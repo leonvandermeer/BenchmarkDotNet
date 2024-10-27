@@ -31,7 +31,7 @@ jobs:
       run: ./build.cmd docs-build
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: site
         path: docs/_site
@@ -48,9 +48,10 @@ jobs:
         ref: docs-stable
 
     - name: Download Artifacts
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: site
+        path: site
 
     - name: Deploy documentation
       uses: JamesIves/github-pages-deploy-action@3.7.1
