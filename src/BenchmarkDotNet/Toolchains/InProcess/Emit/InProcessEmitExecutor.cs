@@ -55,8 +55,10 @@ namespace BenchmarkDotNet.Toolchains.InProcess.Emit
             var host = new InProcessHost(executeParameters.BenchmarkCase, hostLogger, executeParameters.Diagnoser);
 
             int exitCode = -1;
-            var runThread = new Thread(() => exitCode = ExecuteCore(host, executeParameters));
-
+            var runThread = new Thread(() => exitCode = ExecuteCore(host, executeParameters))
+            {
+                Name = "InProcess Emit Executor"
+            };
             if (executeParameters.BenchmarkCase.Descriptor.WorkloadMethod
                 .GetCustomAttributes<STAThreadAttribute>(false)
                 .Any() &&
