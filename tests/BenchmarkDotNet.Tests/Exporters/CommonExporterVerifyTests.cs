@@ -15,6 +15,7 @@ using BenchmarkDotNet.Tests.Builders;
 using BenchmarkDotNet.Tests.Infra;
 using BenchmarkDotNet.Tests.Mocks;
 using BenchmarkDotNet.Tests.Reports;
+using BenchmarkDotNet.Tests.XUnit;
 using JetBrains.Annotations;
 using VerifyXunit;
 using Xunit;
@@ -42,7 +43,7 @@ namespace BenchmarkDotNet.Tests.Exporters
         [UsedImplicitly]
         public static TheoryData<string> CultureInfoNames => TheoryDataHelper.Create(CultureInfos.Keys);
 
-        [Theory]
+        [TheoryEnvSpecific("Fails on .NET Framework", EnvRequirement.NonFullFramework)]
         [MemberData(nameof(CultureInfoNames))]
         public Task Exporters(string cultureInfoName)
         {
