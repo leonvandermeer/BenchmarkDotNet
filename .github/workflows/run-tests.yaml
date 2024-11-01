@@ -27,11 +27,13 @@ jobs:
         run: ./build.cmd in-tests-core -e
       # Upload Artifacts with Unique Name
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-windows-core-trx-${{ github.run_id }}
-          path: "**/*.trx"
+          path: |
+              **/*.trx
+              **/*received*
 
   test-windows-full:
     runs-on: windows-latest
@@ -53,7 +55,9 @@ jobs:
         if: always()
         with:
           name: test-windows-full-trx-${{ github.run_id }}
-          path: "**/*.trx"
+          path: |
+              **/*.trx
+              **/*received*
 
   test-linux:
     runs-on: ubuntu-latest
@@ -88,7 +92,9 @@ jobs:
         if: always()
         with:
           name: test-linux-trx-${{ github.run_id }}
-          path: "**/*.trx"
+          path: |
+              **/*.trx
+              **/*received*
 
   test-macos:
     runs-on: macos-13
@@ -115,7 +121,9 @@ jobs:
         if: always()
         with:
           name: test-macos-trx-${{ github.run_id }}
-          path: "**/*.trx"
+          path: |
+              **/*.trx
+              **/*received*
 
   test-pack:
     runs-on: ubuntu-latest
