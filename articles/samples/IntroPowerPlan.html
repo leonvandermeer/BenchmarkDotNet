@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/samples/IntroPowerPlan.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Samples.IntroPowerPlan">
+
+<h2 id="sample-intropowerplan">Sample: IntroPowerPlan</h2>
+<p>This sample shows how we can manipulate with power plans. In BenchmarkDotNet we could change power plan in two ways. The first one is to set one from the list:</p>
+<ul>
+<li>PowerSaver, guid: a1841308-3541-4fab-bc81-f71556f20b4a</li>
+<li>Balanced, guid: 381b4222-f694-41f0-9685-ff5bb260df2e</li>
+<li>High-Performance, guid: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c (the default one)</li>
+<li>Ultimate Performance, guid: e9a42b02-d5df-448d-aa00-03f14749eb61</li>
+<li>UserPowerPlan (a current power plan set in computer)
+The second one rely on guid string. We could easily found currently set GUIDs with cmd command</li>
+</ul>
+<pre><code class="lang-cmd">powercfg /list
+</code></pre>
+<p>If we set power plans in two ways at the same time, the second one will be used.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroPowerPlan.cs">using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Jobs;
+using System;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Config(typeof(Config))]
+    public class IntroPowerPlan
+    {
+        private class Config : ManualConfig
+        {
+            public Config()
+            {
+                AddJob(Job.MediumRun.WithPowerPlan(new Guid(&quot;e9a42b02-d5df-448d-aa00-03f14749eb61&quot;)));
+                AddJob(Job.MediumRun.WithPowerPlan(PowerPlan.UltimatePerformance));
+                AddJob(Job.MediumRun.WithPowerPlan(PowerPlan.UserPowerPlan));
+                AddJob(Job.MediumRun.WithPowerPlan(PowerPlan.HighPerformance));
+                AddJob(Job.MediumRun.WithPowerPlan(PowerPlan.Balanced));
+                AddJob(Job.MediumRun.WithPowerPlan(PowerPlan.PowerSaver));
+            }
+        }
+
+        [Benchmark]
+        public int IterationTest()
+        {
+            int j = 0;
+            for (int i = 0; i &lt; short.MaxValue; ++i)
+            {
+                j = i;
+            }
+
+            return j;
+        }
+
+        [Benchmark]
+        public int SplitJoin()
+            =&gt; string.Join(&quot;,&quot;, new string[1000]).Split(',').Length;
+    }
+}
+</code></pre><h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/powerplans.html">Power Plans</a></li>
+<li>The permanent link to this sample: <a class="xref" href="IntroPowerPlan.html">BenchmarkDotNet.Samples.IntroPowerPlan</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

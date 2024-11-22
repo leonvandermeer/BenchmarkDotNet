@@ -1,0 +1,758 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Characteristic
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Characteristic
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Characteristics.Characteristic">
+
+
+
+  <h1 id="BenchmarkDotNet_Characteristics_Characteristic" data-uid="BenchmarkDotNet.Characteristics.Characteristic" class="text-break">
+    Class Characteristic
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Characteristics.html">Characteristics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Characteristic</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Characteristic</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_IsPresentableCharacteristic_BenchmarkDotNet_Characteristics_Characteristic_System_Boolean_">CharacteristicHelper.IsPresentableCharacteristic(Characteristic, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic__ctor_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic__ctor_System_String_System_Type_System_Type_System_Object_System_Boolean_System_Boolean_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.#ctor(System.String,System.Type,System.Type,System.Object,System.Boolean,System.Boolean)">
+  Characteristic(string, Type, Type, object, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Characteristic(string id, Type characteristicType, Type declaringType, object fallbackValue, bool ignoreOnApply, bool dontShowInSummary = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>characteristicType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>declaringType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>fallbackValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>ignoreOnApply</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>dontShowInSummary</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_EmptyValue" data-uid="BenchmarkDotNet.Characteristics.Characteristic.EmptyValue">
+  EmptyValue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly object EmptyValue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_CharacteristicType_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CharacteristicType*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_CharacteristicType" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CharacteristicType">
+  CharacteristicType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type CharacteristicType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_DeclaringType_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.DeclaringType*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_DeclaringType" data-uid="BenchmarkDotNet.Characteristics.Characteristic.DeclaringType">
+  DeclaringType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type DeclaringType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_DontShowInSummary_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.DontShowInSummary*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_DontShowInSummary" data-uid="BenchmarkDotNet.Characteristics.Characteristic.DontShowInSummary">
+  DontShowInSummary
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DontShowInSummary { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_FullId_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.FullId*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_FullId" data-uid="BenchmarkDotNet.Characteristics.Characteristic.FullId">
+  FullId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_HasChildCharacteristics_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.HasChildCharacteristics*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_HasChildCharacteristics" data-uid="BenchmarkDotNet.Characteristics.Characteristic.HasChildCharacteristics">
+  HasChildCharacteristics
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasChildCharacteristics { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_Id_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Id*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_Id" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Id">
+  Id
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_IgnoreOnApply_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.IgnoreOnApply*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_IgnoreOnApply" data-uid="BenchmarkDotNet.Characteristics.Characteristic.IgnoreOnApply">
+  IgnoreOnApply
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IgnoreOnApply { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_Item_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Item*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_Item_BenchmarkDotNet_Characteristics_CharacteristicObject_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Item(BenchmarkDotNet.Characteristics.CharacteristicObject)">
+  this[CharacteristicObject]
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object? this[CharacteristicObject obj] { get; set; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_CreateHidden_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CreateHidden*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_CreateHidden__2_System_String_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CreateHidden``2(System.String)">
+  CreateHidden&lt;TOwner, T&gt;(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Characteristic&lt;T&gt; CreateHidden&lt;TOwner, T&gt;(string memberName) where TOwner : CharacteristicObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOwner</code></dt>
+    <dd></dd>
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_CreateIgnoreOnApply_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CreateIgnoreOnApply*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_CreateIgnoreOnApply__2_System_String_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.CreateIgnoreOnApply``2(System.String)">
+  CreateIgnoreOnApply&lt;TOwner, T&gt;(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Characteristic&lt;T&gt; CreateIgnoreOnApply&lt;TOwner, T&gt;(string memberName) where TOwner : CharacteristicObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOwner</code></dt>
+    <dd></dd>
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_Create_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_Create__2_System_String_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create``2(System.String)">
+  Create&lt;TOwner, T&gt;(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Characteristic&lt;T&gt; Create&lt;TOwner, T&gt;(string memberName) where TOwner : CharacteristicObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOwner</code></dt>
+    <dd></dd>
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_Create_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_Create__2_System_String_System_Func_BenchmarkDotNet_Characteristics_CharacteristicObject___1___1____1_System_Boolean_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create``2(System.String,System.Func{BenchmarkDotNet.Characteristics.CharacteristicObject,``1,``1},``1,System.Boolean)">
+  Create&lt;TOwner, T&gt;(string, Func&lt;CharacteristicObject, T, T&gt;, T, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Characteristic&lt;T&gt; Create&lt;TOwner, T&gt;(string memberName, Func&lt;CharacteristicObject, T, T&gt; resolver, T fallbackValue, bool ignoreOnApply) where TOwner : CharacteristicObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>resolver</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a>, T, T&gt;</dt>
+    <dd></dd>
+    <dt><code>fallbackValue</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>ignoreOnApply</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOwner</code></dt>
+    <dd></dd>
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_Create_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_Create__2_System_String___1_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.Create``2(System.String,``1)">
+  Create&lt;TOwner, T&gt;(string, T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Characteristic&lt;T&gt; Create&lt;TOwner, T&gt;(string memberName, T fallbackValue) where TOwner : CharacteristicObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>memberName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>fallbackValue</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOwner</code></dt>
+    <dd></dd>
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Characteristics_Characteristic_ToString_" data-uid="BenchmarkDotNet.Characteristics.Characteristic.ToString*"></a>
+
+  <h3 id="BenchmarkDotNet_Characteristics_Characteristic_ToString" data-uid="BenchmarkDotNet.Characteristics.Characteristic.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

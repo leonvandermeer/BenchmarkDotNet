@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/samples/IntroExportXml.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Samples.IntroExportXml">
+
+<h2 id="sample-introexportxml">Sample: IntroExportXml</h2>
+<p>BenchmarkDotNet has a set of XML exporters. You can customize the following properties of these exporters:</p>
+<ul>
+<li><code>fileNameSuffix</code>: a string which be placed in the end of target file name.</li>
+<li><code>indentXml</code>=<code>false</code>/<code>true</code>: should we format xml or not.</li>
+<li><code>excludeMeasurements</code>=<code>false</code>/<code>true</code>: should we exclude detailed information about measurements or not
+(the final summary with statistics will be in the XML file anyway).</li>
+</ul>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroExportXml.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DryJob]
+    [XmlExporterAttribute.Brief]
+    [XmlExporterAttribute.Full]
+    [XmlExporterAttribute.BriefCompressed]
+    [XmlExporterAttribute.FullCompressed]
+    [XmlExporter(&quot;-custom&quot;, indentXml: true, excludeMeasurements: true)]
+    public class IntroExportXml
+    {
+        [Benchmark] public void Sleep10() =&gt; Thread.Sleep(10);
+        [Benchmark] public void Sleep20() =&gt; Thread.Sleep(20);
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<p>Example of <code>IntroXmlExport-report-brief.xml</code>:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Summary&gt;
+  &lt;Title&gt;IntroXmlExport&lt;/Title&gt;
+  &lt;HostEnvironmentInfo&gt;
+    &lt;BenchmarkDotNetCaption&gt;BenchmarkDotNet&lt;/BenchmarkDotNetCaption&gt;
+    &lt;BenchmarkDotNetVersion&gt;0.10.9.20170805-develop&lt;/BenchmarkDotNetVersion&gt;
+    &lt;OsVersion&gt;Windows 10 Redstone 2 (10.0.15063)&lt;/OsVersion&gt;
+    &lt;ProcessorName&gt;Intel Core i7-3770K CPU 3.50GHz (Ivy Bridge)&lt;/ProcessorName&gt;
+    &lt;ProcessorCount&gt;8&lt;/ProcessorCount&gt;
+    &lt;RuntimeVersion&gt;.NET Framework 4.7 (CLR 4.0.30319.42000)&lt;/RuntimeVersion&gt;
+    &lt;Architecture&gt;64bit&lt;/Architecture&gt;
+    &lt;HasAttachedDebugger&gt;False&lt;/HasAttachedDebugger&gt;
+    &lt;HasRyuJit&gt;True&lt;/HasRyuJit&gt;
+    &lt;Configuration&gt;RELEASE&lt;/Configuration&gt;
+    &lt;JitModules&gt;clrjit-v4.7.2101.1&lt;/JitModules&gt;
+    &lt;DotNetSdkVersion&gt;1.0.4&lt;/DotNetSdkVersion&gt;
+    &lt;ChronometerFrequency&gt;
+      &lt;Hertz&gt;3410220&lt;/Hertz&gt;
+    &lt;/ChronometerFrequency&gt;
+    &lt;HardwareTimerKind&gt;Tsc&lt;/HardwareTimerKind&gt;
+  &lt;/HostEnvironmentInfo&gt;
+  &lt;Benchmarks&gt;
+    &lt;Benchmark&gt;
+      &lt;DisplayInfo&gt;IntroXmlExport.Sleep10: DefaultJob&lt;/DisplayInfo&gt;
+      &lt;Namespace&gt;BenchmarkDotNet.Samples.Intro&lt;/Namespace&gt;
+      &lt;Type&gt;IntroXmlExport&lt;/Type&gt;
+      &lt;Method&gt;Sleep10&lt;/Method&gt;
+      &lt;MethodTitle&gt;Sleep10&lt;/MethodTitle&gt;
+      &lt;Statistics&gt;
+        &lt;N&gt;15&lt;/N&gt;
+        &lt;Min&gt;10989865.8785938&lt;/Min&gt;
+        &lt;LowerFence&gt;10989836.0967969&lt;/LowerFence&gt;
+        &lt;Q1&gt;10990942.6053125&lt;/Q1&gt;
+        &lt;Median&gt;10991249.5870313&lt;/Median&gt;
+        &lt;Mean&gt;10991270.0524583&lt;/Mean&gt;
+        &lt;Q3&gt;10991680.2776563&lt;/Q3&gt;
+        &lt;UpperFence&gt;10992786.7861719&lt;/UpperFence&gt;
+        &lt;Max&gt;10992115.5501563&lt;/Max&gt;
+        &lt;InterquartileRange&gt;737.672343749553&lt;/InterquartileRange&gt;
+        &lt;StandardError&gt;148.484545262958&lt;/StandardError&gt;
+        &lt;Variance&gt;330714.902729213&lt;/Variance&gt;
+        &lt;StandardDeviation&gt;575.07817097262&lt;/StandardDeviation&gt;
+        &lt;Skewness&gt;-0.67759778074187&lt;/Skewness&gt;
+        &lt;Kurtosis&gt;3.14296703520386&lt;/Kurtosis&gt;
+        &lt;ConfidenceInterval&gt;
+          &lt;N&gt;15&lt;/N&gt;
+          &lt;Mean&gt;10991270.0524583&lt;/Mean&gt;
+          &lt;StandardError&gt;148.484545262958&lt;/StandardError&gt;
+          &lt;Level&gt;L999&lt;/Level&gt;
+          &lt;Margin&gt;614.793505974065&lt;/Margin&gt;
+          &lt;Lower&gt;10990655.2589524&lt;/Lower&gt;
+          &lt;Upper&gt;10991884.8459643&lt;/Upper&gt;
+        &lt;/ConfidenceInterval&gt;
+        &lt;Percentiles&gt;
+          &lt;P0&gt;10989865.8785938&lt;/P0&gt;
+          &lt;P25&gt;10991027.3689063&lt;/P25&gt;
+          &lt;P50&gt;10991249.5870313&lt;/P50&gt;
+          &lt;P67&gt;10991489.490875&lt;/P67&gt;
+          &lt;P80&gt;10991696.7722187&lt;/P80&gt;
+          &lt;P85&gt;10991754.5031875&lt;/P85&gt;
+          &lt;P90&gt;10991933.1939688&lt;/P90&gt;
+          &lt;P95&gt;10992067.441125&lt;/P95&gt;
+          &lt;P100&gt;10992115.5501563&lt;/P100&gt;
+        &lt;/Percentiles&gt;
+      &lt;/Statistics&gt;
+    &lt;/Benchmark&gt;
+  &lt;/Benchmarks&gt;
+&lt;/Summary&gt;
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/exporters.html">Exporters</a></li>
+<li>The permanent link to this sample: <a class="xref" href="IntroExportXml.html">BenchmarkDotNet.Samples.IntroExportXml</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

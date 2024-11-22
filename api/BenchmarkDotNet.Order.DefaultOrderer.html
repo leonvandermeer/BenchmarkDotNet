@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DefaultOrderer
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DefaultOrderer
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Order.DefaultOrderer">
+
+
+
+  <h1 id="BenchmarkDotNet_Order_DefaultOrderer" data-uid="BenchmarkDotNet.Order.DefaultOrderer" class="text-break">
+    Class DefaultOrderer
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Order.html">Order</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DefaultOrderer : IOrderer</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DefaultOrderer</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Order.IOrderer.html">IOrderer</a></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer__ctor_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer__ctor_BenchmarkDotNet_Order_SummaryOrderPolicy_BenchmarkDotNet_Order_MethodOrderPolicy_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.#ctor(BenchmarkDotNet.Order.SummaryOrderPolicy,BenchmarkDotNet.Order.MethodOrderPolicy)">
+  DefaultOrderer(SummaryOrderPolicy, MethodOrderPolicy)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DefaultOrderer(SummaryOrderPolicy summaryOrderPolicy = SummaryOrderPolicy.Default, MethodOrderPolicy methodOrderPolicy = MethodOrderPolicy.Declared)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>summaryOrderPolicy</code> <a class="xref" href="BenchmarkDotNet.Order.SummaryOrderPolicy.html">SummaryOrderPolicy</a></dt>
+    <dd></dd>
+    <dt><code>methodOrderPolicy</code> <a class="xref" href="BenchmarkDotNet.Order.MethodOrderPolicy.html">MethodOrderPolicy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_Instance" data-uid="BenchmarkDotNet.Order.DefaultOrderer.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IOrderer Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Order.IOrderer.html">IOrderer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_MethodOrderPolicy_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.MethodOrderPolicy*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_MethodOrderPolicy" data-uid="BenchmarkDotNet.Order.DefaultOrderer.MethodOrderPolicy">
+  MethodOrderPolicy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MethodOrderPolicy MethodOrderPolicy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Order.MethodOrderPolicy.html">MethodOrderPolicy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_SeparateLogicalGroups_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.SeparateLogicalGroups*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_SeparateLogicalGroups" data-uid="BenchmarkDotNet.Order.DefaultOrderer.SeparateLogicalGroups">
+  SeparateLogicalGroups
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SeparateLogicalGroups { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_SummaryOrderPolicy_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.SummaryOrderPolicy*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_SummaryOrderPolicy" data-uid="BenchmarkDotNet.Order.DefaultOrderer.SummaryOrderPolicy">
+  SummaryOrderPolicy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SummaryOrderPolicy SummaryOrderPolicy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Order.SummaryOrderPolicy.html">SummaryOrderPolicy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetExecutionOrder_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetExecutionOrder*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetExecutionOrder_System_Collections_Immutable_ImmutableArray_BenchmarkDotNet_Running_BenchmarkCase__System_Collections_Generic_IEnumerable_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule__" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetExecutionOrder(System.Collections.Immutable.ImmutableArray{BenchmarkDotNet.Running.BenchmarkCase},System.Collections.Generic.IEnumerable{BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule})">
+  GetExecutionOrder(ImmutableArray&lt;BenchmarkCase&gt;, IEnumerable&lt;BenchmarkLogicalGroupRule&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;BenchmarkCase&gt; GetExecutionOrder(ImmutableArray&lt;BenchmarkCase&gt; benchmarkCases, IEnumerable&lt;BenchmarkLogicalGroupRule&gt;? order = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarkCases</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule.html">BenchmarkLogicalGroupRule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetHighlightGroupKey_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetHighlightGroupKey*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetHighlightGroupKey_BenchmarkDotNet_Running_BenchmarkCase_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetHighlightGroupKey(BenchmarkDotNet.Running.BenchmarkCase)">
+  GetHighlightGroupKey(BenchmarkCase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetHighlightGroupKey(BenchmarkCase benchmarkCase)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarkCase</code> <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetLogicalGroupKey_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetLogicalGroupKey*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetLogicalGroupKey_System_Collections_Immutable_ImmutableArray_BenchmarkDotNet_Running_BenchmarkCase__BenchmarkDotNet_Running_BenchmarkCase_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetLogicalGroupKey(System.Collections.Immutable.ImmutableArray{BenchmarkDotNet.Running.BenchmarkCase},BenchmarkDotNet.Running.BenchmarkCase)">
+  GetLogicalGroupKey(ImmutableArray&lt;BenchmarkCase&gt;, BenchmarkCase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetLogicalGroupKey(ImmutableArray&lt;BenchmarkCase&gt; allBenchmarksCases, BenchmarkCase benchmarkCase)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>allBenchmarksCases</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>benchmarkCase</code> <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetLogicalGroupOrder_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetLogicalGroupOrder*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetLogicalGroupOrder_System_Collections_Generic_IEnumerable_System_Linq_IGrouping_System_String_BenchmarkDotNet_Running_BenchmarkCase___System_Collections_Generic_IEnumerable_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule__" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetLogicalGroupOrder(System.Collections.Generic.IEnumerable{System.Linq.IGrouping{System.String,BenchmarkDotNet.Running.BenchmarkCase}},System.Collections.Generic.IEnumerable{BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule})">
+  GetLogicalGroupOrder(IEnumerable&lt;IGrouping&lt;string, BenchmarkCase&gt;&gt;, IEnumerable&lt;BenchmarkLogicalGroupRule&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;IGrouping&lt;string, BenchmarkCase&gt;&gt; GetLogicalGroupOrder(IEnumerable&lt;IGrouping&lt;string, BenchmarkCase&gt;&gt; logicalGroups, IEnumerable&lt;BenchmarkLogicalGroupRule&gt;? order = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logicalGroups</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule.html">BenchmarkLogicalGroupRule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetSummaryOrder_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetSummaryOrder*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetSummaryOrder_System_Collections_Immutable_ImmutableArray_BenchmarkDotNet_Running_BenchmarkCase__BenchmarkDotNet_Reports_Summary_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetSummaryOrder(System.Collections.Immutable.ImmutableArray{BenchmarkDotNet.Running.BenchmarkCase},BenchmarkDotNet.Reports.Summary)">
+  GetSummaryOrder(ImmutableArray&lt;BenchmarkCase&gt;, Summary)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;BenchmarkCase&gt; GetSummaryOrder(ImmutableArray&lt;BenchmarkCase&gt; benchmarksCases, Summary summary)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarksCases</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>summary</code> <a class="xref" href="BenchmarkDotNet.Reports.Summary.html">Summary</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Order_DefaultOrderer_GetSummaryOrderForGroup_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetSummaryOrderForGroup*"></a>
+
+  <h3 id="BenchmarkDotNet_Order_DefaultOrderer_GetSummaryOrderForGroup_System_Collections_Immutable_ImmutableArray_BenchmarkDotNet_Running_BenchmarkCase__BenchmarkDotNet_Reports_Summary_" data-uid="BenchmarkDotNet.Order.DefaultOrderer.GetSummaryOrderForGroup(System.Collections.Immutable.ImmutableArray{BenchmarkDotNet.Running.BenchmarkCase},BenchmarkDotNet.Reports.Summary)">
+  GetSummaryOrderForGroup(ImmutableArray&lt;BenchmarkCase&gt;, Summary)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;BenchmarkCase&gt; GetSummaryOrderForGroup(ImmutableArray&lt;BenchmarkCase&gt; benchmarksCase, Summary summary)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarksCase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>summary</code> <a class="xref" href="BenchmarkDotNet.Reports.Summary.html">Summary</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Getting started | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Getting started | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/guides/getting-started.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="getting-started">Getting started</h1>
+
+<p>To get started with BenchmarkDotNet, please follow these steps.</p>
+<h2 id="step-1-create-a-project">Step 1. Create a project</h2>
+<p>Create a new console application.</p>
+<h2 id="step-2-installation">Step 2. Installation</h2>
+<p>Install BenchmarkDotNet via the NuGet package: <a href="https://www.nuget.org/packages/BenchmarkDotNet/">BenchmarkDotNet</a></p>
+<pre><code class="lang-cmd">&gt; dotnet add package BenchmarkDotNet
+</code></pre>
+<p>Read more about BenchmarkDotNet NuGet packages: <a class="xref" href="nuget.html">Installing NuGet packages</a></p>
+<h2 id="step-3-design-a-benchmark">Step 3. Design a benchmark</h2>
+<p>Write a class with methods that you want to measure and mark them with the <code>Benchmark</code> attribute. In the following example, we
+compare <a href="https://en.wikipedia.org/wiki/MD5">MD5</a> and <a href="https://en.wikipedia.org/wiki/SHA-2">SHA256</a> cryptographic hash functions:</p>
+<pre><code class="lang-cs">using System;
+using System.Security.Cryptography;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
+
+namespace MyBenchmarks
+{
+    public class Md5VsSha256
+    {
+        private const int N = 10000;
+        private readonly byte[] data;
+
+        private readonly SHA256 sha256 = SHA256.Create();
+        private readonly MD5 md5 = MD5.Create();
+
+        public Md5VsSha256()
+        {
+            data = new byte[N];
+            new Random(42).NextBytes(data);
+        }
+
+        [Benchmark]
+        public byte[] Sha256() =&gt; sha256.ComputeHash(data);
+
+        [Benchmark]
+        public byte[] Md5() =&gt; md5.ComputeHash(data);
+    }
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var summary = BenchmarkRunner.Run&lt;Md5VsSha256&gt;();
+        }
+    }
+}
+</code></pre>
+<p>The <code>BenchmarkRunner.Run&lt;Md5VsSha256&gt;()</code> call runs your benchmarks and prints results to the console.</p>
+<h2 id="step-4-run-benchmarks">Step 4. Run benchmarks</h2>
+<p>Start your console application to run the benchmarks. The application must be built in the Release configuration.</p>
+<pre><code class="lang-cmd">&gt; dotnet run -c Release
+</code></pre>
+<h2 id="step-5-view-results">Step 5. View results</h2>
+<p>View the results. Here is an example of output from the above benchmark:</p>
+<pre><code>BenchmarkDotNet=v0.13.2, OS=Windows 10 (10.0.19045.2251)
+Intel Core i7-4770HQ CPU 2.20GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.100
+  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+
+
+| Method |     Mean |    Error |   StdDev |
+|------- |---------:|---------:|---------:|
+| Sha256 | 51.57 us | 0.311 us | 0.291 us |
+|    Md5 | 21.91 us | 0.138 us | 0.129 us |
+</code></pre>
+<h2 id="step-6-analyze-results">Step 6. Analyze results</h2>
+<p>BenchmarkDotNet will automatically create basic reports in the <code>.\BenchmarkDotNet.Artifacts\results</code> folder that can be shared and analyzed.</p>
+<p>To help analyze performance in further depth, you can configure your benchmark to collect and output more detailed information. Benchmark configuration can be conveniently changed by adding attributes to the class containing your benchmarks. For example:</p>
+<ul>
+<li><a href="../configs/diagnosers.html">Diagnosers</a>
+<ul>
+<li>GC allocations: <code>[MemoryDiagnoser]</code></li>
+<li>Code size and disassembly: <code>[DisassemblyDiagnoser]</code></li>
+<li>Threading statistics: <code>[ThreadingDiagnoser]</code></li>
+</ul>
+</li>
+<li><a href="../configs/exporters.html">Exporters</a>
+<ul>
+<li>CSV reports with raw data: <code>[CsvMeasurementsExporter]</code></li>
+<li>JSON reports with raw data: <code>[JsonExporter]</code></li>
+<li>Plots (if you have installed R): <code>[RPlotExporter]</code></li>
+</ul>
+</li>
+</ul>
+<p>For more information, see <a href="../configs/configs.html">Configs</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>BenchmarkDotNet provides features which aid high-quality performance research.
+If you want to know more about BenchmarkDotNet features, check out the <a href="../overview.html">Overview</a> page.
+If you have any questions, check out the <a href="../faq.html">FAQ</a> page.
+If you didn't find an answer for your question on this page, <a href="https://gitter.im/dotnet/BenchmarkDotNet">ask it on Gitter</a> or <a href="https://github.com/dotnet/BenchmarkDotNet/issues">create an issue on GitHub</a>.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

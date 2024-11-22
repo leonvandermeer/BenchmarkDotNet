@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>BenchmarkDotNet v0.10.8 | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="BenchmarkDotNet v0.10.8 | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/changelog/v0.10.8.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="changelog.v0.10.8">
+<h1 id="benchmarkdotnet-v0108">BenchmarkDotNet v0.10.8</h1>
+
+<ul>
+<li>Legend for time units (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/349">#349</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/issues/459">#459</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/commit/f14e508e44b510a26cc3ec5aed30ee7843a92baf">f14e508e</a>)</li>
+<li>XML exporter (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/157">#157</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/pull/452">#452</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/commit/a0148db80c518a9d255f496534a8d1666be52c69">a0148db8</a>)</li>
+<li>.NET Framework 4.7 support (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/461">#461</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/commit/3f2b5c3c134c62f34f0ecf1a9c90d91ad37f2c6a">3f2b5c3c</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/commit/5513873ac40d07583d6136e431e3b7c8cdf6c851">5513873a</a>)</li>
+<li>Public API for AllocationQuantum (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/450">#450</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/pull/462">#462</a>, <a href="https://github.com/dotnet/BenchmarkDotNet/commit/a0148db80c518a9d255f496534a8d1666be52c69">a0148db8</a>)</li>
+</ul>
+<h2 id="milestone-details">Milestone details</h2>
+<p>In the <a href="https://github.com/dotnet/BenchmarkDotNet/issues?q=milestone:v0.10.8">v0.10.8</a> scope,
+5 issues were resolved and 3 pull requests were merged.
+This release includes 8 commits by 4 contributors.</p>
+<h2 id="resolved-issues-5">Resolved issues (5)</h2>
+<ul>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/issues/157">#157</a> Implement export to xml</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/issues/349">#349</a> What the report title and value means? (assignee: <a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/issues/450">#450</a> [Minor feature request] Please make GcStats.AllocationQuantum public</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/issues/459">#459</a> [Question] What does the unit of measurement us stand for</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/issues/461">#461</a> .NET Framework 4.7 support (assignee: <a href="https://github.com/adamsitnik">@adamsitnik</a>)</li>
+</ul>
+<h2 id="merged-pull-requests-3">Merged pull requests (3)</h2>
+<ul>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/pull/452">#452</a> Feature: XML Exporter (by <a href="https://github.com/Teknikaali">@Teknikaali</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/pull/455">#455</a> Wrong xml doc comment (by <a href="https://github.com/ig-sinicyn">@ig-sinicyn</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/pull/462">#462</a> make allocation quantum public, deal with a spelling error and expose… (by <a href="https://github.com/RichLinnell">@RichLinnell</a>)</li>
+</ul>
+<h2 id="commits-8">Commits (8)</h2>
+<ul>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/f14e508e44b510a26cc3ec5aed30ee7843a92baf">f14e50</a> Add legend for time units (by <a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/e5955083f372cfaf706b4665acc1eb37b21b07c3">e59550</a> Add info about OrderProviders in docs (by <a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/6fc2456ceec071bfc2e3432c3b800ae905c90c6a">6fc245</a> Fix ConfigPassingTest (by <a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/ef0583365a97d899e918ad14b56b697db1b8e910">ef0583</a> Feature: XML Exporter (#452) (by <a href="https://github.com/Teknikaali">@Teknikaali</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/3f2b5c3c134c62f34f0ecf1a9c90d91ad37f2c6a">3f2b5c</a> .NET 4.7 support from .NET Core host process on Windows, fixes #461 (by <a href="https://github.com/adamsitnik">@adamsitnik</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/a0148db80c518a9d255f496534a8d1666be52c69">a0148d</a> make allocation quantum public, deal with a spelling error and expose allocat... (by <a href="https://github.com/RichLinnell">@RichLinnell</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/5513873ac40d07583d6136e431e3b7c8cdf6c851">551387</a> add Windows check to our CsProjClassicNetToolchain (by <a href="https://github.com/adamsitnik">@adamsitnik</a>)</li>
+<li><a href="https://github.com/dotnet/BenchmarkDotNet/commit/971565b3674555731692933f5924a850a448ba27">971565</a> Set library version: 0.10.8 (by <a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+</ul>
+<h2 id="contributors-4">Contributors (4)</h2>
+<ul>
+<li>Adam Sitnik (<a href="https://github.com/adamsitnik">@adamsitnik</a>)</li>
+<li>Andrey Akinshin (<a href="https://github.com/AndreyAkinshin">@AndreyAkinshin</a>)</li>
+<li>Anssi Kettunen (<a href="https://github.com/Teknikaali">@Teknikaali</a>)</li>
+<li>Rich Linnell (<a href="https://github.com/RichLinnell">@RichLinnell</a>)</li>
+</ul>
+<p>Thank you very much!</p>
+<h2 id="additional-details">Additional details</h2>
+<p><em>Date: June 09, 2017</em></p>
+<p><em>Milestone: <a href="https://github.com/PerfDotNet/BenchmarkDotNet/issues?q=milestone%3Av0.10.8">v0.10.8</a></em></p>
+<p><em>NuGet Packages:</em></p>
+<ul>
+<li><a href="https://www.nuget.org/packages/BenchmarkDotNet/0.10.8">https://www.nuget.org/packages/BenchmarkDotNet/0.10.8</a></li>
+<li><a href="https://www.nuget.org/packages/BenchmarkDotNet.Core/0.10.8">https://www.nuget.org/packages/BenchmarkDotNet.Core/0.10.8</a></li>
+<li><a href="https://www.nuget.org/packages/BenchmarkDotNet.Toolchains.Roslyn/0.10.8">https://www.nuget.org/packages/BenchmarkDotNet.Toolchains.Roslyn/0.10.8</a></li>
+<li><a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/0.10.8">https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/0.10.8</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

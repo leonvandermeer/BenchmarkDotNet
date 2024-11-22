@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CustomDotNetCliToolchainBuilder
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CustomDotNetCliToolchainBuilder
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder">
+
+
+
+  <h1 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder" class="text-break">
+    Class CustomDotNetCliToolchainBuilder
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.html">Toolchains</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.html">DotNetCli</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CustomDotNetCliToolchainBuilder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CustomDotNetCliToolchainBuilder</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.NativeAot.NativeAotToolchainBuilder.html">NativeAotToolchainBuilder</a></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder__ctor_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder__ctor" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.#ctor">
+  CustomDotNetCliToolchainBuilder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CustomDotNetCliToolchainBuilder()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_Feeds" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.Feeds">
+  Feeds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly Dictionary&lt;string, string&gt; Feeds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_customDotNetCliPath" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.customDotNetCliPath">
+  customDotNetCliPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string customDotNetCliPath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_displayName" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.displayName">
+  displayName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string displayName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_runtimeFrameworkVersion" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.runtimeFrameworkVersion">
+  runtimeFrameworkVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string runtimeFrameworkVersion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_runtimeIdentifier" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.runtimeIdentifier">
+  runtimeIdentifier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string runtimeIdentifier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_useNuGetClearTag" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.useNuGetClearTag">
+  useNuGetClearTag
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool useNuGetClearTag</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_useTempFolderForRestore" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.useTempFolderForRestore">
+  useTempFolderForRestore
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool useTempFolderForRestore</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_AdditionalNuGetFeed_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.AdditionalNuGetFeed*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_AdditionalNuGetFeed_System_String_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.AdditionalNuGetFeed(System.String,System.String)">
+  AdditionalNuGetFeed(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>it allows you to define an additional NuGet feed, you can seal the feeds list by using the UseNuGetClearTag() method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder AdditionalNuGetFeed(string feedName, string feedAddress)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>feedName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the name of the feed, will be used in the auto-generated NuGet.config file</p>
+</dd>
+    <dt><code>feedAddress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the address of the feed, will be used in the auto-generated NuGet.config file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_DisplayName_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.DisplayName*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_DisplayName_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.DisplayName(System.String)">
+  DisplayName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder DisplayName(string newDisplayName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newDisplayName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>the name of the toolchain to be displayed in results</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_DotNetCli_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.DotNetCli*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_DotNetCli_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.DotNetCli(System.String)">
+  DotNetCli(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder DotNetCli(string newCustomDotNetCliPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newCustomDotNetCliPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>if not provided, the one from PATH will be used</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_GetTargetFrameworkMoniker_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.GetTargetFrameworkMoniker*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_GetTargetFrameworkMoniker" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.GetTargetFrameworkMoniker">
+  GetTargetFrameworkMoniker()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetTargetFrameworkMoniker()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_RuntimeFrameworkVersion_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.RuntimeFrameworkVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_RuntimeFrameworkVersion_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.RuntimeFrameworkVersion(System.String)">
+  RuntimeFrameworkVersion(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder RuntimeFrameworkVersion(string newRuntimeFrameworkVersion)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newRuntimeFrameworkVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>optional, when set it's copied to the generated .csproj file</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_RuntimeIdentifier_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.RuntimeIdentifier*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_RuntimeIdentifier_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.RuntimeIdentifier(System.String)">
+  RuntimeIdentifier(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder RuntimeIdentifier(string newRuntimeIdentifier)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newRuntimeIdentifier</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>if not provided, portable OS-arch will be used (example: &quot;win-x64&quot;, &quot;linux-x86&quot;)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_TargetFrameworkMoniker_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.TargetFrameworkMoniker*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_TargetFrameworkMoniker_System_String_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.TargetFrameworkMoniker(System.String)">
+  TargetFrameworkMoniker(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder TargetFrameworkMoniker(string targetFrameworkMoniker)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>targetFrameworkMoniker</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>TFM, example: net8.0</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_ToToolchain_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.ToToolchain*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_ToToolchain" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.ToToolchain">
+  ToToolchain()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract IToolchain ToToolchain()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_UseNuGetClearTag_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.UseNuGetClearTag*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_UseNuGetClearTag_System_Boolean_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.UseNuGetClearTag(System.Boolean)">
+  UseNuGetClearTag(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>emits clear tag in the auto-generated NuGet.config file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder UseNuGetClearTag(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_UseTempFolderForRestore_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.UseTempFolderForRestore*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_DotNetCli_CustomDotNetCliToolchainBuilder_UseTempFolderForRestore_System_Boolean_" data-uid="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.UseTempFolderForRestore(System.Boolean)">
+  UseTempFolderForRestore(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>restore to temp folder to keep your CI clean or install same package many times (perhaps with different content but same version number), by default true for local builds
+<a href="https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/dogfooding.md#3---consuming-subsequent-code-changes-by-rebuilding-the-package-alternative-2">https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/dogfooding.md#3---consuming-subsequent-code-changes-by-rebuilding-the-package-alternative-2</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomDotNetCliToolchainBuilder UseTempFolderForRestore(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.CustomDotNetCliToolchainBuilder.html">CustomDotNetCliToolchainBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

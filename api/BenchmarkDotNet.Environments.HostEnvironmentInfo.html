@@ -1,0 +1,780 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HostEnvironmentInfo
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HostEnvironmentInfo
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo">
+
+
+
+  <h1 id="BenchmarkDotNet_Environments_HostEnvironmentInfo" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo" class="text-break">
+    Class HostEnvironmentInfo
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Environments.html">Environments</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HostEnvironmentInfo : BenchmarkEnvironmentInfo</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html">BenchmarkEnvironmentInfo</a></div>
+      <div><span class="xref">HostEnvironmentInfo</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_GetConfigurationFlag">BenchmarkEnvironmentInfo.GetConfigurationFlag()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_GetDebuggerFlag">BenchmarkEnvironmentInfo.GetDebuggerFlag()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_GetGcServerFlag">BenchmarkEnvironmentInfo.GetGcServerFlag()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_GetGcConcurrentFlag">BenchmarkEnvironmentInfo.GetGcConcurrentFlag()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_Validate_BenchmarkDotNet_Jobs_Job_">BenchmarkEnvironmentInfo.Validate(Job)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_Architecture">BenchmarkEnvironmentInfo.Architecture</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_Configuration">BenchmarkEnvironmentInfo.Configuration</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_RuntimeVersion">BenchmarkEnvironmentInfo.RuntimeVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_HasAttachedDebugger">BenchmarkEnvironmentInfo.HasAttachedDebugger</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_HasRyuJit">BenchmarkEnvironmentInfo.HasRyuJit</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_JitInfo">BenchmarkEnvironmentInfo.JitInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_HardwareIntrinsicsShort">BenchmarkEnvironmentInfo.HardwareIntrinsicsShort</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_IsServerGC">BenchmarkEnvironmentInfo.IsServerGC</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_IsConcurrentGC">BenchmarkEnvironmentInfo.IsConcurrentGC</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_GCAllocationQuantum">BenchmarkEnvironmentInfo.GCAllocationQuantum</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Environments.BenchmarkEnvironmentInfo.html#BenchmarkDotNet_Environments_BenchmarkEnvironmentInfo_InDocker">BenchmarkEnvironmentInfo.InDocker</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo__ctor_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo__ctor" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.#ctor">
+  HostEnvironmentInfo()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HostEnvironmentInfo()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_BenchmarkDotNetCaption" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.BenchmarkDotNetCaption">
+  BenchmarkDotNetCaption
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string BenchmarkDotNetCaption = &quot;BenchmarkDotNet&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_AntivirusProducts_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.AntivirusProducts*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_AntivirusProducts" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.AntivirusProducts">
+  AntivirusProducts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;ICollection&lt;Antivirus&gt;&gt; AntivirusProducts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="BenchmarkDotNet.Portability.Antivirus.html">Antivirus</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_BenchmarkDotNetVersion_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.BenchmarkDotNetVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_BenchmarkDotNetVersion" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.BenchmarkDotNetVersion">
+  BenchmarkDotNetVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BenchmarkDotNetVersion { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ChronometerFrequency_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ChronometerFrequency*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ChronometerFrequency" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ChronometerFrequency">
+  ChronometerFrequency
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The frequency of the timer as the number of ticks per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Frequency ChronometerFrequency { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Frequency</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ChronometerResolution_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ChronometerResolution*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ChronometerResolution" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ChronometerResolution">
+  ChronometerResolution
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeInterval ChronometerResolution { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TimeInterval</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_Cpu_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.Cpu*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_Cpu" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.Cpu">
+  Cpu
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>is expensive to call (1s)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;PhdCpu&gt; Cpu { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<span class="xref">PhdCpu</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_DotNetSdkVersion_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.DotNetSdkVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_DotNetSdkVersion" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.DotNetSdkVersion">
+  DotNetSdkVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>.NET Core SDK version
+<remarks>It's expensive to call (creates new process by calling <code>dotnet --version</code>)</remarks></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;string&gt; DotNetSdkVersion { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_FallbackLogger_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.FallbackLogger*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_FallbackLogger" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.FallbackLogger">
+  FallbackLogger
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Logger to use when there's no config available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ILogger FallbackLogger { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_HardwareTimerKind_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.HardwareTimerKind*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_HardwareTimerKind" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.HardwareTimerKind">
+  HardwareTimerKind
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HardwareTimerKind HardwareTimerKind { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">HardwareTimerKind</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_IsMonoInstalled_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.IsMonoInstalled*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_IsMonoInstalled" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.IsMonoInstalled">
+  IsMonoInstalled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>checks if Mono is installed
+<remarks>It's expensive to call (creates new process by calling <code>mono --version</code>)</remarks></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;bool&gt; IsMonoInstalled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_Os_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.Os*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_Os" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.Os">
+  Os
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;PhdOs&gt; Os { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<span class="xref">PhdOs</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_VirtualMachineHypervisor_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.VirtualMachineHypervisor*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_VirtualMachineHypervisor" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.VirtualMachineHypervisor">
+  VirtualMachineHypervisor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lazy&lt;VirtualMachineHypervisor?&gt; VirtualMachineHypervisor { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.lazy-1">Lazy</a>&lt;<a class="xref" href="BenchmarkDotNet.Portability.VirtualMachineHypervisor.html">VirtualMachineHypervisor</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_GetCurrent_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.GetCurrent*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_GetCurrent" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.GetCurrent">
+  GetCurrent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HostEnvironmentInfo GetCurrent()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Environments.HostEnvironmentInfo.html">HostEnvironmentInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_GetInformation_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.GetInformation*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_GetInformation" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.GetInformation">
+  GetInformation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return string representation of CPU and environment configuration including BenchmarkDotNet, OS and .NET version</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetInformation()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_IsDotNetCliInstalled_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.IsDotNetCliInstalled*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_IsDotNetCliInstalled" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.IsDotNetCliInstalled">
+  IsDotNetCliInstalled()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDotNetCliInstalled()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ToFormattedString_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ToFormattedString*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ToFormattedString" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ToFormattedString">
+  ToFormattedString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;string&gt; ToFormattedString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ToPhd_" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ToPhd*"></a>
+
+  <h3 id="BenchmarkDotNet_Environments_HostEnvironmentInfo_ToPhd" data-uid="BenchmarkDotNet.Environments.HostEnvironmentInfo.ToPhd">
+  ToPhd()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BdnHost ToPhd()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Phd.BdnHost.html">BdnHost</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

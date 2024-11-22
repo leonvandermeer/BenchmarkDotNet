@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Jobs | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Jobs | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/configs/jobs.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.jobs">
+<h1 id="jobs">Jobs</h1>
+
+<p>Basically, a <em>job</em> describes how to run your benchmark. Practically, it's a set of characteristics which can be specified. You can specify one or several jobs for your benchmarks.</p>
+<h2 id="characteristics">Characteristics</h2>
+<p>There are several categories of characteristics which you can specify. Let's consider each category in detail.</p>
+<h3 id="id">Id</h3>
+<p>It's a single string characteristic. It allows to name your job. This name will be used in logs and a part of a folder name with generated files for this job. <code>Id</code> doesn't affect benchmark results, but it can be useful for diagnostics. If you don't specify <code>Id</code>, random value will be chosen based on other characteristics</p>
+<h3 id="environment">Environment</h3>
+<p><code>Environment</code> specifies an environment of the job. You can specify the following characteristics:</p>
+<ul>
+<li><code>Platform</code>: <code>x86</code> or <code>x64</code></li>
+<li><code>Runtime</code>:
+<ul>
+<li><code>Clr</code>: Full .NET Framework (available only on Windows)</li>
+<li><code>Core</code>: CoreCLR (x-plat)</li>
+<li><code>Mono</code>: Mono (x-plat)</li>
+</ul>
+</li>
+<li><code>Jit</code>:
+<ul>
+<li><code>LegacyJit</code> (available only for <code>Runtime.Clr</code>)</li>
+<li><code>RyuJit</code> (available only for <code>Runtime.Clr</code> and <code>Runtime.Core</code>)</li>
+<li><code>Llvm</code> (available only for <code>Runtime.Mono</code>)</li>
+</ul>
+</li>
+<li><code>Affinity</code>: <a href="https://msdn.microsoft.com/library/system.diagnostics.process.processoraffinity.aspx">Affinity</a> of a benchmark process</li>
+<li><code>GcMode</code>: settings of Garbage Collector
+<ul>
+<li><code>Server</code>: <code>true</code> (Server mode) or <code>false</code> (Workstation mode)</li>
+<li><code>Concurrent</code>:  <code>true</code> (Concurrent mode) or <code>false</code> (NonConcurrent mode)</li>
+<li><code>CpuGroups</code>:  Specifies whether garbage collection supports multiple CPU groups</li>
+<li><code>Force</code>: Specifies whether the BenchmarkDotNet's benchmark runner forces full garbage collection after each benchmark invocation</li>
+<li><code>AllowVeryLargeObjects</code>:  On 64-bit platforms, enables arrays that are greater than 2 gigabytes (GB) in total size</li>
+</ul>
+</li>
+<li><code>LargeAddressAware</code>: Specifies that benchmark can handle addresses larger than 2 gigabytes. See also: <a class="xref" href="../samples/IntroLargeAddressAware.html">Sample: IntroLargeAddressAware</a> and <a href="https://learn.microsoft.com/cpp/build/reference/largeaddressaware-handle-large-addresses"><code>LARGEADDRESSAWARE</code></a>
+<ul>
+<li><code>false</code>: Benchmark uses the defaults (64-bit: enabled; 32-bit: disabled).</li>
+<li><code>true</code>: Explicitly specify that benchmark can handle addresses larger than 2 gigabytes.</li>
+</ul>
+</li>
+<li><code>EnvironmentVariables</code>: customized environment variables for target benchmark. See also: <a class="xref" href="../samples/IntroEnvVars.html">BenchmarkDotNet.Samples.IntroEnvVars</a></li>
+</ul>
+<p>BenchmarkDotNet will use host process environment characteristics for non specified values.</p>
+<h3 id="run">Run</h3>
+<p>In this category, you can specify how to benchmark each method.</p>
+<ul>
+<li><code>RunStrategy</code>:
+<ul>
+<li><code>Throughput</code>: default strategy which allows to get good precision level</li>
+<li><code>ColdStart</code>: should be used only for measuring cold start of the application or testing purpose</li>
+<li><code>Monitoring</code>: A mode without overhead evaluating, with several target iterations</li>
+</ul>
+</li>
+<li><code>LaunchCount</code>: how many times we should launch process with target benchmark</li>
+<li><code>WarmupCount</code>: how many warmup iterations should be performed</li>
+<li><code>IterationCount</code>: how many target iterations should be performed (if specified, <code>BenchmarkDotNet.Jobs.RunMode.MinIterationCount</code> and <code>BenchmarkDotNet.Jobs.RunMode.MaxIterationCount</code> will be ignored)</li>
+<li><code>IterationTime</code>: desired time of a single iteration</li>
+<li><code>UnrollFactor</code>: how many times the benchmark method will be invoked per one iteration of a generated loop</li>
+<li><code>InvocationCount</code>: count of invocation in a single iteration (if specified, <code>IterationTime</code> will be ignored), must be a multiple of <code>UnrollFactor</code></li>
+<li><code>MinIterationCount</code>: Minimum count of target iterations that should be performed, the default value is 15</li>
+<li><code>MaxIterationCount</code>: Maximum count of target iterations that should be performed, the default value is 100</li>
+<li><code>MinWarmupIterationCount</code>: Minimum count of warmup iterations that should be performed, the default value is 6</li>
+<li><code>MaxWarmupIterationCount</code>: Maximum count of warmup iterations that should be performed, the default value is 50</li>
+</ul>
+<p>Usually, you shouldn't specify such characteristics like <code>LaunchCount</code>, <code>WarmupCount</code>, <code>IterationCount</code>, or <code>IterationTime</code> because BenchmarkDotNet has a smart algorithm to choose these values automatically based on received measurements. You can specify it for testing purposes or when you are damn sure that you know the right characteristics for your benchmark (when you set <code>IterationCount</code> = <code>20</code> you should understand why <code>20</code> is a good value for your case).</p>
+<h3 id="accuracy">Accuracy</h3>
+<p>If you want to change the accuracy level, you should use the following characteristics instead of manually adjusting values of <code>WarmupCount</code>, <code>IterationCount</code>, and so on.</p>
+<ul>
+<li><code>MaxRelativeError</code>, <code>MaxAbsoluteError</code>: Maximum acceptable error for a benchmark (by default, BenchmarkDotNet continue iterations until the actual error is less than the specified error). <em>In these two characteristics</em>, the error means half of 99.9% confidence interval. <code>MaxAbsoluteError</code> is an absolute <code>TimeInterval</code>; doesn't have a default value. <code>MaxRelativeError</code> defines max acceptable (<code>(&lt;half of CI 99.9%&gt;) / Mean</code>).</li>
+<li><code>MinIterationTime</code>: Minimum time of a single iteration. Unlike <code>Run.IterationTime</code>, this characteristic specifies only the lower limit. In case of need, BenchmarkDotNet can increase this value.</li>
+<li><code>MinInvokeCount</code>:  Minimum about of target method invocation. Default value if <code>4</code> but you can decrease this value for cases when single invocations takes a lot of time.</li>
+<li><code>EvaluateOverhead</code>: if your benchmark method takes nanoseconds, BenchmarkDotNet overhead can significantly affect measurements. If this characteristic is enabled, the overhead will be evaluated and subtracted from the result measurements. Default value is <code>true</code>.</li>
+<li><code>WithOutlierMode</code>: sometimes you could have outliers in your measurements. Usually these are unexpected outliers which arose because of other processes activities. By default (<code>OutlierMode.RemoveUpper</code>), all upper outliers (which is larger than Q3) will be removed from the result measurements. However, some of benchmarks have <em>expected</em> outliers. In these situation, you expect that some of invocation can produce outliers measurements (e.g. in case of network activities, cache operations, and so on). If you want to see result statistics with these outliers, you should use <code>OutlierMode.DontRemove</code>. If you can also choose <code>OutlierMode.RemoveLower</code> (outliers which are smaller than Q1 will be removed) or <code>OutlierMode.RemoveAll</code> (all outliers will be removed). See also: @BenchmarkDotNet.Mathematics.OutlierMode</li>
+<li><code>AnalyzeLaunchVariance</code>: this characteristic makes sense only if <code>Run.LaunchCount</code> is default. If this mode is enabled and, BenchmarkDotNet will try to perform several launches and detect if there is a variance between launches. If this mode is disable, only one launch will be performed.</li>
+</ul>
+<h3 id="infrastructure">Infrastructure</h3>
+<p>Usually, you shouldn't specify any characteristics from this section, it can be used for advanced cases only.</p>
+<ul>
+<li><code>Toolchain</code>: a toolchain which generates source code for target benchmark methods, builds it, and executes it. BenchmarkDotNet has own toolchains for .NET, .NET Core, Mono and CoreRT projects. If you want, you can define own toolchain.</li>
+<li><code>Clock</code>: a clock which will be used for measurements. BenchmarkDotNet automatically choose the best available clock source, but you can specify own clock source.</li>
+<li><code>EngineFactory</code>: a provider for measurement engine which performs all the measurement magic. If you don't trust BenchmarkDotNet, you can define own engine and implement all the measurement stages manually.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>There are several ways to specify a job.</p>
+<h3 id="object-style">Object style</h3>
+<p>You can create own jobs directly from the source code via a custom config:</p>
+<pre><code class="lang-cs">[Config(typeof(Config))]
+public class MyBenchmarks
+{
+    private class Config : ManualConfig
+    {
+        public Config()
+        {
+            AddJob(
+                new Job(&quot;MySuperJob&quot;, RunMode.Dry, EnvironmentMode.RyuJitX64)
+                {
+                    Environment = { Runtime = CoreRuntime.Core90 },
+                    Run = { LaunchCount = 5, IterationTime = TimeInterval.Millisecond * 200 },
+                    Accuracy = { MaxRelativeError = 0.01 }
+                });
+
+            // The same, using the .With() factory methods:
+            AddJob(
+                Job.Dry
+                .WithPlatform(Platform.X64)
+                .WithJit(Jit.RyuJit)
+                .WithRuntime(CoreRuntime.Core90)
+                .WithLaunchCount(5)
+                .WithIterationTime(TimeInterval.Millisecond * 200)
+                .WithMaxRelativeError(0.01)
+                .WithId(&quot;MySuperJob&quot;));
+        }
+    }
+    // Benchmarks
+}
+</code></pre>
+<p>Basically, it's a good idea to start with predefined values (e.g. <code>EnvironmentMode.RyuJitX64</code> and <code>RunMode.Dry</code> passed as constructor args) and modify rest of the properties using property setters or with help of object initializer syntax.</p>
+<p>Note that the job cannot be modified after it's added into config. Trying to set a value on property of the frozen job will throw an <code>InvalidOperationException</code>. Use the <code>Job.Frozen</code> property to determine if the code properties can be altered.</p>
+<p>If you do want to create a new job based on frozen one (all predefined job values are frozen) you can use the <code>.With()</code> extension method</p>
+<pre><code class="lang-cs">            var newJob = Job.Dry.WithPlatform(Platform.X64);
+</code></pre>
+<p>or pass the frozen value as a constructor argument</p>
+<pre><code class="lang-c#">            var newJob = new Job(Job.Dry) { Environment = { Platform = Platform.X64 } };
+</code></pre>
+<p>or use the <code>.Apply()</code> method on unfrozen job</p>
+<pre><code class="lang-c#">            var newJob = new Job() { Environment = { Platform = Platform.X64 } }.Apply(Job.Dry);
+</code></pre>
+<p>in any case the Id property will not be transfered and you must pass it explicitly (using the .ctor id argument or the <code>.WithId()</code> extension method).</p>
+<h3 id="attribute-style">Attribute style</h3>
+<p>You can also add new jobs via attributes. Examples:</p>
+<pre><code class="lang-cs">[DryJob]
+[MonoJob]
+[SimpleJob(RuntimeMoniker.Net90)]
+[SimpleJob(RuntimeMoniker.NetCoreApp31)]
+[LegacyJitX86Job, LegacyJitX64Job, RyuJitX64Job]
+[SimpleJob(RunStrategy.ColdStart, launchCount: 1, warmupCount: 5, iterationCount: 5, id: &quot;FastAndDirtyJob&quot;)]
+public class MyBenchmarkClass
+</code></pre>
+<p>Note that each of the attributes identifies a separate job, the sample above will result in 8 different jobs, not a single merged job.</p>
+<h3 id="attribute-style-for-merging-jobs">Attribute style for merging jobs</h3>
+<p>Sometimes you want to apply some changes to other jobs, without adding a new job to a config (which results in one extra benchmark run).</p>
+<p>To do that you can use following predefined job mutator attributes:</p>
+<ul>
+<li><code>[EvaluateOverhead]</code></li>
+<li><code>[GcConcurrent]</code></li>
+<li><code>[GcForce]</code></li>
+<li><code>[GcServer]</code></li>
+<li><code>[InnerIterationCount]</code></li>
+<li><code>[InvocationCount]</code></li>
+<li><code>[IterationCount]</code></li>
+<li><code>[IterationTime]</code></li>
+<li><code>[MaxAbsoluteError]</code></li>
+<li><code>[MaxIterationCount]</code></li>
+<li><code>[MaxRelativeError]</code></li>
+<li><code>[MinInvokeCount]</code></li>
+<li><code>[MinIterationCount]</code></li>
+<li><code>[MinIterationTime]</code></li>
+<li><code>[Outliers]</code></li>
+<li><code>[ProcessCount]</code></li>
+<li><code>[RunOncePerIteration]</code></li>
+<li><code>[WarmupCount]</code></li>
+<li><code>[MinWarmupCount]</code></li>
+<li><code>[MaxWarmupCount]</code></li>
+</ul>
+<p>So following example:</p>
+<pre><code class="lang-cs">[ClrJob, CoreJob]
+[GcServer(true)]
+public class MyBenchmarkClass
+</code></pre>
+<p>Is going to be merged to a config with two jobs:</p>
+<ul>
+<li>CoreJob with <code>GcServer=true</code></li>
+<li>ClrJob with <code>GcServer=true</code></li>
+</ul>
+<h4 id="custom-attributes">Custom attributes</h4>
+<p>You can also create your own custom attributes with your favourite set of jobs. Example:</p>
+<pre><code class="lang-cs">[AttributeUsage(AttributeTargets.Class | AttributeTargets.Assembly)]
+public class MySuperJobAttribute : Attribute, IConfigSource
+{
+    protected MySuperJobAttribute()
+    {
+        var job = new Job(&quot;MySuperJob&quot;, RunMode.Core);
+        job.Env.Platform = Platform.X64;
+        Config = ManualConfig.CreateEmpty().AddJob(job);
+    }
+
+    public IConfig Config { get; }
+}
+
+[MySuperJob]
+public class MyBenchmarks
+</code></pre>
+<hr>
+<h2 id="sample-introgcmode">Sample: IntroGcMode</h2>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroGcMode.cs">using System.Runtime.CompilerServices;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Order;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Config(typeof(Config))]
+    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
+    [MemoryDiagnoser]
+    public class IntroGcMode
+    {
+        private class Config : ManualConfig
+        {
+            public Config()
+            {
+                AddJob(Job.MediumRun.WithGcServer(true).WithGcForce(true).WithId(&quot;ServerForce&quot;));
+                AddJob(Job.MediumRun.WithGcServer(true).WithGcForce(false).WithId(&quot;Server&quot;));
+                AddJob(Job.MediumRun.WithGcServer(false).WithGcForce(true).WithId(&quot;Workstation&quot;));
+                AddJob(Job.MediumRun.WithGcServer(false).WithGcForce(false).WithId(&quot;WorkstationForce&quot;));
+            }
+        }
+
+        [Benchmark(Description = &quot;new byte[10kB]&quot;)]
+        public byte[] Allocate()
+        {
+            return new byte[10000];
+        }
+
+        [Benchmark(Description = &quot;stackalloc byte[10kB]&quot;)]
+        public unsafe void AllocateWithStackalloc()
+        {
+            var array = stackalloc byte[10000];
+            Consume(array);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static unsafe void Consume(byte* input)
+        {
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="jobs.html">Jobs</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroGcMode.html">BenchmarkDotNet.Samples.IntroGcMode</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

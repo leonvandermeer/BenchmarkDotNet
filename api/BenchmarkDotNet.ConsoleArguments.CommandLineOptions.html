@@ -1,0 +1,2293 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CommandLineOptions
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CommandLineOptions
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions">
+
+
+
+  <h1 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions" class="text-break">
+    Class CommandLineOptions
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.ConsoleArguments.html">ConsoleArguments</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CommandLineOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CommandLineOptions</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions__ctor_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions__ctor" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.#ctor">
+  CommandLineOptions()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommandLineOptions()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AOTCompilerMode_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AOTCompilerMode*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AOTCompilerMode" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AOTCompilerMode">
+  AOTCompilerMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MonoAotCompilerMode AOTCompilerMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.MonoAotLLVM.MonoAotCompilerMode.html">MonoAotCompilerMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AOTCompilerPath_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AOTCompilerPath*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AOTCompilerPath" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AOTCompilerPath">
+  AOTCompilerPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo AOTCompilerPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Affinity_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Affinity*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Affinity" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Affinity">
+  Affinity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Affinity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AllCategories_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AllCategories*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AllCategories" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AllCategories">
+  AllCategories
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; AllCategories { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AnyCategories_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AnyCategories*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AnyCategories" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AnyCategories">
+  AnyCategories
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; AnyCategories { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ApplesToApples_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ApplesToApples*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ApplesToApples" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ApplesToApples">
+  ApplesToApples
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ApplesToApples { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ArtifactsDirectory_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ArtifactsDirectory*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ArtifactsDirectory" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ArtifactsDirectory">
+  ArtifactsDirectory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DirectoryInfo ArtifactsDirectory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AttributeNames_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AttributeNames*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_AttributeNames" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.AttributeNames">
+  AttributeNames
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; AttributeNames { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_BaseJob_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.BaseJob*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_BaseJob" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.BaseJob">
+  BaseJob
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BaseJob { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CliPath_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CliPath*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CliPath" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CliPath">
+  CliPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo CliPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ClrVersion_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ClrVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ClrVersion" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ClrVersion">
+  ClrVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClrVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CoreRunPaths_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CoreRunPaths*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CoreRunPaths" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CoreRunPaths">
+  CoreRunPaths
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;FileInfo&gt; CoreRunPaths { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CustomRuntimePack_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CustomRuntimePack*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_CustomRuntimePack" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.CustomRuntimePack">
+  CustomRuntimePack
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CustomRuntimePack { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisableLogFile_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisableLogFile*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisableLogFile" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisableLogFile">
+  DisableLogFile
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisableLogFile { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerDiff_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerDiff*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerDiff" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerDiff">
+  DisassemblerDiff
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisassemblerDiff { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerFilters_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerFilters*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerFilters" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerFilters">
+  DisassemblerFilters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; DisassemblerFilters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerRecursiveDepth_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerRecursiveDepth*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisassemblerRecursiveDepth" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisassemblerRecursiveDepth">
+  DisassemblerRecursiveDepth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DisassemblerRecursiveDepth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisplayAllStatistics_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisplayAllStatistics*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DisplayAllStatistics" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DisplayAllStatistics">
+  DisplayAllStatistics
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisplayAllStatistics { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DontOverwriteResults_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DontOverwriteResults*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_DontOverwriteResults" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.DontOverwriteResults">
+  DontOverwriteResults
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DontOverwriteResults { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_EnvironmentVariables_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.EnvironmentVariables*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_EnvironmentVariables" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.EnvironmentVariables">
+  EnvironmentVariables
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; EnvironmentVariables { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Examples_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Examples*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Examples" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Examples">
+  Examples
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Example&gt; Examples { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">Example</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Exporters_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Exporters*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Exporters" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Exporters">
+  Exporters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Exporters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Filters_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Filters*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Filters" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Filters">
+  Filters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Filters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_GenerateMSBuildBinLog_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.GenerateMSBuildBinLog*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_GenerateMSBuildBinLog" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.GenerateMSBuildBinLog">
+  GenerateMSBuildBinLog
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GenerateMSBuildBinLog { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_HardwareCounters_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.HardwareCounters*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_HardwareCounters" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.HardwareCounters">
+  HardwareCounters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; HardwareCounters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_HiddenColumns_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.HiddenColumns*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_HiddenColumns" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.HiddenColumns">
+  HiddenColumns
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; HiddenColumns { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ILCompilerVersion_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ILCompilerVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ILCompilerVersion" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ILCompilerVersion">
+  ILCompilerVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ILCompilerVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IlcPackages_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IlcPackages*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IlcPackages" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IlcPackages">
+  IlcPackages
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DirectoryInfo IlcPackages { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_InvocationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.InvocationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_InvocationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.InvocationCount">
+  InvocationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? InvocationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IterationCount">
+  IterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? IterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IterationTimeInMilliseconds_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IterationTimeInMilliseconds*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_IterationTimeInMilliseconds" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.IterationTimeInMilliseconds">
+  IterationTimeInMilliseconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? IterationTimeInMilliseconds { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Join_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Join*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Join" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Join">
+  Join
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Join { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_KeepBenchmarkFiles_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.KeepBenchmarkFiles*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_KeepBenchmarkFiles" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.KeepBenchmarkFiles">
+  KeepBenchmarkFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool KeepBenchmarkFiles { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_LaunchCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.LaunchCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_LaunchCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.LaunchCount">
+  LaunchCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? LaunchCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ListBenchmarkCaseMode_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ListBenchmarkCaseMode*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_ListBenchmarkCaseMode" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.ListBenchmarkCaseMode">
+  ListBenchmarkCaseMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ListBenchmarkCaseMode ListBenchmarkCaseMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.ConsoleArguments.ListBenchmarks.ListBenchmarkCaseMode.html">ListBenchmarkCaseMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_LogBuildOutput_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.LogBuildOutput*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_LogBuildOutput" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.LogBuildOutput">
+  LogBuildOutput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LogBuildOutput { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxIterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxIterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxIterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxIterationCount">
+  MaxIterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxIterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxParameterColumnWidth_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxParameterColumnWidth*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxParameterColumnWidth" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxParameterColumnWidth">
+  MaxParameterColumnWidth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxParameterColumnWidth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxWarmupIterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxWarmupIterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MaxWarmupIterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MaxWarmupIterationCount">
+  MaxWarmupIterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxWarmupIterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MemoryRandomization_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MemoryRandomization*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MemoryRandomization" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MemoryRandomization">
+  MemoryRandomization
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MemoryRandomization { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MinIterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MinIterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MinIterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MinIterationCount">
+  MinIterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MinIterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MinWarmupIterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MinWarmupIterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MinWarmupIterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MinWarmupIterationCount">
+  MinWarmupIterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MinWarmupIterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MonoPath_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MonoPath*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_MonoPath" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.MonoPath">
+  MonoPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo MonoPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_NoEvaluationOverhead_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.NoEvaluationOverhead*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_NoEvaluationOverhead" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.NoEvaluationOverhead">
+  NoEvaluationOverhead
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NoEvaluationOverhead { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_NoForcedGCs_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.NoForcedGCs*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_NoForcedGCs" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.NoForcedGCs">
+  NoForcedGCs
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NoForcedGCs { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Outliers_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Outliers*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Outliers" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Outliers">
+  Outliers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OutlierMode Outliers { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">OutlierMode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Platform_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Platform*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Platform" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Platform">
+  Platform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Platform? Platform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Environments.Platform.html">Platform</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_PrintInformation_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.PrintInformation*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_PrintInformation" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.PrintInformation">
+  PrintInformation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrintInformation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Profiler_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Profiler*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Profiler" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Profiler">
+  Profiler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Profiler { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RestorePath_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RestorePath*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RestorePath" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RestorePath">
+  RestorePath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DirectoryInfo RestorePath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Resume_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Resume*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Resume" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Resume">
+  Resume
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Resume { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunInProcess_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunInProcess*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunInProcess" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunInProcess">
+  RunInProcess
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RunInProcess { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunOncePerIteration_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunOncePerIteration*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunOncePerIteration" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunOncePerIteration">
+  RunOncePerIteration
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RunOncePerIteration { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunStrategy_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunStrategy*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_RunStrategy" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.RunStrategy">
+  RunStrategy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RunStrategy? RunStrategy { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.RunStrategy.html">RunStrategy</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Runtimes_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Runtimes*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_Runtimes" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.Runtimes">
+  Runtimes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Runtimes { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_StatisticalTestThreshold_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.StatisticalTestThreshold*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_StatisticalTestThreshold" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.StatisticalTestThreshold">
+  StatisticalTestThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StatisticalTestThreshold { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_StopOnFirstError_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.StopOnFirstError*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_StopOnFirstError" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.StopOnFirstError">
+  StopOnFirstError
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StopOnFirstError { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_TimeOutInSeconds_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.TimeOutInSeconds*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_TimeOutInSeconds" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.TimeOutInSeconds">
+  TimeOutInSeconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? TimeOutInSeconds { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UnrollFactor_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UnrollFactor*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UnrollFactor" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UnrollFactor">
+  UnrollFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? UnrollFactor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseDisassemblyDiagnoser_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseDisassemblyDiagnoser*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseDisassemblyDiagnoser" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseDisassemblyDiagnoser">
+  UseDisassemblyDiagnoser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseDisassemblyDiagnoser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseExceptionDiagnoser_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseExceptionDiagnoser*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseExceptionDiagnoser" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseExceptionDiagnoser">
+  UseExceptionDiagnoser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseExceptionDiagnoser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseMemoryDiagnoser_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseMemoryDiagnoser*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseMemoryDiagnoser" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseMemoryDiagnoser">
+  UseMemoryDiagnoser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseMemoryDiagnoser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseThreadingDiagnoser_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseThreadingDiagnoser*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_UseThreadingDiagnoser" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.UseThreadingDiagnoser">
+  UseThreadingDiagnoser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseThreadingDiagnoser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WakeLock_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WakeLock*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WakeLock" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WakeLock">
+  WakeLock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WakeLockType? WakeLock { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Configs.WakeLockType.html">WakeLockType</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WarmupIterationCount_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WarmupIterationCount*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WarmupIterationCount" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WarmupIterationCount">
+  WarmupIterationCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? WarmupIterationCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmDataDirectory_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmDataDirectory*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmDataDirectory" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmDataDirectory">
+  WasmDataDirectory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DirectoryInfo WasmDataDirectory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmJavaScriptEngineArguments_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmJavaScriptEngineArguments*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmJavaScriptEngineArguments" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmJavaScriptEngineArguments">
+  WasmJavaScriptEngineArguments
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string WasmJavaScriptEngineArguments { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmJavascriptEngine_" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmJavascriptEngine*"></a>
+
+  <h3 id="BenchmarkDotNet_ConsoleArguments_CommandLineOptions_WasmJavascriptEngine" data-uid="BenchmarkDotNet.ConsoleArguments.CommandLineOptions.WasmJavascriptEngine">
+  WasmJavascriptEngine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo WasmJavascriptEngine { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

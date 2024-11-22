@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>EtwProfiler | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="EtwProfiler | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/features/etwprofiler.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.etwprofiler">
+<h1 id="etwprofiler">EtwProfiler</h1>
+
+<p><code>EtwProfiler</code> allows to profile the benchmarked .NET code on Windows and exports the data to a trace file which can be opened with <a href="https://github.com/Microsoft/perfview">PerfView</a> or <a href="https://learn.microsoft.com/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer</a>.</p>
+<p><img src="https://adamsitnik.com/images/etwprofiler/flamegraph.png" alt=""></p>
+<h2 id="how-it-works">How it works</h2>
+<p><code>EtwProfiler</code> uses <code>TraceEvent</code> library which internally uses Event Tracing for Windows (ETW) to capture stack traces and important .NET Runtime events.</p>
+<p>Before the process with benchmarked code is started, EtwProfiler starts User and Kernel ETW sessions. Every session writes data to it's own file and captures different data. User session listens for the .NET Runtime events (GC, JIT etc) while the Kernel session gets CPU stacks and Hardware Counter events. After this, the process with benchmarked code is started. During the benchmark execution all the data is captured and written to a trace file. Moreover, BenchmarkDotNet Engine emits it's own events to be able to differentiate jitting, warmup, pilot and actual workload when analyzing the trace file. When the benchmarking is over, both sessions are closed and the two trace files are merged into one.</p>
+<h2 id="limitations">Limitations</h2>
+<p>What we have today comes with following limitations:</p>
+<ul>
+<li>EtwProfiler works only on Windows (one day we might implement similar thing for Unix using EventPipe)</li>
+<li>Requires to run as Admin (to create ETW Kernel Session)</li>
+<li>No <code>InProcessToolchain</code> support</li>
+<li>To get the best possible managed code symbols you should configure your project in following way:</li>
+</ul>
+<pre><code class="lang-xml">&lt;DebugType&gt;pdbonly&lt;/DebugType&gt;
+&lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On certain machines <a href="https://www.microsoft.com/en-us/security/blog/2021/04/26/defending-against-cryptojacking-with-microsoft-defender-for-endpoint-and-intel-tdt/">Intel TDT and Windows Defender</a> can cause CPU samples to be captured with no value.
+You can correct this problem by disabling the feature using <code>powershell.exe Set-MpPreference -DisableTDTFeature $true</code>.
+<em>WARNING:</em> Disabling security features will make your machine less secure; do so at your own risk.</p>
+</div>
+<h2 id="how-to-use-it">How to use it?</h2>
+<p>You need to install <code>BenchmarkDotNet.Diagnostics.Windows</code> package.</p>
+<p>It can be enabled in few ways, some of them:</p>
+<ul>
+<li>Use the new attribute (apply it on a class that contains Benchmarks):</li>
+</ul>
+<pre><code class="lang-cs">using BenchmarkDotNet.Diagnostics.Windows.Configs;
+
+[EtwProfiler]
+public class TheClassThatContainsBenchmarks { /* benchmarks go here */ }
+</code></pre>
+<ul>
+<li>Extend the <code>DefaultConfig.Instance</code> with new instance of <code>EtwProfiler</code>:</li>
+</ul>
+<pre><code class="lang-cs">class Program
+{
+    static void Main(string[] args)
+        =&gt; BenchmarkSwitcher
+            .FromAssembly(typeof(Program).Assembly)
+            .Run(args,
+                DefaultConfig.Instance
+                    .AddDiagnoser(new EtwProfiler())); // HERE
+}
+</code></pre>
+<ul>
+<li>Passing <code>-p ETW</code> or <code>--profiler ETW</code> command line argument to <code>BenchmarkSwitcher</code></li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>To configure the new diagnoser you need to create an instance of <code>EtwProfilerConfig</code> class and pass it to the <code>EtwProfiler</code> constructor. The parameters that <code>EtwProfilerConfig</code> ctor takes are:</p>
+<ul>
+<li><code>performExtraBenchmarksRun</code> - if set to true, benchmarks will be executed one more time with the profiler attached. If set to false, there will be no extra run but the results will contain overhead. True by default.</li>
+<li><code>bufferSizeInMb</code> - ETW session buffer size, in MB. 256 by default.</li>
+<li><code>intervalSelectors</code> - interval per hardware counter, if not provided then default values will be used.</li>
+<li><code>kernelKeywords</code> - kernel session keywords, ImageLoad (for native stack frames) and Profile (for CPU Stacks) are the defaults.</li>
+<li><code>providers</code> - providers that should be enabled, if not provided then default values will be used.</li>
+</ul>
+<h2 id="using-perfview-to-work-with-trace-files">Using PerfView to work with trace files</h2>
+<p>PerfView is a free .NET profiler from Microsoft. If you don't know how to use it you should watch <a href="https://channel9.msdn.com/Series/PerfView-Tutorial">these instructional videos</a> first.</p>
+<p>If you are familiar with PerfView, then the only thing you need to know is that BenchmarkDotNet performs Jitting by running the code once, Pilot Experiment to determine how many times benchmark should be executed per iteration, non-trivial Warmup and Actual Workload. This is why when you open your trace file in PerfView you will see your benchmark in a few different places of the StackTrace.</p>
+<p><img src="https://adamsitnik.com/images/etwprofiler/flamegraph_not_filtered.png" alt=""></p>
+<p>The simplest way to filter the data to the actual benchmarks runs is to open the <code>CallTree</code> tab, put &quot;EngineActualStage&quot; in the Find box, press enter and when PerfView selects <code>EngineActualStage</code> in the <code>CallTree</code> press <code>Alt+R</code> to Set Time Range.</p>
+<p><img src="https://adamsitnik.com/images/etwprofiler/perfview.gif" alt=""></p>
+<p>If you want to filter the trace to single iteration, then you must go to the Events panel and search for the <code>WorkloadActual/Start</code> and <code>WorkloadActual/Stop</code> events.</p>
+<ol>
+<li>Open Events window</li>
+<li>Put &quot;WorkloadActual&quot; in the Filter box and hit enter.</li>
+<li>Press control or shift and choose the Start and Stop events from the left panel. Hit enter.</li>
+<li>Choose iteration that you want to investigate (events are sorted by time).</li>
+<li>Select two or more cells from the &quot;Time MSec&quot; column.</li>
+<li>Right click, choose &quot;Open Cpu Stacks&quot;.</li>
+<li>Choose the process with benchmarks, right-click, choose &quot;Drill Into&quot;</li>
+</ol>
+<p><img src="https://adamsitnik.com/images/etwprofiler/perfview_events.gif" alt=""></p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

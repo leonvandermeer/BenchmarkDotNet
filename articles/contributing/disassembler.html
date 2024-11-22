@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Contributing to Disassembler | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Contributing to Disassembler | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/contributing/disassembler.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="contributing-to-disassembler">Contributing to Disassembler</h1>
+
+<p>The disassembler might looks scarry, but once you know how it works and how to debug it, it's very easy to develop it.</p>
+<h3 id="how-it-works">How it works</h3>
+<p>We have 3 disassemblers:</p>
+<ul>
+<li>Mono</li>
+<li>x64 for Windows and Linux</li>
+<li>x86 for Windows</li>
+</ul>
+<p>The MonoDisassembler is very simple: it spawns Mono with the right arguments to get the asm, Mono prints the output to the console and we just parse it. Single class does the job: <code>MonoDisassembler</code>.</p>
+<p>When it comes to Windows disassemblers it's not so easy. To obtain the disassm we are using ClrMD. ClrMD can attach only to the process of same bitness (architecture).
+This is why we have two disassemblers: x64 and x86. The code is the same (single class, linked in two projects) but compiled for two different architectures. We keep both disassemblers in the resources of the BenchmarkDotNet.dll. When we need the disassembler, we search for it in the resources, copy it to the disk and run (it's an exe).</p>
+<p>On Linux it's simpler (only x64 is supported) and we don't spawn a new process (everything is done in-proc).</p>
+<h3 id="how-to-debug-the-disassembler">How to debug the disassembler</h3>
+<p>You need to create a new console app project which executes the code that you would like to disassemble. In this app, you need to run the desired code (to get it jitted) and just don't exit before attaching the disassembler and getting the disassembly.</p>
+<p>Disassembler requires some arguments to run: id of the process to attach, full type name of the type which contains desired method, name of desired method and few other (see the example below).</p>
+<p>Personally I use following code to run the console app and print arguments that are required to attach to it:</p>
+<pre><code class="lang-cs">namespace Sample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var result = Benchmark(); // execute the benchmark do method gets jitted
+
+            Console.WriteLine(
+            $&quot;{Process.GetCurrentProcess().Id} &quot; +   // process Id
+                $&quot;\&quot;{typeof(Program).FullName}\&quot; &quot; + // full type name
+                $&quot;{nameof(Benchmark)} &quot; +            // benchmarked method name
+                $&quot;{bool.FalseString} &quot; +             // print Source
+                &quot;2 &quot; +                               // recursive depth
+                $&quot;{Path.GetTempFileName()}.xml&quot;);    // result xml file path
+
+            while(true)
+            {
+                Console.WriteLine(&quot;Press Ctrl+C to kill the process&quot;);
+                Console.ReadLine(); // block the exe, attach with Disassembler now
+            }
+
+            GC.KeepAlive(result);
+        }
+
+        public static IntPtr Benchmark()
+        {
+            return new IntPtr(42).Multiply(4);
+        }
+    }
+
+    public static class IntPtrHelper
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static IntPtr Multiply(this IntPtr a, int factor)
+        {
+            return (sizeof(IntPtr) == sizeof(int))
+                ? new IntPtr((int)a * factor)
+                : new IntPtr((long)a * factor);
+        }
+    }
+}
+</code></pre>
+<p><strong>Important</strong>: Please remember that every new classic .NET project in VS compiles as 32 bit. If you want to check the asm produced for x64 you need to go to the properties of the console app (Alt+Enter) and uncheck &quot;Prefer 32 bit&quot; in the &quot;Build&quot; tab.</p>
+<p>Once you configure your app, you should run it. It will give you an output similar to this:</p>
+<p><code>13672 Sample.Program Benchmark True 7 C:\Users\adsitnik\AppData\Local\Temp\tmpDCB9.tmp.xml</code></p>
+<p>Now you go to BenchmarkDotNet solution, select desired Disassembler project in the Solution Explorer and Set it as Startup project. After this you go to the project's properties and in the Debug tab copy-paste the arguments for the disassembler. Now when you start debugging, your IDE will spawn new process of the disassembler with the right arguments to attach to the desired exe. You should be able to debug it like any other app.</p>
+<p>Please keep in mind that you should always use the disassembler for the correct processor architecture. If you fail to debug it, you are most probably using the wrong one.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

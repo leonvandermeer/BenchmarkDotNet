@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CsProjCoreToolchain
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CsProjCoreToolchain
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain">
+
+
+
+  <h1 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain" class="text-break">
+    Class CsProjCoreToolchain
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.html">Toolchains</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.html">CsProj</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CsProjCoreToolchain : Toolchain, IToolchain, IEquatable&lt;CsProjCoreToolchain&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html">Toolchain</a></div>
+      <div><span class="xref">CsProjCoreToolchain</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.html">CsProjCoreToolchain</a>&gt;</div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.Mono.MonoToolchain.html">MonoToolchain</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_ToString">Toolchain.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_Name">Toolchain.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_Generator">Toolchain.Generator</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_Builder">Toolchain.Builder</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_Executor">Toolchain.Executor</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.Toolchain.html#BenchmarkDotNet_Toolchains_Toolchain_IsInProcess">Toolchain.IsInProcess</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp20" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp20">
+  NetCoreApp20
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This runtime is no longer supported. Use a newer runtime or use BenchmarkDotNet v0.14.X or older.&quot;, true)]
+public static readonly IToolchain NetCoreApp20</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp21" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp21">
+  NetCoreApp21
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This runtime is no longer supported. Use a newer runtime or use BenchmarkDotNet v0.14.X or older.&quot;, true)]
+public static readonly IToolchain NetCoreApp21</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp22" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp22">
+  NetCoreApp22
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This runtime is no longer supported. Use a newer runtime or use BenchmarkDotNet v0.14.X or older.&quot;, true)]
+public static readonly IToolchain NetCoreApp22</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp30" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp30">
+  NetCoreApp30
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This runtime is no longer supported. Use a newer runtime or use BenchmarkDotNet v0.14.X or older.&quot;, true)]
+public static readonly IToolchain NetCoreApp30</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp31" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp31">
+  NetCoreApp31
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp31</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp50" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp50">
+  NetCoreApp50
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp50</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp60" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp60">
+  NetCoreApp60
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp60</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp70" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp70">
+  NetCoreApp70
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp70</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp80" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp80">
+  NetCoreApp80
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp80</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_NetCoreApp90" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.NetCoreApp90">
+  NetCoreApp90
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly IToolchain NetCoreApp90</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Equals_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Equals_BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Equals(BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain)">
+  Equals(CsProjCoreToolchain)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(CsProjCoreToolchain other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.html">CsProjCoreToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Equals_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Equals_System_Object_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_From_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.From*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_From_BenchmarkDotNet_Toolchains_DotNetCli_NetCoreAppSettings_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.From(BenchmarkDotNet.Toolchains.DotNetCli.NetCoreAppSettings)">
+  From(NetCoreAppSettings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IToolchain From(NetCoreAppSettings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.NetCoreAppSettings.html">NetCoreAppSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Toolchains.IToolchain.html">IToolchain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_GetHashCode_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.GetHashCode*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_GetHashCode" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Validate_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Validate*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjCoreToolchain_Validate_BenchmarkDotNet_Running_BenchmarkCase_BenchmarkDotNet_Characteristics_IResolver_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjCoreToolchain.Validate(BenchmarkDotNet.Running.BenchmarkCase,BenchmarkDotNet.Characteristics.IResolver)">
+  Validate(BenchmarkCase, IResolver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;ValidationError&gt; Validate(BenchmarkCase benchmarkCase, IResolver resolver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarkCase</code> <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></dt>
+    <dd></dd>
+    <dt><code>resolver</code> <a class="xref" href="BenchmarkDotNet.Characteristics.IResolver.html">IResolver</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Validators.ValidationError.html">ValidationError</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

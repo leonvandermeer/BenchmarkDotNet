@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CsProjGenerator
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CsProjGenerator
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator">
+
+
+
+  <h1 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator" class="text-break">
+    Class CsProjGenerator
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.html">Toolchains</a>.<a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.html">CsProj</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CsProjGenerator : DotNetCliGenerator, IGenerator, IEquatable&lt;CsProjGenerator&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html">GeneratorBase</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html">DotNetCliGenerator</a></div>
+      <div><span class="xref">CsProjGenerator</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.IGenerator.html">IGenerator</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.html">CsProjGenerator</a>&gt;</div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.CoreRun.CoreRunGenerator.html">CoreRunGenerator</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.Mono.MonoGenerator.html">MonoGenerator</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.MonoAotLLVM.MonoAotLLVMGenerator.html">MonoAotLLVMGenerator</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.MonoWasm.WasmGenerator.html">WasmGenerator</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Toolchains.NativeAot.Generator.html">Generator</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_GetExecutableExtension">DotNetCliGenerator.GetExecutableExtension()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_GetArtifactsToCleanup_BenchmarkDotNet_Toolchains_ArtifactsPaths_">DotNetCliGenerator.GetArtifactsToCleanup(ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_CopyAllRequiredFiles_BenchmarkDotNet_Toolchains_ArtifactsPaths_">DotNetCliGenerator.CopyAllRequiredFiles(ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_GetPackagesDirectoryPath_System_String_">DotNetCliGenerator.GetPackagesDirectoryPath(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_GenerateBuildScript_BenchmarkDotNet_Running_BuildPartition_BenchmarkDotNet_Toolchains_ArtifactsPaths_">DotNetCliGenerator.GenerateBuildScript(BuildPartition, ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_TargetFrameworkMoniker">DotNetCliGenerator.TargetFrameworkMoniker</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_CliPath">DotNetCliGenerator.CliPath</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_PackagesPath">DotNetCliGenerator.PackagesPath</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.DotNetCli.DotNetCliGenerator.html#BenchmarkDotNet_Toolchains_DotNetCli_DotNetCliGenerator_IsNetCore">DotNetCliGenerator.IsNetCore</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html#BenchmarkDotNet_Toolchains_GeneratorBase_GenerateProject_BenchmarkDotNet_Running_BuildPartition_BenchmarkDotNet_Loggers_ILogger_System_String_">GeneratorBase.GenerateProject(BuildPartition, ILogger, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html#BenchmarkDotNet_Toolchains_GeneratorBase_GenerateNuGetConfig_BenchmarkDotNet_Toolchains_ArtifactsPaths_">GeneratorBase.GenerateNuGetConfig(ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html#BenchmarkDotNet_Toolchains_GeneratorBase_GenerateAppConfig_BenchmarkDotNet_Running_BuildPartition_BenchmarkDotNet_Toolchains_ArtifactsPaths_">GeneratorBase.GenerateAppConfig(BuildPartition, ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html#BenchmarkDotNet_Toolchains_GeneratorBase_GenerateCode_BenchmarkDotNet_Running_BuildPartition_BenchmarkDotNet_Toolchains_ArtifactsPaths_">GeneratorBase.GenerateCode(BuildPartition, ArtifactsPaths)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Toolchains.GeneratorBase.html#BenchmarkDotNet_Toolchains_GeneratorBase_GetExecutablePath_System_String_System_String_">GeneratorBase.GetExecutablePath(string, string)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator__ctor_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator__ctor_System_String_System_String_System_String_System_String_System_Boolean_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.#ctor(System.String,System.String,System.String,System.String,System.Boolean)">
+  CsProjGenerator(string, string, string, string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsProjGenerator(string targetFrameworkMoniker, string cliPath, string packagesPath, string runtimeFrameworkVersion, bool isNetCore = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>targetFrameworkMoniker</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cliPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>packagesPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>runtimeFrameworkVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>isNetCore</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_RuntimeFrameworkVersion_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.RuntimeFrameworkVersion*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_RuntimeFrameworkVersion" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.RuntimeFrameworkVersion">
+  RuntimeFrameworkVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RuntimeFrameworkVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_Equals_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_Equals_BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.Equals(BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator)">
+  Equals(CsProjGenerator)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(CsProjGenerator other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.html">CsProjGenerator</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_Equals_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_Equals_System_Object_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GenerateProject_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GenerateProject*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GenerateProject_BenchmarkDotNet_Running_BuildPartition_BenchmarkDotNet_Toolchains_ArtifactsPaths_BenchmarkDotNet_Loggers_ILogger_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GenerateProject(BenchmarkDotNet.Running.BuildPartition,BenchmarkDotNet.Toolchains.ArtifactsPaths,BenchmarkDotNet.Loggers.ILogger)">
+  GenerateProject(BuildPartition, ArtifactsPaths, ILogger)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>generates .csproj file with a reference to the project with benchmarks</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void GenerateProject(BuildPartition buildPartition, ArtifactsPaths artifactsPaths, ILogger logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildPartition</code> <a class="xref" href="BenchmarkDotNet.Running.BuildPartition.html">BuildPartition</a></dt>
+    <dd></dd>
+    <dt><code>artifactsPaths</code> <a class="xref" href="BenchmarkDotNet.Toolchains.ArtifactsPaths.html">ArtifactsPaths</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetBinariesDirectoryPath_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetBinariesDirectoryPath*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetBinariesDirectoryPath_System_String_System_String_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetBinariesDirectoryPath(System.String,System.String)">
+  GetBinariesDirectoryPath(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns a path where executable should be found after the build (usually \bin)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string GetBinariesDirectoryPath(string buildArtifactsDirectoryPath, string configuration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildArtifactsDirectoryPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetBuildArtifactsDirectoryPath_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetBuildArtifactsDirectoryPath*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetBuildArtifactsDirectoryPath_BenchmarkDotNet_Running_BuildPartition_System_String_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetBuildArtifactsDirectoryPath(BenchmarkDotNet.Running.BuildPartition,System.String)">
+  GetBuildArtifactsDirectoryPath(BuildPartition, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>we need our folder to be on the same level as the project that we want to reference
+we are limited by xprojs (by default compiles all .cs files in all subfolders, Program.cs could be doubled and fail the build)
+and also by NuGet internal implementation like looking for global.json file in parent folders</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string GetBuildArtifactsDirectoryPath(BuildPartition buildPartition, string programName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildPartition</code> <a class="xref" href="BenchmarkDotNet.Running.BuildPartition.html">BuildPartition</a></dt>
+    <dd></dd>
+    <dt><code>programName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetHashCode_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetHashCode*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetHashCode" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetIntermediateDirectoryPath_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetIntermediateDirectoryPath*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetIntermediateDirectoryPath_System_String_System_String_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetIntermediateDirectoryPath(System.String,System.String)">
+  GetIntermediateDirectoryPath(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns a path where intermediate files should be found after the build (usually \obj)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string GetIntermediateDirectoryPath(string buildArtifactsDirectoryPath, string configuration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildArtifactsDirectoryPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetProjectFilePath_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetProjectFilePath*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetProjectFilePath_System_String_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetProjectFilePath(System.String)">
+  GetProjectFilePath(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns a path to the auto-generated .csproj file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string GetProjectFilePath(string buildArtifactsDirectoryPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildArtifactsDirectoryPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetProjectFilePath_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetProjectFilePath*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetProjectFilePath_System_Type_BenchmarkDotNet_Loggers_ILogger_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetProjectFilePath(System.Type,BenchmarkDotNet.Loggers.ILogger)">
+  GetProjectFilePath(Type, ILogger)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns a path to the project file which defines the benchmarks</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual FileInfo GetProjectFilePath(Type benchmarkTarget, ILogger logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarkTarget</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetRuntimeSettings_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetRuntimeSettings*"></a>
+
+  <h3 id="BenchmarkDotNet_Toolchains_CsProj_CsProjGenerator_GetRuntimeSettings_BenchmarkDotNet_Jobs_GcMode_BenchmarkDotNet_Characteristics_IResolver_" data-uid="BenchmarkDotNet.Toolchains.CsProj.CsProjGenerator.GetRuntimeSettings(BenchmarkDotNet.Jobs.GcMode,BenchmarkDotNet.Characteristics.IResolver)">
+  GetRuntimeSettings(GcMode, IResolver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns an MSBuild string that defines Runtime settings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GetRuntimeSettings(GcMode gcMode, IResolver resolver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gcMode</code> <a class="xref" href="BenchmarkDotNet.Jobs.GcMode.html">GcMode</a></dt>
+    <dd></dd>
+    <dt><code>resolver</code> <a class="xref" href="BenchmarkDotNet.Characteristics.IResolver.html">IResolver</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

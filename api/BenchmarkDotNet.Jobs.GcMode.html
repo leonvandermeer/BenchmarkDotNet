@@ -1,0 +1,947 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GcMode
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GcMode
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Jobs.GcMode">
+
+
+
+  <h1 id="BenchmarkDotNet_Jobs_GcMode" data-uid="BenchmarkDotNet.Jobs.GcMode" class="text-break">
+    Class GcMode
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Jobs.html">Jobs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class GcMode : JobMode&lt;GcMode&gt;, IEquatable&lt;GcMode&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html">CharacteristicObject</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.GcMode.html">GcMode</a>&gt;</div>
+      <div><a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html">JobMode</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.GcMode.html">GcMode</a>&gt;</div>
+      <div><span class="xref">GcMode</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.GcMode.html">GcMode</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Default">JobMode&lt;GcMode&gt;.Default</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Job">JobMode&lt;GcMode&gt;.Job</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;GcMode&gt;.Apply(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;GcMode&gt;.Apply(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;GcMode&gt;.ApplyAndFreeze(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;GcMode&gt;.ApplyAndFreeze(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Freeze">CharacteristicObject&lt;GcMode&gt;.Freeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_UnfreezeCopy">CharacteristicObject&lt;GcMode&gt;.UnfreezeCopy()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_IdCharacteristic">CharacteristicObject.IdCharacteristic</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_GetCharacteristicsWithValues">CharacteristicObject.GetCharacteristicsWithValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasValue_BenchmarkDotNet_Characteristics_Characteristic_">CharacteristicObject.HasValue(Characteristic)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver___0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue(Characteristic, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_System_Object_">CharacteristicObject.ResolveValue(Characteristic, IResolver, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0____0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_System_Object_">CharacteristicObject.ResolveValue(Characteristic, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValueAsNullable__1_BenchmarkDotNet_Characteristics_Characteristic___0__">CharacteristicObject.ResolveValueAsNullable&lt;T&gt;(Characteristic&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ToString">CharacteristicObject.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Frozen">CharacteristicObject.Frozen</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasChanges">CharacteristicObject.HasChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Id">CharacteristicObject.Id</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetAllCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetAllCharacteristics(CharacteristicObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetThisTypeCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetThisTypeCharacteristics(CharacteristicObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithAllowVeryLargeObjects_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithAllowVeryLargeObjects(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithConcurrent_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithConcurrent(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithCpuGroups_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithCpuGroups(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithForce_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithForce(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithHeapAffinitizeMask_BenchmarkDotNet_Jobs_GcMode_System_Int32_">GcModeExtensions.WithHeapAffinitizeMask(GcMode, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithHeapCount_BenchmarkDotNet_Jobs_GcMode_System_Int32_">GcModeExtensions.WithHeapCount(GcMode, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithNoAffinitize_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithNoAffinitize(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithRetainVm_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithRetainVm(GcMode, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.GcModeExtensions.html#BenchmarkDotNet_Jobs_GcModeExtensions_WithServer_BenchmarkDotNet_Jobs_GcMode_System_Boolean_">GcModeExtensions.WithServer(GcMode, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode__ctor_" data-uid="BenchmarkDotNet.Jobs.GcMode.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode__ctor" data-uid="BenchmarkDotNet.Jobs.GcMode.#ctor">
+  GcMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GcMode()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_AllowVeryLargeObjectsCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.AllowVeryLargeObjectsCharacteristic">
+  AllowVeryLargeObjectsCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; AllowVeryLargeObjectsCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_ConcurrentCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.ConcurrentCharacteristic">
+  ConcurrentCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; ConcurrentCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_CpuGroupsCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.CpuGroupsCharacteristic">
+  CpuGroupsCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; CpuGroupsCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_ForceCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.ForceCharacteristic">
+  ForceCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; ForceCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_HeapAffinitizeMaskCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapAffinitizeMaskCharacteristic">
+  HeapAffinitizeMaskCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;int&gt; HeapAffinitizeMaskCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_HeapCountCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapCountCharacteristic">
+  HeapCountCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;int&gt; HeapCountCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_NoAffinitizeCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.NoAffinitizeCharacteristic">
+  NoAffinitizeCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; NoAffinitizeCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_RetainVmCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.RetainVmCharacteristic">
+  RetainVmCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; RetainVmCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_ServerCharacteristic" data-uid="BenchmarkDotNet.Jobs.GcMode.ServerCharacteristic">
+  ServerCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; ServerCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_AllowVeryLargeObjects_" data-uid="BenchmarkDotNet.Jobs.GcMode.AllowVeryLargeObjects*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_AllowVeryLargeObjects" data-uid="BenchmarkDotNet.Jobs.GcMode.AllowVeryLargeObjects">
+  AllowVeryLargeObjects
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>On 64-bit platforms, enables arrays that are greater than 2 gigabytes (GB) in total size.
+<returns>false: Arrays greater than 2 GB in total size are not enabled. This is the default.</returns>
+<returns>true: Arrays greater than 2 GB in total size are enabled on 64-bit platforms.</returns></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowVeryLargeObjects { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_Concurrent_" data-uid="BenchmarkDotNet.Jobs.GcMode.Concurrent*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_Concurrent" data-uid="BenchmarkDotNet.Jobs.GcMode.Concurrent">
+  Concurrent
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether the common language runtime runs garbage collection on a separate thread.
+<returns>false: Does not run garbage collection concurrently.</returns>
+<returns>true: Runs garbage collection concurrently. This is the default.</returns></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Concurrent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_CpuGroups_" data-uid="BenchmarkDotNet.Jobs.GcMode.CpuGroups*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_CpuGroups" data-uid="BenchmarkDotNet.Jobs.GcMode.CpuGroups">
+  CpuGroups
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether garbage collection supports multiple CPU groups.
+<returns>false: Garbage collection does not support multiple CPU groups. This is the default.</returns>
+<returns>true: Garbage collection supports multiple CPU groups, if server garbage collection is enabled.</returns></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CpuGroups { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_Force_" data-uid="BenchmarkDotNet.Jobs.GcMode.Force*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_Force" data-uid="BenchmarkDotNet.Jobs.GcMode.Force">
+  Force
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether the BenchmarkDotNet's benchmark runner forces full garbage collection after each benchmark invocation
+<returns>false: Does not force garbage collection.</returns>
+<returns>true: Forces full garbage collection after each benchmark invocation. This is the default.</returns></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Force { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_HeapAffinitizeMask_" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapAffinitizeMask*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_HeapAffinitizeMask" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapAffinitizeMask">
+  HeapAffinitizeMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>process mask, see <a href="https://support.microsoft.com/en-us/help/4014604/may-2017-description-of-the-quality-rollup-for-the-net-framework-4-6-4">MSDN</a> for more.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HeapAffinitizeMask { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_HeapCount_" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapCount*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_HeapCount" data-uid="BenchmarkDotNet.Jobs.GcMode.HeapCount">
+  HeapCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>specify the # of Server GC threads/heaps, must be smaller than the # of logical CPUs the process is allowed to run on,
+ie, if you don't specifically affinitize your process it means the # of total logical CPUs on the machine;
+otherwise this is the # of logical CPUs you affinitized your process to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HeapCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_NoAffinitize_" data-uid="BenchmarkDotNet.Jobs.GcMode.NoAffinitize*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_NoAffinitize" data-uid="BenchmarkDotNet.Jobs.GcMode.NoAffinitize">
+  NoAffinitize
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>specify true to disable hard affinity of Server GC threads to CPUs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NoAffinitize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_RetainVm_" data-uid="BenchmarkDotNet.Jobs.GcMode.RetainVm*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_RetainVm" data-uid="BenchmarkDotNet.Jobs.GcMode.RetainVm">
+  RetainVm
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Put segments that should be deleted on a standby list for future use instead of releasing them back to the OS
+<remarks>The default is false</remarks></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RetainVm { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_Server_" data-uid="BenchmarkDotNet.Jobs.GcMode.Server*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_Server" data-uid="BenchmarkDotNet.Jobs.GcMode.Server">
+  Server
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether the common language runtime runs server garbage collection.
+<returns>false: Does not run server garbage collection. This is the default.</returns>
+<returns>true: Runs server garbage collection.</returns></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Server { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_Equals_" data-uid="BenchmarkDotNet.Jobs.GcMode.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_Equals_BenchmarkDotNet_Jobs_GcMode_" data-uid="BenchmarkDotNet.Jobs.GcMode.Equals(BenchmarkDotNet.Jobs.GcMode)">
+  Equals(GcMode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(GcMode other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Jobs.GcMode.html">GcMode</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_GcMode_GetHashCode_" data-uid="BenchmarkDotNet.Jobs.GcMode.GetHashCode*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_GcMode_GetHashCode" data-uid="BenchmarkDotNet.Jobs.GcMode.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

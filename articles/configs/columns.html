@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Columns | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Columns | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/configs/columns.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.columns">
+<h1 id="columns">Columns</h1>
+
+<p>A <em>column</em> is a column in the summary table.</p>
+<h2 id="default-columns">Default columns</h2>
+<p>In this section, default columns (which be added to the Summary table by default) are presented.
+Some of columns are optional, i.e. they can be omitted (it depends on the measurements from the summary).</p>
+<h3 id="target">Target</h3>
+<p>There are 3 default columns which describes the target benchmark:
+<code>Namespace</code>, <code>Type</code>, <code>Method</code>. <code>Namespace</code> and <code>Type</code> will be omitted
+when all the benchmarks have the same namespace or type name.
+<code>Method</code> column always be a part of the summary table.</p>
+<h3 id="job">Job</h3>
+<p>There are many different job characteristics,
+but the summary includes only characteristics which has at least one non-default value.</p>
+<h3 id="statistics">Statistics</h3>
+<p>There are also a lot of different statistics which can be considered.
+It will be really hard to analyse the summary table, if all of the available statistics will be shown.
+Fortunately, BenchmarkDotNet has some heuristics for statistics columns and shows only important columns.
+For example, if all of the standard deviations are zero (we run our benchmarks against Dry job),
+this column will be omitted.
+The standard error will be shown only for cases when we are failed to achieve required accuracy level.</p>
+<p>Only <code>Mean</code> will be always shown.
+If the distribution looks strange,
+BenchmarkDotNet could also print additional columns like <code>Median</code> or <code>P95</code> (95th percentile).</p>
+<p>If you need specific statistics, you always could add them manually.</p>
+<h3 id="params">Params</h3>
+<p>If you have <code>params</code>, the corresponded columns will be automatically added.</p>
+<h3 id="diagnosers">Diagnosers</h3>
+<p>If you turned on diagnosers which providers additional columns, they will be also included in the summary page.</p>
+<h2 id="custom-columns">Custom columns</h2>
+<p>Of course, you can define own custom columns and use it everywhere. Here is the definition of <code>TagColumn</code>:</p>
+<pre><code class="lang-csharp" name="IntroTagColumn.cs">using System;
+using BenchmarkDotNet.Reports;
+using BenchmarkDotNet.Running;
+
+namespace BenchmarkDotNet.Columns
+{
+    public class TagColumn : IColumn
+    {
+        private readonly Func&lt;string, string&gt; getTag;
+
+        public string Id { get; }
+        public string ColumnName { get; }
+
+        public TagColumn(string columnName, Func&lt;string, string&gt; getTag)
+        {
+            this.getTag = getTag;
+            ColumnName = columnName;
+            Id = nameof(TagColumn) + &quot;.&quot; + ColumnName;
+        }
+
+        public bool IsDefault(Summary summary, BenchmarkCase benchmarkCase) =&gt; false;
+        public string GetValue(Summary summary, BenchmarkCase benchmarkCase) =&gt; getTag(benchmarkCase.Descriptor?.WorkloadMethod?.Name ?? &quot;&quot;);
+
+        public bool IsAvailable(Summary summary) =&gt; true;
+        public bool AlwaysShow =&gt; true;
+        public ColumnCategory Category =&gt; ColumnCategory.Custom;
+        public int PriorityInCategory =&gt; 0;
+        public bool IsNumeric =&gt; false;
+        public UnitType UnitType =&gt; UnitType.Dimensionless;
+        public string Legend =&gt; $&quot;Custom '{ColumnName}' tag column&quot;;
+        public string GetValue(Summary summary, BenchmarkCase benchmarkCase, SummaryStyle style) =&gt; GetValue(summary, benchmarkCase);
+        public override string ToString() =&gt; ColumnName;
+    }
+}
+</code></pre><hr>
+<h2 id="sample-introtagcolumn">Sample: IntroTagColumn</h2>
+<p>In the following example, we introduce two new columns which contains a tag based on a benchmark method name.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroTagColumn.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+
+namespace BenchmarkDotNet.Samples
+{
+    // You can add custom tags per each method using Columns
+    [Config(typeof(Config))]
+    public class IntroTagColumn
+    {
+        private class Config : ManualConfig
+        {
+            public Config()
+            {
+                AddJob(Job.Dry);
+                AddColumn(new TagColumn(&quot;Kind&quot;, name =&gt; name.Substring(0, 3)));
+                AddColumn(new TagColumn(&quot;Number&quot;, name =&gt; name.Substring(3)));
+            }
+        }
+
+        [Benchmark]
+        public void Foo1() =&gt; Thread.Sleep(10);
+
+        [Benchmark]
+        public void Foo12() =&gt; Thread.Sleep(10);
+
+        [Benchmark]
+        public void Bar3() =&gt; Thread.Sleep(10);
+
+        [Benchmark]
+        public void Bar34() =&gt; Thread.Sleep(10);
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<pre><code class="lang-markdown">| Method | Mean       | Kind | Number |
+| ------ | ---------- | ---- | ------ |
+| Bar34  | 10.3636 ms | Bar  | 34     |
+| Bar3   | 10.4662 ms | Bar  | 3      |
+| Foo12  | 10.1377 ms | Foo  | 12     |
+| Foo1   | 10.2814 ms | Foo  | 1      |
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="columns.html">Columns</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroTagColumn.html">BenchmarkDotNet.Samples.IntroTagColumn</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AccuracyMode
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AccuracyMode
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Jobs.AccuracyMode">
+
+
+
+  <h1 id="BenchmarkDotNet_Jobs_AccuracyMode" data-uid="BenchmarkDotNet.Jobs.AccuracyMode" class="text-break">
+    Class AccuracyMode
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Jobs.html">Jobs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class AccuracyMode : JobMode&lt;AccuracyMode&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html">CharacteristicObject</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html">AccuracyMode</a>&gt;</div>
+      <div><a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html">JobMode</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html">AccuracyMode</a>&gt;</div>
+      <div><span class="xref">AccuracyMode</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Default">JobMode&lt;AccuracyMode&gt;.Default</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Job">JobMode&lt;AccuracyMode&gt;.Job</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;AccuracyMode&gt;.Apply(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;AccuracyMode&gt;.Apply(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;AccuracyMode&gt;.ApplyAndFreeze(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;AccuracyMode&gt;.ApplyAndFreeze(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Freeze">CharacteristicObject&lt;AccuracyMode&gt;.Freeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_UnfreezeCopy">CharacteristicObject&lt;AccuracyMode&gt;.UnfreezeCopy()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_IdCharacteristic">CharacteristicObject.IdCharacteristic</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_GetCharacteristicsWithValues">CharacteristicObject.GetCharacteristicsWithValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasValue_BenchmarkDotNet_Characteristics_Characteristic_">CharacteristicObject.HasValue(Characteristic)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver___0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue(Characteristic, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_System_Object_">CharacteristicObject.ResolveValue(Characteristic, IResolver, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0____0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_System_Object_">CharacteristicObject.ResolveValue(Characteristic, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValueAsNullable__1_BenchmarkDotNet_Characteristics_Characteristic___0__">CharacteristicObject.ResolveValueAsNullable&lt;T&gt;(Characteristic&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ToString">CharacteristicObject.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Frozen">CharacteristicObject.Frozen</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasChanges">CharacteristicObject.HasChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Id">CharacteristicObject.Id</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetAllCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetAllCharacteristics(CharacteristicObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetThisTypeCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetThisTypeCharacteristics(CharacteristicObject)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode__ctor_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode__ctor" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.#ctor">
+  AccuracyMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AccuracyMode()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_AnalyzeLaunchVarianceCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.AnalyzeLaunchVarianceCharacteristic">
+  AnalyzeLaunchVarianceCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; AnalyzeLaunchVarianceCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_EvaluateOverheadCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.EvaluateOverheadCharacteristic">
+  EvaluateOverheadCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;bool&gt; EvaluateOverheadCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MaxAbsoluteErrorCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxAbsoluteErrorCharacteristic">
+  MaxAbsoluteErrorCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;TimeInterval&gt; MaxAbsoluteErrorCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<span class="xref">TimeInterval</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MaxRelativeErrorCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxRelativeErrorCharacteristic">
+  MaxRelativeErrorCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;double&gt; MaxRelativeErrorCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MinInvokeCountCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinInvokeCountCharacteristic">
+  MinInvokeCountCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;int&gt; MinInvokeCountCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MinIterationTimeCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinIterationTimeCharacteristic">
+  MinIterationTimeCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;TimeInterval&gt; MinIterationTimeCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<span class="xref">TimeInterval</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_OutlierModeCharacteristic" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.OutlierModeCharacteristic">
+  OutlierModeCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;OutlierMode&gt; OutlierModeCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<span class="xref">OutlierMode</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_AnalyzeLaunchVariance_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.AnalyzeLaunchVariance*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_AnalyzeLaunchVariance" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.AnalyzeLaunchVariance">
+  AnalyzeLaunchVariance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AnalyzeLaunchVariance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_EvaluateOverhead_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.EvaluateOverhead*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_EvaluateOverhead" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.EvaluateOverhead">
+  EvaluateOverhead
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies if the overhead should be evaluated (Idle runs) and it's average value subtracted from every result.
+True by default, very important for nano-benchmarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EvaluateOverhead { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_MaxAbsoluteError_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxAbsoluteError*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MaxAbsoluteError" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxAbsoluteError">
+  MaxAbsoluteError
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maximum acceptable error for a benchmark (by default, BenchmarkDotNet continue iterations until the actual error is less than the specified error).
+Doesn't have a default value.
+<remarks>If <a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html#BenchmarkDotNet_Jobs_AccuracyMode_MaxRelativeError">MaxRelativeError</a> is also provided, the smallest value is used as stop criteria.</remarks></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeInterval MaxAbsoluteError { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TimeInterval</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_MaxRelativeError_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxRelativeError*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MaxRelativeError" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MaxRelativeError">
+  MaxRelativeError
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maximum acceptable error for a benchmark (by default, BenchmarkDotNet continue iterations until the actual error is less than the specified error).
+The default value is 0.02.
+<remarks>If <a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html#BenchmarkDotNet_Jobs_AccuracyMode_MaxAbsoluteError">MaxAbsoluteError</a> is also provided, the smallest value is used as stop criteria.</remarks></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double MaxRelativeError { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_MinInvokeCount_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinInvokeCount*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MinInvokeCount" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinInvokeCount">
+  MinInvokeCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Minimum count of benchmark invocations per iteration.
+The default value is 4.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinInvokeCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_MinIterationTime_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinIterationTime*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_MinIterationTime" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.MinIterationTime">
+  MinIterationTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Minimum time of a single iteration. Unlike Run.IterationTime, this characteristic specifies only the lower limit. In case of need, BenchmarkDotNet can increase this value.
+The default value is 500 milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeInterval MinIterationTime { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TimeInterval</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_AccuracyMode_OutlierMode_" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.OutlierMode*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_AccuracyMode_OutlierMode" data-uid="BenchmarkDotNet.Jobs.AccuracyMode.OutlierMode">
+  OutlierMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies which outliers should be removed from the distribution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OutlierMode OutlierMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">OutlierMode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

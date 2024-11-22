@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Measurement
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Measurement
+ | BenchmarkDotNet ">
+      
+      <meta name="description" content="The basic captured statistics for a benchmark">
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Reports.Measurement">
+
+
+
+  <h1 id="BenchmarkDotNet_Reports_Measurement" data-uid="BenchmarkDotNet.Reports.Measurement" class="text-break">
+    Struct Measurement
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Reports.html">Reports</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The basic captured statistics for a benchmark</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Measurement : IComparable&lt;Measurement&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Reports.MeasurementExtensions.html#BenchmarkDotNet_Reports_MeasurementExtensions_GetOpsPerSecond_BenchmarkDotNet_Reports_Measurement_">MeasurementExtensions.GetOpsPerSecond(Measurement)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Reports.MeasurementExtensions.html#BenchmarkDotNet_Reports_MeasurementExtensions_Is_BenchmarkDotNet_Reports_Measurement_BenchmarkDotNet_Engines_IterationMode_BenchmarkDotNet_Engines_IterationStage_">MeasurementExtensions.Is(Measurement, IterationMode, IterationStage)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Reports.MeasurementExtensions.html#BenchmarkDotNet_Reports_MeasurementExtensions_IsOverhead_BenchmarkDotNet_Reports_Measurement_">MeasurementExtensions.IsOverhead(Measurement)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Reports.MeasurementExtensions.html#BenchmarkDotNet_Reports_MeasurementExtensions_IsWorkload_BenchmarkDotNet_Reports_Measurement_">MeasurementExtensions.IsWorkload(Measurement)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement__ctor_" data-uid="BenchmarkDotNet.Reports.Measurement.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement__ctor_System_Int32_BenchmarkDotNet_Engines_IterationMode_BenchmarkDotNet_Engines_IterationStage_System_Int32_System_Int64_System_Double_" data-uid="BenchmarkDotNet.Reports.Measurement.#ctor(System.Int32,BenchmarkDotNet.Engines.IterationMode,BenchmarkDotNet.Engines.IterationStage,System.Int32,System.Int64,System.Double)">
+  Measurement(int, IterationMode, IterationStage, int, long, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Measurement(int launchIndex, IterationMode iterationMode, IterationStage iterationStage, int iterationIndex, long operations, double nanoseconds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>launchIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>iterationMode</code> <a class="xref" href="BenchmarkDotNet.Engines.IterationMode.html">IterationMode</a></dt>
+    <dd></dd>
+    <dt><code>iterationStage</code> <a class="xref" href="BenchmarkDotNet.Engines.IterationStage.html">IterationStage</a></dt>
+    <dd></dd>
+    <dt><code>iterationIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>operations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The number of operations performed.</p>
+</dd>
+    <dt><code>nanoseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The total number of nanoseconds it took to perform all operations.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_IterationIndex_" data-uid="BenchmarkDotNet.Reports.Measurement.IterationIndex*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_IterationIndex" data-uid="BenchmarkDotNet.Reports.Measurement.IterationIndex">
+  IterationIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int IterationIndex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_IterationMode_" data-uid="BenchmarkDotNet.Reports.Measurement.IterationMode*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_IterationMode" data-uid="BenchmarkDotNet.Reports.Measurement.IterationMode">
+  IterationMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly IterationMode IterationMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.IterationMode.html">IterationMode</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_IterationStage_" data-uid="BenchmarkDotNet.Reports.Measurement.IterationStage*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_IterationStage" data-uid="BenchmarkDotNet.Reports.Measurement.IterationStage">
+  IterationStage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly IterationStage IterationStage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.IterationStage.html">IterationStage</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_LaunchIndex_" data-uid="BenchmarkDotNet.Reports.Measurement.LaunchIndex*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_LaunchIndex" data-uid="BenchmarkDotNet.Reports.Measurement.LaunchIndex">
+  LaunchIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int LaunchIndex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_Nanoseconds_" data-uid="BenchmarkDotNet.Reports.Measurement.Nanoseconds*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_Nanoseconds" data-uid="BenchmarkDotNet.Reports.Measurement.Nanoseconds">
+  Nanoseconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total number of nanoseconds it took to perform all operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly double Nanoseconds { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_Operations_" data-uid="BenchmarkDotNet.Reports.Measurement.Operations*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_Operations" data-uid="BenchmarkDotNet.Reports.Measurement.Operations">
+  Operations
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the number of operations performed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly long Operations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_CompareTo_" data-uid="BenchmarkDotNet.Reports.Measurement.CompareTo*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_CompareTo_BenchmarkDotNet_Reports_Measurement_" data-uid="BenchmarkDotNet.Reports.Measurement.CompareTo(BenchmarkDotNet.Reports.Measurement)">
+  CompareTo(Measurement)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(Measurement other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_GetAverageTime_" data-uid="BenchmarkDotNet.Reports.Measurement.GetAverageTime*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_GetAverageTime" data-uid="BenchmarkDotNet.Reports.Measurement.GetAverageTime">
+  GetAverageTime()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the average duration of one operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeInterval GetAverageTime()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TimeInterval</span></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_Parse_" data-uid="BenchmarkDotNet.Reports.Measurement.Parse*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_Parse_System_String_System_Int32_" data-uid="BenchmarkDotNet.Reports.Measurement.Parse(System.String,System.Int32)">
+  Parse(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses the benchmark statistics from the plain text line.</p>
+<p>E.g. given the input <code class="paramref">line</code>:</p>
+<pre><code>WorkloadTarget 1: 10 op, 1005842518 ns
+</code></pre>
+<p>Will extract the number of <a class="xref" href="BenchmarkDotNet.Reports.Measurement.html#BenchmarkDotNet_Reports_Measurement_Operations">Operations</a> performed and the
+total number of <a class="xref" href="BenchmarkDotNet.Reports.Measurement.html#BenchmarkDotNet_Reports_Measurement_Nanoseconds">Nanoseconds</a> it took to perform them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Measurement Parse(string line, int processIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The line to parse.</p>
+</dd>
+    <dt><code>processIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Process launch index, indexed from one.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a></dt>
+    <dd><p>An instance of <a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a> if parsed successfully. <code>Null</code> in case of any trouble.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Reports_Measurement_ToString_" data-uid="BenchmarkDotNet.Reports.Measurement.ToString*"></a>
+
+  <h3 id="BenchmarkDotNet_Reports_Measurement_ToString" data-uid="BenchmarkDotNet.Reports.Measurement.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd>The basic captured statistics for a benchmark</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,968 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Diagnosers | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Diagnosers | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/configs/diagnosers.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.diagnosers">
+<h1 id="diagnosers">Diagnosers</h1>
+
+<p>A <strong>diagnoser</strong> can attach to your benchmark and get some useful info.</p>
+<p>The current Diagnosers are:</p>
+<ul>
+<li>GC and Memory Allocation (<code>MemoryDiagnoser</code>) which is cross platform, built-in and <strong>is not enabled by default anymore</strong>.
+Please see Adam Sitnik's <a href="https://adamsitnik.com/the-new-Memory-Diagnoser/">blog post</a> for all the details.</li>
+<li>JIT Stats Diagnoser.
+You can find this diagnoser in a separate package with diagnosers for Windows (<code>BenchmarkDotNet.Diagnostics.Windows</code>):
+<a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/"><img src="https://img.shields.io/nuget/v/BenchmarkDotNet.svg" alt="NuGet"></a></li>
+<li>JIT Inlining Events (<code>InliningDiagnoser</code>).
+You can find this diagnoser in a separate package with diagnosers for Windows (<code>BenchmarkDotNet.Diagnostics.Windows</code>):
+<a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/"><img src="https://img.shields.io/nuget/v/BenchmarkDotNet.svg" alt="NuGet"></a></li>
+<li>JIT Tail Call Events (<code>TailCallDiagnoser</code>).
+You can find this diagnoser as well as the (<code>InliningDiagnoser</code>) in a separate package with diagnosers for Windows (<code>BenchmarkDotNet.Diagnostics.Windows</code>):
+<a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/"><img src="https://img.shields.io/nuget/v/BenchmarkDotNet.svg" alt="NuGet"></a> Please see <a href="https://georgeplotnikov.github.io/articles/tale-tail-call-dotnet">this post</a> for all the details.</li>
+<li>Hardware Counter Diagnoser.
+You can find this diagnoser in a separate package with diagnosers for Windows (<code>BenchmarkDotNet.Diagnostics.Windows</code>):
+<a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/"><img src="https://img.shields.io/nuget/v/BenchmarkDotNet.svg" alt="NuGet"></a>.
+Please see Adam Sitnik's <a href="https://adamsitnik.com/Hardware-Counters-Diagnoser/">blog post</a> for all the details.</li>
+<li>Disassembly Diagnoser.
+It allows you to disassemble the benchmarked code to asm, IL and C#/F#.
+Please see Adam Sitnik's <a href="https://adamsitnik.com/Disassembly-Diagnoser/">blog post</a> for all the details.</li>
+<li>ETW Profiler (<code>EtwProfiler</code>).
+It allows you to not only benchmark, but also profile the code. It's using TraceEvent, which internally uses ETW and exports all the information to a trace file. The trace file contains all of the stack traces captured by the profiler, PDBs to resolve symbols for both native and managed code and captured GC, JIT and CLR events. Please use one of the free tools: PerfView or Windows Performance Analyzer to analyze and visualize the data from trace file. You can find this diagnoser in a separate package with diagnosers for Windows (<code>BenchmarkDotNet.Diagnostics.Windows</code>): <a href="https://www.nuget.org/packages/BenchmarkDotNet.Diagnostics.Windows/"><img src="https://img.shields.io/nuget/v/BenchmarkDotNet.svg" alt="NuGet"></a>
+Please see Adam Sitnik's <a href="https://adamsitnik.com/ETW-Profiler/">blog post</a> for all the details.</li>
+<li>Concurrency Visualizer Profiler (<code>ConcurrencyVisualizerProfiler</code>)
+It uses <code>EtwProfiler</code> to profile the code using ETW and create not only <code>.etl</code> file but also a CVTrace file which can be opened by Concurrency Visualizer plugin from Visual Studio.
+Please see Adam Sitnik's <a href="https://adamsitnik.com/ConcurrencyVisualizer-Profiler/">blog post</a> for all the details.</li>
+<li>Native Memory Profiler (<code>NativeMemoryProfiler</code>)
+It uses <code>EtwProfiler</code> to profile the code using ETW and adds the extra columns <code>Allocated native memory</code> and <code>Native memory leak</code>.
+Please see Wojciech Nagórski's <a href="https://wojciechnagorski.com/2019/08/analyzing-native-memory-allocation-with-benchmarkdotnet/">blog post</a> for all the details.</li>
+<li>Event Pipe Profiler (<code>EventPipeProfiler</code>).
+It is a cross-platform profiler that allows profile .NET code on every platform - Windows, Linux, macOS.
+Please see Wojciech Nagórski's <a href="https://wojciechnagorski.com/2020/04/cross-platform-profiling-.net-code-with-benchmarkdotnet/">blog post</a> for all the details.</li>
+<li>Threading Diagnoser (<code>ThreadingDiagnoser</code>) - .NET Core 3.0+ diagnoser that reports some Threading statistics.</li>
+<li>Exception Diagnoser (<code>ExceptionDiagnoser</code>) - a diagnoser that reports the frequency of exceptions thrown during the operation.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Below is a sample output from the <code>GC and Memory Allocation</code> diagnoser, note the extra columns on the right-hand side (&quot;Gen 0&quot;, &quot;Gen 1&quot;, &quot;Gen 2&quot; and &quot;Allocated&quot;):</p>
+<pre><code>           Method |        Mean |     StdErr |      Median |  Gen 0 | Allocated |
+----------------- |------------ |----------- |------------ |------- |---------- |
+ 'new byte[10kB]' | 884.4896 ns | 46.3528 ns | 776.4237 ns | 0.1183 |     10 kB |
+</code></pre>
+<p>A config example:</p>
+<pre><code class="lang-cs">private class Config : ManualConfig
+{
+    public Config()
+    {
+        AddDiagnoser(MemoryDiagnoser.Default);
+        AddDiagnoser(new InliningDiagnoser());
+        AddDiagnoser(new EtwProfiler());
+        AddDiagnoser(ThreadingDiagnoser.Default);
+        AddDiagnoser(ExceptionDiagnoser.Default);
+    }
+}
+</code></pre>
+<p>You can also use one of the following attributes (apply it on a class that contains Benchmarks):</p>
+<pre><code class="lang-cs">[MemoryDiagnoser]
+[InliningDiagnoser]
+[TailCallDiagnoser]
+[EtwProfiler]
+[ConcurrencyVisualizerProfiler]
+[NativeMemoryProfiler]
+[ThreadingDiagnoser]
+[ExceptionDiagnoser]
+</code></pre>
+<p>In BenchmarkDotNet, 1kB = 1024B, 1MB = 1024kB, and so on. The column Gen X means number of GC collections per 1000 operations for that generation.</p>
+<h2 id="restrictions">Restrictions</h2>
+<ul>
+<li>In order to not affect main results we perform a separate run if any diagnoser is used. That's why it might take more time to execute benchmarks.</li>
+<li>MemoryDiagnoser:
+<ul>
+<li>In order to get the number of allocated bytes in cross platform way we are using <code>GC.GetAllocatedBytesForCurrentThread</code> which recently got <a href="https://github.com/dotnet/corefx/pull/12489">exposed</a> for netcoreapp1.1. That's why BenchmarkDotNet does not support netcoreapp1.0 from version 0.10.1.</li>
+<li>MemoryDiagnoser is <code>99.5%</code> accurate about allocated memory when using default settings or Job.ShortRun (or any longer job than it).</li>
+</ul>
+</li>
+<li>Threading Diagnoser:
+<ul>
+<li>Works only for .NET Core 3.0+</li>
+</ul>
+</li>
+<li>HardwareCounters:
+<ul>
+<li>Windows 8+ only (we plan to add Unix support in the future)</li>
+<li>No Hyper-V (Virtualization) support</li>
+<li>Requires running as Admin (ETW Kernel Session)</li>
+<li>No <code>InProcessToolchain</code> support (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/394">#394</a>)</li>
+</ul>
+</li>
+<li>EtwProfiler, ConcurrencyVisualizerProfiler and NativeMemoryProfiler:
+<ul>
+<li>Windows only</li>
+<li>Requires running as Admin (ETW Kernel Session)</li>
+<li>No <code>InProcessToolchain</code> support (<a href="https://github.com/dotnet/BenchmarkDotNet/issues/394">#394</a>)</li>
+</ul>
+</li>
+<li>Disassembly Diagnoser:
+<ul>
+<li>.NET Core disassembler works only on Windows</li>
+<li>Mono disassembler does not support recursive disassembling and produces output without IL and C#.</li>
+<li>Indirect calls are not tracked.</li>
+<li>To be able to compare different platforms, you need to target AnyCPU <code>&lt;PlatformTarget&gt;AnyCPU&lt;/PlatformTarget&gt;</code></li>
+<li>To get the corresponding C#/F# code from disassembler you need to configure your project in following way:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-xml">&lt;DebugType&gt;pdbonly&lt;/DebugType&gt;
+&lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;
+</code></pre>
+<hr>
+<h2 id="sample-introhardwarecounters">Sample: IntroHardwareCounters</h2>
+<p>This diagnoser is not enabled in explicit way as the other diagnosers.
+You need to specify <code>[HardwareCounters]</code> and we choose the right diagnoser in the runtime.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroHardwareCounters.cs">using System;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Diagnosers;
+
+namespace BenchmarkDotNet.Samples
+{
+    [HardwareCounters(
+        HardwareCounter.BranchMispredictions,
+        HardwareCounter.BranchInstructions)]
+    public class IntroHardwareCounters
+    {
+        private const int N = 32767;
+        private readonly int[] sorted, unsorted;
+
+        public IntroHardwareCounters()
+        {
+            var random = new Random(0);
+            unsorted = new int[N];
+            sorted = new int[N];
+            for (int i = 0; i &lt; N; i++)
+                sorted[i] = unsorted[i] = random.Next(256);
+            Array.Sort(sorted);
+        }
+
+        private static int Branch(int[] data)
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; N; i++)
+                if (data[i] &gt;= 128)
+                    sum += data[i];
+            return sum;
+        }
+
+        private static int Branchless(int[] data)
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; N; i++)
+            {
+                int t = (data[i] - 128) &gt;&gt; 31;
+                sum += ~t &amp; data[i];
+            }
+            return sum;
+        }
+
+        [Benchmark]
+        public int SortedBranch() =&gt; Branch(sorted);
+
+        [Benchmark]
+        public int UnsortedBranch() =&gt; Branch(unsorted);
+
+        [Benchmark]
+        public int SortedBranchless() =&gt; Branchless(sorted);
+
+        [Benchmark]
+        public int UnsortedBranchless() =&gt; Branchless(unsorted);
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mean</th>
+<th>Mispredict rate</th>
+<th>BranchInstructions/Op</th>
+<th>BranchMispredictions/Op</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SortedBranch</td>
+<td>21.4539 us</td>
+<td>0,04%</td>
+<td>70121</td>
+<td>24</td>
+</tr>
+<tr>
+<td>UnsortedBranch</td>
+<td>136.1139 us</td>
+<td>23,70%</td>
+<td>68788</td>
+<td>16301</td>
+</tr>
+<tr>
+<td>SortedBranchless</td>
+<td>28.6705 us</td>
+<td>0,06%</td>
+<td>35711</td>
+<td>22</td>
+</tr>
+<tr>
+<td>UnsortedBranchless</td>
+<td>28.9336 us</td>
+<td>0,05%</td>
+<td>35578</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroHardwareCounters.html">BenchmarkDotNet.Samples.IntroHardwareCounters</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblyryujit">Sample: IntroDisassemblyRyuJit</h2>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyRyuJit.cs">using System.Linq;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(printSource: true)]
+    [RyuJitX64Job]
+    public class IntroDisassemblyRyuJit
+    {
+        private int[] field = Enumerable.Range(0, 100).ToArray();
+
+        [Benchmark]
+        public int SumLocal()
+        {
+            var local = field; // we use local variable that points to the field
+
+            int sum = 0;
+            for (int i = 0; i &lt; local.Length; i++)
+                sum += local[i];
+
+            return sum;
+        }
+
+        [Benchmark]
+        public int SumField()
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; field.Length; i++)
+                sum += field[i];
+
+            return sum;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<p><img src="../../images/disasm-demo.png" alt=""></p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="../features/disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyRyuJit.html">BenchmarkDotNet.Samples.IntroDisassemblyRyuJit</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassembly">Sample: IntroDisassembly</h2>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassembly.cs">using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Diagnosers;
+using System.Linq;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(printInstructionAddresses: true, syntax: DisassemblySyntax.Masm)]
+    public class IntroDisassembly
+    {
+        private int[] field = Enumerable.Range(0, 100).ToArray();
+
+        [Benchmark]
+        public int SumLocal()
+        {
+            var local = field; // we use local variable that points to the field
+
+            int sum = 0;
+            for (int i = 0; i &lt; local.Length; i++)
+                sum += local[i];
+
+            return sum;
+        }
+
+        [Benchmark]
+        public int SumField()
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; field.Length; i++)
+                sum += field[i];
+
+            return sum;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<pre><code class="lang-x86asm">; .NET Framework 4.7.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.3110.0
+05452718 BenchmarkDotNet.Samples.IntroDisassembly.Sum()
+IL_0000: ldc.r8 0
+IL_0009: stloc.0
+0545271c d9ee            fldz
+IL_000a: ldc.i4.0
+IL_000b: stloc.1
+IL_000c: br.s IL_0017
+0545271e 33c0            xor     eax,eax
+IL_000e: ldloc.0
+IL_000f: ldloc.1
+IL_0010: conv.r8
+IL_0011: add
+IL_0012: stloc.0
+05452720 8945fc          mov     dword ptr [ebp-4],eax
+05452723 db45fc          fild    dword ptr [ebp-4]
+05452726 dec1            faddp   st(1),st
+IL_0013: ldloc.1
+IL_0014: ldc.i4.1
+IL_0015: add
+IL_0016: stloc.1
+05452728 40              inc     eax
+IL_0017: ldloc.1
+IL_0018: ldc.i4.s 64
+IL_001a: blt.s IL_000e
+05452729 83f840          cmp     eax,40h
+0545272c 7cf2            jl      05452720
+IL_001c: ldloc.0
+IL_001d: ret
+0545272e 8be5            mov     esp,ebp
+</code></pre>
+<pre><code class="lang-x86asm">; .NET Core 2.1.0 (CoreCLR 4.6.26515.07, CoreFX 4.6.26515.06), 64bit RyuJIT
+00007ffa`6c621320 BenchmarkDotNet.Samples.IntroDisassembly.Sum()
+IL_0000: ldc.r8 0
+IL_0009: stloc.0
+00007ffa`6c621323 c4e17857c0      vxorps  xmm0,xmm0,xmm0
+IL_000a: ldc.i4.0
+IL_000b: stloc.1
+IL_000c: br.s IL_0017
+00007ffa`6c621328 33c0            xor     eax,eax
+IL_000e: ldloc.0
+IL_000f: ldloc.1
+IL_0010: conv.r8
+IL_0011: add
+IL_0012: stloc.0
+00007ffa`6c62132a c4e17057c9      vxorps  xmm1,xmm1,xmm1
+00007ffa`6c62132f c4e1732ac8      vcvtsi2sd xmm1,xmm1,eax
+00007ffa`6c621334 c4e17b58c1      vaddsd  xmm0,xmm0,xmm1
+IL_0013: ldloc.1
+IL_0014: ldc.i4.1
+IL_0015: add
+IL_0016: stloc.1
+00007ffa`6c621339 ffc0            inc     eax
+IL_0017: ldloc.1
+IL_0018: ldc.i4.s 64
+IL_001a: blt.s IL_000e
+00007ffa`6c62133b 83f840          cmp     eax,40h
+00007ffa`6c62133e 7cea            jl      00007ffa`6c62132a
+IL_001c: ldloc.0
+IL_001d: ret
+00007ffa`6c621340 c3              ret
+</code></pre>
+<pre><code class="lang-x86asm">Mono 5.12.0 (Visual Studio), 64bit
+ Sum
+sub    $0x18,%rsp
+mov    %rsi,(%rsp)
+xorpd  %xmm0,%xmm0
+movsd  %xmm0,0x8(%rsp)
+xor    %esi,%esi
+jmp    2e 
+xchg   %ax,%ax
+movsd  0x8(%rsp),%xmm0
+cvtsi2sd %esi,%xmm1
+addsd  %xmm1,%xmm0
+movsd  %xmm0,0x8(%rsp)
+inc    %esi
+cmp    $0x40,%esi
+jl     18 
+movsd  0x8(%rsp),%xmm0
+mov    (%rsp),%rsi
+add    $0x18,%rsp
+retq   
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="../features/disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassembly.html">BenchmarkDotNet.Samples.IntroDisassembly</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblyalljits">Sample: IntroDisassemblyAllJits</h2>
+<p>You can use a single config to compare the generated assembly code for ALL JITs.</p>
+<p>But to allow benchmarking any target platform architecture the project which defines benchmarks has to target <strong>AnyCPU</strong>.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;PlatformTarget&gt;AnyCPU&lt;/PlatformTarget&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyAllJits.cs">using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Jobs;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Config(typeof(MultipleJits))]
+    public class IntroDisassemblyAllJits
+    {
+        public class MultipleJits : ManualConfig
+        {
+            public MultipleJits()
+            {
+                AddJob(Job.ShortRun.WithPlatform(Platform.X86).WithRuntime(new MonoRuntime(name: &quot;Mono x86&quot;, customPath: @&quot;C:\Program Files (x86)\Mono\bin\mono.exe&quot;)));
+                AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithRuntime(new MonoRuntime(name: &quot;Mono x64&quot;, customPath: @&quot;C:\Program Files\Mono\bin\mono.exe&quot;)));
+
+                AddJob(Job.ShortRun.WithJit(Jit.LegacyJit).WithPlatform(Platform.X86).WithRuntime(ClrRuntime.Net462));
+                AddJob(Job.ShortRun.WithJit(Jit.LegacyJit).WithPlatform(Platform.X64).WithRuntime(ClrRuntime.Net462));
+
+                AddJob(Job.ShortRun.WithJit(Jit.RyuJit).WithPlatform(Platform.X64).WithRuntime(ClrRuntime.Net462));
+
+                // RyuJit for .NET Core 5.0
+                AddJob(Job.ShortRun.WithJit(Jit.RyuJit).WithPlatform(Platform.X64).WithRuntime(CoreRuntime.Core50));
+
+                AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig(maxDepth: 3, exportDiff: true)));
+            }
+        }
+
+        private Increment increment = new Increment();
+
+        [Benchmark]
+        public int CallVirtualMethod() =&gt; increment.OperateTwice(10);
+
+        public abstract class Operation  // abstract unary integer operation
+        {
+            public abstract int Operate(int input);
+
+            public int OperateTwice(int input) =&gt; Operate(Operate(input)); // two virtual calls to Operate
+        }
+
+        public sealed class Increment : Operation // concrete, sealed operation: increment by fixed amount
+        {
+            public readonly int Amount;
+            public Increment(int amount = 1) { Amount = amount; }
+
+            public override int Operate(int input) =&gt; input + Amount;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<p>The disassembly result can be obtained <a href="https://adamsitnik.com/files/disasm/Jit_Devirtualization-disassembly-report.html">here</a>.
+The file was too big to embed it in this doc page.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="../features/disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyAllJits.html">BenchmarkDotNet.Samples.IntroDisassemblyAllJits</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblydry">Sample: IntroDisassemblyDry</h2>
+<p><strong>Getting only the Disassembly without running the benchmarks for a long time.</strong></p>
+<p>Sometimes you might be interested only in the disassembly, not the results of the benchmarks.
+In that case you can use <strong>Job.Dry</strong> which runs the benchmark only <strong>once</strong>.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyDry.cs">using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(maxDepth: 3)]
+    [DryJob]
+    public class IntroDisassemblyDry
+    {
+        [Benchmark]
+        public void Foo()
+        {
+
+        }
+    }
+}
+</code></pre><h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="../features/disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyDry.html">BenchmarkDotNet.Samples.IntroDisassemblyDry</a></li>
+</ul>
+<hr>
+<h2 id="sample-introtailcall">Sample: IntroTailcall</h2>
+<p>You need to use the <code>TailcallDiagnoser</code> attribute to configure it. The available options are:</p>
+<ul>
+<li>logFailuresOnly: Track only the methods that failed to get tail called. True by default.</li>
+<li>filterByNamespace : Track only the methods from declaring type's namespace. Set to false if you want to see all Jit tail events. True by default.</li>
+</ul>
+<h3 id="restrictions">Restrictions</h3>
+<ul>
+<li>Windows only</li>
+<li>x64</li>
+</ul>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroTailcall.cs">using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Diagnostics.Windows.Configs.TailCallDiagnoser]
+    [LegacyJitX86Job, LegacyJitX64Job, RyuJitX64Job]
+    public class IntroTailcall
+    {
+        [Benchmark]
+        public long Calc()
+            =&gt; FactorialWithoutTailing(7) - FactorialWithTailing(7);
+
+        private static long FactorialWithoutTailing(int depth)
+            =&gt; depth == 0 ? 1 : depth * FactorialWithoutTailing(depth - 1);
+
+        private static long FactorialWithTailing(int pos, int depth)
+            =&gt; pos == 0 ? depth : FactorialWithTailing(pos - 1, depth * pos);
+
+        private static long FactorialWithTailing(int depth)
+            =&gt; FactorialWithTailing(depth - 1, depth);
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<pre><code class="lang-markdown">// * Diagnostic Output - TailCallDiagnoser *
+--------------------
+
+--------------------
+Jit_TailCalling.Calc: LegacyJitX64(Jit=LegacyJit, Platform=X64, Runtime=Clr)
+--------------------
+
+--------------------
+Jit_TailCalling.Calc: LegacyJitX86(Jit=LegacyJit, Platform=X86, Runtime=Clr)
+--------------------
+
+--------------------
+Jit_TailCalling.Calc: RyuJitX64(Jit=RyuJit, Platform=X64)
+--------------------
+Caller: &lt;null&gt;.&lt;null&gt; - &lt;null&gt;
+Callee: BenchmarkDotNet.Samples.JIT.Jit_TailCalling.FactorialWithTailing - int64  (int32,int32)
+Tail prefix: False
+Tail call type: RecursiveLoop
+-------------------
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroTailcall.html">BenchmarkDotNet.Samples.IntroTailcall</a></li>
+</ul>
+<hr>
+<h2 id="sample-introjitstatsdiagnoser">Sample: IntroJitStatsDiagnoser</h2>
+<p>This diagnoser shows various stats from the JIT compiler that were collected during entire benchmark run (warmup phase and BenchmarkDotNet-generated boilerplate code are included):</p>
+<ul>
+<li>Amount of JITted methods.</li>
+<li>Amount of <a href="https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0#tiered-compilation">tiered methods</a>.</li>
+<li>How much memory JIT allocated during the benchmark.</li>
+</ul>
+<h3 id="restrictions">Restrictions</h3>
+<ul>
+<li>Windows only</li>
+</ul>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroJitStatsDiagnoser.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Diagnostics.Windows.Configs.JitStatsDiagnoser]
+    public class IntroJitStatsDiagnoser
+    {
+        [Benchmark]
+        public void Sleep() =&gt; Thread.Sleep(10);
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Methods JITted</th>
+<th style="text-align: right;">Methods Tiered</th>
+<th style="text-align: right;">JIT allocated memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sleep</td>
+<td style="text-align: right;">15.50 ms</td>
+<td style="text-align: right;">0.052 ms</td>
+<td style="text-align: right;">0.048 ms</td>
+<td style="text-align: right;">1,102</td>
+<td style="text-align: right;">214</td>
+<td style="text-align: right;">221,736 B</td>
+</tr>
+</tbody>
+</table>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroJitStatsDiagnoser.html">BenchmarkDotNet.Samples.IntroJitStatsDiagnoser</a></li>
+</ul>
+<hr>
+<h2 id="sample-intronativememory">Sample: IntroNativeMemory</h2>
+<p>The <code>NativeMemoryProfiler</code> uses <code>EtwProfiler</code> to profile the code using ETW and adds the extra columns <code>Allocated native memory</code> and <code>Native memory leak</code> to the benchmark results table.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroNativeMemory.cs">using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Diagnostics.Windows.Configs;
+
+namespace BenchmarkDotNet.Samples
+{
+    [ShortRunJob]
+    [NativeMemoryProfiler]
+    [MemoryDiagnoser]
+    public class IntroNativeMemory
+    {
+        [Benchmark]
+        public void BitmapWithLeaks()
+        {
+            var flag = new Bitmap(200, 100);
+            var graphics = Graphics.FromImage(flag);
+            var blackPen = new Pen(Color.Black, 3);
+            graphics.DrawLine(blackPen, 100, 100, 500, 100);
+        }
+
+        [Benchmark]
+        public void Bitmap()
+        {
+            using (var flag = new Bitmap(200, 100))
+            {
+                using (var graphics = Graphics.FromImage(flag))
+                {
+                    using (var blackPen = new Pen(Color.Black, 3))
+                    {
+                        graphics.DrawLine(blackPen, 100, 100, 500, 100);
+                    }
+                }
+            }
+        }
+
+        private const int Size = 20; // Greater value could cause System.OutOfMemoryException for test with memory leaks.
+        private int ArraySize = Size * Marshal.SizeOf(typeof(int));
+
+        [Benchmark]
+        public unsafe void AllocHGlobal()
+        {
+            IntPtr unmanagedHandle = Marshal.AllocHGlobal(ArraySize);
+            Span&lt;byte&gt; unmanaged = new Span&lt;byte&gt;(unmanagedHandle.ToPointer(), ArraySize);
+            Marshal.FreeHGlobal(unmanagedHandle);
+        }
+
+        [Benchmark]
+        public unsafe void AllocHGlobalWithLeaks()
+        {
+            IntPtr unmanagedHandle = Marshal.AllocHGlobal(ArraySize);
+            Span&lt;byte&gt; unmanaged = new Span&lt;byte&gt;(unmanagedHandle.ToPointer(), ArraySize);
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Gen 2</th>
+<th style="text-align: right;">Allocated</th>
+<th style="text-align: right;">Allocated native memory</th>
+<th style="text-align: right;">Native memory leak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BitmapWithLeaks</td>
+<td style="text-align: right;">73,456.43 ns</td>
+<td style="text-align: right;">22,498.10 ns</td>
+<td style="text-align: right;">1,233.197 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">177 B</td>
+<td style="text-align: right;">13183 B</td>
+<td style="text-align: right;">11615 B</td>
+</tr>
+<tr>
+<td>Bitmap</td>
+<td style="text-align: right;">91,590.08 ns</td>
+<td style="text-align: right;">101,468.12 ns</td>
+<td style="text-align: right;">5,561.810 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">180 B</td>
+<td style="text-align: right;">12624 B</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>AllocHGlobal</td>
+<td style="text-align: right;">79.91 ns</td>
+<td style="text-align: right;">43.93 ns</td>
+<td style="text-align: right;">2.408 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">80 B</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>AllocHGlobalWithLeaks</td>
+<td style="text-align: right;">103.50 ns</td>
+<td style="text-align: right;">153.21 ns</td>
+<td style="text-align: right;">8.398 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">80 B</td>
+<td style="text-align: right;">80 B</td>
+</tr>
+</tbody>
+</table>
+<h3 id="profiling-memory-leaks">Profiling memory leaks</h3>
+<p>The BenchmarkDotNet repeats benchmarking function many times. Sometimes it can cause a memory overflow. In this case, the BenchmarkDotNet shows the message:</p>
+<pre><code class="lang-ini">OutOfMemoryException!
+BenchmarkDotNet continues to run additional iterations until desired accuracy level is achieved. It's possible only if the benchmark method doesn't have any side-effects.
+If your benchmark allocates memory and keeps it alive, you are creating a memory leak.
+You should redesign your benchmark and remove the side-effects. You can use `OperationsPerInvoke`, `IterationSetup` and `IterationCleanup` to do that.
+</code></pre>
+<p>In this case, you should try to reduce the number of invocation, by adding <code>[ShortRunJob]</code> attribute or using <code>Job.Short</code> for custom configuration.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroNativeMemory.html">BenchmarkDotNet.Samples.IntroNativeMemory</a></li>
+</ul>
+<hr>
+<h2 id="sample-introthreadingdiagnoser">Sample: IntroThreadingDiagnoser</h2>
+<p>The <code>ThreadingDiagnoser</code> uses new APIs <a href="https://github.com/dotnet/corefx/issues/35500">exposed</a> in .NET Core 3.0 to report:</p>
+<ul>
+<li>Completed Work Items: The number of work items that have been processed in ThreadPool (per single operation)</li>
+<li>Lock Contentions: The number of times there <strong>was contention</strong> upon trying to take a Monitor's lock (per single operation)</li>
+</ul>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroThreadingDiagnoser.cs">using BenchmarkDotNet.Attributes;
+using System.Threading;
+
+namespace BenchmarkDotNet.Samples
+{
+    [ThreadingDiagnoser] // ENABLE the diagnoser
+    public class IntroThreadingDiagnoser
+    {
+        [Benchmark]
+        public void CompleteOneWorkItem()
+        {
+            ManualResetEvent done = new ManualResetEvent(initialState: false);
+
+            ThreadPool.QueueUserWorkItem(m =&gt; (m as ManualResetEvent).Set(), done);
+
+            done.WaitOne();
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Completed Work Items</th>
+<th style="text-align: right;">Lock Contentions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CompleteOneWorkItem</td>
+<td style="text-align: right;">8,073.5519 ns</td>
+<td style="text-align: right;">69.7261 ns</td>
+<td style="text-align: right;">8,111.6074 ns</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroThreadingDiagnoser.html">BenchmarkDotNet.Samples.IntroThreadingDiagnoser</a></li>
+</ul>
+<hr>
+<h2 id="sample-introexceptiondiagnoser">Sample: IntroExceptionDiagnoser</h2>
+<p>The <code>ExceptionDiagnoser</code> uses <a href="https://learn.microsoft.com/en-us/dotnet/api/system.appdomain.firstchanceexception">AppDomain.FirstChanceException</a> API to report:</p>
+<ul>
+<li>Exception frequency: The number of exceptions thrown during the operations divided by the number of operations.</li>
+</ul>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroExceptionDiagnoser.cs">using BenchmarkDotNet.Attributes;
+using System;
+
+namespace BenchmarkDotNet.Samples
+{
+    [ExceptionDiagnoser]
+    public class IntroExceptionDiagnoser
+    {
+        [Benchmark]
+        public void ThrowExceptionRandomly()
+        {
+            try
+            {
+                if (new Random().Next(0, 5) &gt; 1)
+                {
+                    throw new Exception();
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Exception frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ThrowExceptionRandomly</td>
+<td style="text-align: right;">4.936 us</td>
+<td style="text-align: right;">0.1542 us</td>
+<td style="text-align: right;">0.4499 us</td>
+<td style="text-align: right;">0.1381</td>
+</tr>
+</tbody>
+</table>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="diagnosers.html">Diagnosers</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroExceptionDiagnoser.html">BenchmarkDotNet.Samples.IntroExceptionDiagnoser</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

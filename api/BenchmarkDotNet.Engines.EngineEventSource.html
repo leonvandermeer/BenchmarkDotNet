@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EngineEventSource
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EngineEventSource
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Engines.EngineEventSource">
+
+
+
+  <h1 id="BenchmarkDotNet_Engines_EngineEventSource" data-uid="BenchmarkDotNet.Engines.EngineEventSource" class="text-break">
+    Class EngineEventSource
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Engines.html">Engines</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[EventSource(Name = &quot;BenchmarkDotNet.EngineEventSource&quot;)]
+public class EngineEventSource : EventSource, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource">EventSource</a></div>
+      <div><span class="xref">EngineEventSource</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.isenabled#system-diagnostics-tracing-eventsource-isenabled">EventSource.IsEnabled()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.isenabled#system-diagnostics-tracing-eventsource-isenabled(system-diagnostics-tracing-eventlevel-system-diagnostics-tracing-eventkeywords)">EventSource.IsEnabled(EventLevel, EventKeywords)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.isenabled#system-diagnostics-tracing-eventsource-isenabled(system-diagnostics-tracing-eventlevel-system-diagnostics-tracing-eventkeywords-system-diagnostics-tracing-eventchannel)">EventSource.IsEnabled(EventLevel, EventKeywords, EventChannel)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.getguid">EventSource.GetGuid(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.getname">EventSource.GetName(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.generatemanifest#system-diagnostics-tracing-eventsource-generatemanifest(system-type-system-string)">EventSource.GenerateManifest(Type, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.generatemanifest#system-diagnostics-tracing-eventsource-generatemanifest(system-type-system-string-system-diagnostics-tracing-eventmanifestoptions)">EventSource.GenerateManifest(Type, string, EventManifestOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.getsources">EventSource.GetSources()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.sendcommand">EventSource.SendCommand(EventSource, EventCommand, IDictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.gettrait">EventSource.GetTrait(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.tostring">EventSource.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid#system-diagnostics-tracing-eventsource-setcurrentthreadactivityid(system-guid)">EventSource.SetCurrentThreadActivityId(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid#system-diagnostics-tracing-eventsource-setcurrentthreadactivityid(system-guid-system-guid@)">EventSource.SetCurrentThreadActivityId(Guid, out Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.oneventcommand">EventSource.OnEventCommand(EventCommandEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32)">EventSource.WriteEvent(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int32)">EventSource.WriteEvent(int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int32-system-int32)">EventSource.WriteEvent(int, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int32-system-int32-system-int32)">EventSource.WriteEvent(int, int, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int64)">EventSource.WriteEvent(int, long)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int64-system-int64)">EventSource.WriteEvent(int, long, long)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int64-system-int64-system-int64)">EventSource.WriteEvent(int, long, long, long)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string)">EventSource.WriteEvent(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string-system-string)">EventSource.WriteEvent(int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string-system-string-system-string)">EventSource.WriteEvent(int, string, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string-system-int32)">EventSource.WriteEvent(int, string, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string-system-int32-system-int32)">EventSource.WriteEvent(int, string, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-string-system-int64)">EventSource.WriteEvent(int, string, long)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int64-system-string)">EventSource.WriteEvent(int, long, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int32-system-string)">EventSource.WriteEvent(int, int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-byte())">EventSource.WriteEvent(int, byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-int64-system-byte())">EventSource.WriteEvent(int, long, byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeeventcore">EventSource.WriteEventCore(int, int, EventSource.EventData*)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeeventwithrelatedactivityidcore">EventSource.WriteEventWithRelatedActivityIdCore(int, Guid*, int, EventSource.EventData*)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-diagnostics-tracing-eventsource-eventsourceprimitive())">EventSource.WriteEvent(int, params EventSource.EventSourcePrimitive[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeevent#system-diagnostics-tracing-eventsource-writeevent(system-int32-system-object())">EventSource.WriteEvent(int, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.writeeventwithrelatedactivityid">EventSource.WriteEventWithRelatedActivityId(int, Guid, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.dispose#system-diagnostics-tracing-eventsource-dispose">EventSource.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.dispose#system-diagnostics-tracing-eventsource-dispose(system-boolean)">EventSource.Dispose(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write(system-string)">EventSource.Write(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write(system-string-system-diagnostics-tracing-eventsourceoptions)">EventSource.Write(string, EventSourceOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write-1(system-string-0)">EventSource.Write&lt;T&gt;(string, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write-1(system-string-system-diagnostics-tracing-eventsourceoptions-0)">EventSource.Write&lt;T&gt;(string, EventSourceOptions, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write-1(system-string-system-diagnostics-tracing-eventsourceoptions@-0@)">EventSource.Write&lt;T&gt;(string, ref EventSourceOptions, ref T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.write#system-diagnostics-tracing-eventsource-write-1(system-string-system-diagnostics-tracing-eventsourceoptions@-system-guid@-system-guid@-0@)">EventSource.Write&lt;T&gt;(string, ref EventSourceOptions, ref Guid, ref Guid, ref T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.name">EventSource.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.guid">EventSource.Guid</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.settings">EventSource.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.constructionexception">EventSource.ConstructionException</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.currentthreadactivityid">EventSource.CurrentThreadActivityId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource.eventcommandexecuted">EventSource.EventCommandExecuted</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_BenchmarkStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.BenchmarkStartEventId">
+  BenchmarkStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int BenchmarkStartEventId = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_BenchmarkStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.BenchmarkStopEventId">
+  BenchmarkStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int BenchmarkStopEventId = 2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadActualStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadActualStartEventId">
+  OverheadActualStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadActualStartEventId = 11</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadActualStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadActualStopEventId">
+  OverheadActualStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadActualStopEventId = 12</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadJittingStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadJittingStartEventId">
+  OverheadJittingStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadJittingStartEventId = 3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadJittingStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadJittingStopEventId">
+  OverheadJittingStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadJittingStopEventId = 4</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadWarmupStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadWarmupStartEventId">
+  OverheadWarmupStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadWarmupStartEventId = 9</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_OverheadWarmupStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.OverheadWarmupStopEventId">
+  OverheadWarmupStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int OverheadWarmupStopEventId = 10</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_SourceName" data-uid="BenchmarkDotNet.Engines.EngineEventSource.SourceName">
+  SourceName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string SourceName = &quot;BenchmarkDotNet.EngineEventSource&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadActualStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadActualStartEventId">
+  WorkloadActualStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadActualStartEventId = 15</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadActualStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadActualStopEventId">
+  WorkloadActualStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadActualStopEventId = 16</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadJittingStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadJittingStartEventId">
+  WorkloadJittingStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadJittingStartEventId = 5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadJittingStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadJittingStopEventId">
+  WorkloadJittingStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadJittingStopEventId = 6</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadPilotStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadPilotStartEventId">
+  WorkloadPilotStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadPilotStartEventId = 7</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadPilotStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadPilotStopEventId">
+  WorkloadPilotStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadPilotStopEventId = 8</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadWarmupStartEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadWarmupStartEventId">
+  WorkloadWarmupStartEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadWarmupStartEventId = 13</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_EngineEventSource_WorkloadWarmupStopEventId" data-uid="BenchmarkDotNet.Engines.EngineEventSource.WorkloadWarmupStopEventId">
+  WorkloadWarmupStopEventId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WorkloadWarmupStopEventId = 14</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct RunResults
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct RunResults
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Engines.RunResults">
+
+
+
+  <h1 id="BenchmarkDotNet_Engines_RunResults" data-uid="BenchmarkDotNet.Engines.RunResults" class="text-break">
+    Struct RunResults
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Engines.html">Engines</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct RunResults</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults__ctor_" data-uid="BenchmarkDotNet.Engines.RunResults.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults__ctor_System_Collections_Generic_IReadOnlyList_BenchmarkDotNet_Reports_Measurement__Perfolizer_Mathematics_OutlierDetection_OutlierMode_BenchmarkDotNet_Engines_GcStats_BenchmarkDotNet_Engines_ThreadingStats_System_Double_" data-uid="BenchmarkDotNet.Engines.RunResults.#ctor(System.Collections.Generic.IReadOnlyList{BenchmarkDotNet.Reports.Measurement},Perfolizer.Mathematics.OutlierDetection.OutlierMode,BenchmarkDotNet.Engines.GcStats,BenchmarkDotNet.Engines.ThreadingStats,System.Double)">
+  RunResults(IReadOnlyList&lt;Measurement&gt;, OutlierMode, GcStats, ThreadingStats, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RunResults(IReadOnlyList&lt;Measurement&gt; engineMeasurements, OutlierMode outlierMode, GcStats gcStats, ThreadingStats threadingStats, double exceptionFrequency)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>engineMeasurements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>outlierMode</code> <span class="xref">OutlierMode</span></dt>
+    <dd></dd>
+    <dt><code>gcStats</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+    <dt><code>threadingStats</code> <a class="xref" href="BenchmarkDotNet.Engines.ThreadingStats.html">ThreadingStats</a></dt>
+    <dd></dd>
+    <dt><code>exceptionFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_EngineMeasurements_" data-uid="BenchmarkDotNet.Engines.RunResults.EngineMeasurements*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_EngineMeasurements" data-uid="BenchmarkDotNet.Engines.RunResults.EngineMeasurements">
+  EngineMeasurements
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly IReadOnlyList&lt;Measurement&gt; EngineMeasurements { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_ExceptionFrequency_" data-uid="BenchmarkDotNet.Engines.RunResults.ExceptionFrequency*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_ExceptionFrequency" data-uid="BenchmarkDotNet.Engines.RunResults.ExceptionFrequency">
+  ExceptionFrequency
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly double ExceptionFrequency { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_GCStats_" data-uid="BenchmarkDotNet.Engines.RunResults.GCStats*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_GCStats" data-uid="BenchmarkDotNet.Engines.RunResults.GCStats">
+  GCStats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly GcStats GCStats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_Overhead_" data-uid="BenchmarkDotNet.Engines.RunResults.Overhead*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_Overhead" data-uid="BenchmarkDotNet.Engines.RunResults.Overhead">
+  Overhead
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Measurement&gt;? Overhead { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_ThreadingStats_" data-uid="BenchmarkDotNet.Engines.RunResults.ThreadingStats*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_ThreadingStats" data-uid="BenchmarkDotNet.Engines.RunResults.ThreadingStats">
+  ThreadingStats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly ThreadingStats ThreadingStats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.ThreadingStats.html">ThreadingStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_Workload_" data-uid="BenchmarkDotNet.Engines.RunResults.Workload*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_Workload" data-uid="BenchmarkDotNet.Engines.RunResults.Workload">
+  Workload
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Measurement&gt; Workload { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_GetAllMeasurements_" data-uid="BenchmarkDotNet.Engines.RunResults.GetAllMeasurements*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_GetAllMeasurements" data-uid="BenchmarkDotNet.Engines.RunResults.GetAllMeasurements">
+  GetAllMeasurements()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Measurement&gt; GetAllMeasurements()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_GetWorkloadResultMeasurements_" data-uid="BenchmarkDotNet.Engines.RunResults.GetWorkloadResultMeasurements*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_GetWorkloadResultMeasurements" data-uid="BenchmarkDotNet.Engines.RunResults.GetWorkloadResultMeasurements">
+  GetWorkloadResultMeasurements()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Measurement&gt; GetWorkloadResultMeasurements()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Reports.Measurement.html">Measurement</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_RunResults_Print_" data-uid="BenchmarkDotNet.Engines.RunResults.Print*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_RunResults_Print_System_IO_TextWriter_" data-uid="BenchmarkDotNet.Engines.RunResults.Print(System.IO.TextWriter)">
+  Print(TextWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Print(TextWriter outWriter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outWriter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.textwriter">TextWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

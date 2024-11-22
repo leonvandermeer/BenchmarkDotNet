@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Disassembler | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Disassembler | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/features/disassembler.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.disassembler">
+<h1 id="disassembler">Disassembler</h1>
+
+<p>Can be enabled by using <code>[DisassemblyDiagnoser]</code> or command line args: <code>-d</code> or <code>--disasm</code>.</p>
+<p>The configuration options available from code level are:</p>
+<ul>
+<li><code>maxDepth</code>: Includes called methods to given level. 1 by default, indexed from 1. To print just the benchmark set it to 0. This option is also available from the console arguments level <code>--disasmDepth</code>.</li>
+<li><code>printSource</code>: C#|F#|VB source code will be printed. False by default.</li>
+<li><code>printInstructionAddresses</code>: Print instruction addresses. False by default.</li>
+<li><code>exportGithubMarkdown</code>: Exports to GitHub markdown. True by default.</li>
+<li><code>exportHtml</code>: Exports to HTML with clickable links. False by default.</li>
+<li><code>exportCombinedDisassemblyReport</code>: Exports all benchmarks to a single HTML report. Makes it easy to compare different runtimes or methods (each becomes a column in HTML table).</li>
+<li><code>exportDiff</code>: Exports a diff of the assembly code to the Github markdown format. False by default.</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<p>Disassembly Diagnoser requires following settings in your <code>.csproj</code> file:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;PlatformTarget&gt;AnyCPU&lt;/PlatformTarget&gt;
+  &lt;DebugType&gt;pdbonly&lt;/DebugType&gt;
+  &lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+<p>To get the source code we need to locate and read the <code>.pdb</code> files.
+This is why we need <code>DebugType</code> and <code>DebugSymbols</code> settings.
+To compare different platforms the project which defines benchmarks has to target <code>AnyCPU</code>.</p>
+<h3 id="disassembly-diagnoser-for-mono-on-windows">Disassembly Diagnoser for Mono on Windows</h3>
+<p>If you want to get a disassembly listing for Mono on Windows, you need <code>as</code> and <code>x86_64-w64-mingw32-objdump.exe</code> tools.
+If you don't have it, you will get a warning like follows:</p>
+<pre><code>It's impossible to get Mono disasm because you don't have some required tools:
+'as' is not recognized as an internal or external command
+'x86_64-w64-mingw32-objdump.exe' is not recognized as an internal or external command
+</code></pre>
+<p>The easiest way to get these tools:</p>
+<ol>
+<li>Download and install <a href="https://www.cygwin.com/">Cygwin</a></li>
+<li>On the &quot;Select Packages&quot; screen, search for <code>binutils</code></li>
+<li>Install <code>binutils</code> and <code>mingw64-x86_64-binutils</code></li>
+<li>Add <code>cygwin64\bin\</code> (or <code>cygwin\bin\</code>) in <code>%PATH%</code></li>
+</ol>
+<p><img src="../../images/cygwin-binutils.png" alt=""></p>
+<hr>
+<h2 id="sample-introdisassembly">Sample: IntroDisassembly</h2>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassembly.cs">using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Diagnosers;
+using System.Linq;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(printInstructionAddresses: true, syntax: DisassemblySyntax.Masm)]
+    public class IntroDisassembly
+    {
+        private int[] field = Enumerable.Range(0, 100).ToArray();
+
+        [Benchmark]
+        public int SumLocal()
+        {
+            var local = field; // we use local variable that points to the field
+
+            int sum = 0;
+            for (int i = 0; i &lt; local.Length; i++)
+                sum += local[i];
+
+            return sum;
+        }
+
+        [Benchmark]
+        public int SumField()
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; field.Length; i++)
+                sum += field[i];
+
+            return sum;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<pre><code class="lang-x86asm">; .NET Framework 4.7.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.3110.0
+05452718 BenchmarkDotNet.Samples.IntroDisassembly.Sum()
+IL_0000: ldc.r8 0
+IL_0009: stloc.0
+0545271c d9ee            fldz
+IL_000a: ldc.i4.0
+IL_000b: stloc.1
+IL_000c: br.s IL_0017
+0545271e 33c0            xor     eax,eax
+IL_000e: ldloc.0
+IL_000f: ldloc.1
+IL_0010: conv.r8
+IL_0011: add
+IL_0012: stloc.0
+05452720 8945fc          mov     dword ptr [ebp-4],eax
+05452723 db45fc          fild    dword ptr [ebp-4]
+05452726 dec1            faddp   st(1),st
+IL_0013: ldloc.1
+IL_0014: ldc.i4.1
+IL_0015: add
+IL_0016: stloc.1
+05452728 40              inc     eax
+IL_0017: ldloc.1
+IL_0018: ldc.i4.s 64
+IL_001a: blt.s IL_000e
+05452729 83f840          cmp     eax,40h
+0545272c 7cf2            jl      05452720
+IL_001c: ldloc.0
+IL_001d: ret
+0545272e 8be5            mov     esp,ebp
+</code></pre>
+<pre><code class="lang-x86asm">; .NET Core 2.1.0 (CoreCLR 4.6.26515.07, CoreFX 4.6.26515.06), 64bit RyuJIT
+00007ffa`6c621320 BenchmarkDotNet.Samples.IntroDisassembly.Sum()
+IL_0000: ldc.r8 0
+IL_0009: stloc.0
+00007ffa`6c621323 c4e17857c0      vxorps  xmm0,xmm0,xmm0
+IL_000a: ldc.i4.0
+IL_000b: stloc.1
+IL_000c: br.s IL_0017
+00007ffa`6c621328 33c0            xor     eax,eax
+IL_000e: ldloc.0
+IL_000f: ldloc.1
+IL_0010: conv.r8
+IL_0011: add
+IL_0012: stloc.0
+00007ffa`6c62132a c4e17057c9      vxorps  xmm1,xmm1,xmm1
+00007ffa`6c62132f c4e1732ac8      vcvtsi2sd xmm1,xmm1,eax
+00007ffa`6c621334 c4e17b58c1      vaddsd  xmm0,xmm0,xmm1
+IL_0013: ldloc.1
+IL_0014: ldc.i4.1
+IL_0015: add
+IL_0016: stloc.1
+00007ffa`6c621339 ffc0            inc     eax
+IL_0017: ldloc.1
+IL_0018: ldc.i4.s 64
+IL_001a: blt.s IL_000e
+00007ffa`6c62133b 83f840          cmp     eax,40h
+00007ffa`6c62133e 7cea            jl      00007ffa`6c62132a
+IL_001c: ldloc.0
+IL_001d: ret
+00007ffa`6c621340 c3              ret
+</code></pre>
+<pre><code class="lang-x86asm">Mono 5.12.0 (Visual Studio), 64bit
+ Sum
+sub    $0x18,%rsp
+mov    %rsi,(%rsp)
+xorpd  %xmm0,%xmm0
+movsd  %xmm0,0x8(%rsp)
+xor    %esi,%esi
+jmp    2e 
+xchg   %ax,%ax
+movsd  0x8(%rsp),%xmm0
+cvtsi2sd %esi,%xmm1
+addsd  %xmm1,%xmm0
+movsd  %xmm0,0x8(%rsp)
+inc    %esi
+cmp    $0x40,%esi
+jl     18 
+movsd  0x8(%rsp),%xmm0
+mov    (%rsp),%rsi
+add    $0x18,%rsp
+retq   
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassembly.html">BenchmarkDotNet.Samples.IntroDisassembly</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblyryujit">Sample: IntroDisassemblyRyuJit</h2>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyRyuJit.cs">using System.Linq;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(printSource: true)]
+    [RyuJitX64Job]
+    public class IntroDisassemblyRyuJit
+    {
+        private int[] field = Enumerable.Range(0, 100).ToArray();
+
+        [Benchmark]
+        public int SumLocal()
+        {
+            var local = field; // we use local variable that points to the field
+
+            int sum = 0;
+            for (int i = 0; i &lt; local.Length; i++)
+                sum += local[i];
+
+            return sum;
+        }
+
+        [Benchmark]
+        public int SumField()
+        {
+            int sum = 0;
+            for (int i = 0; i &lt; field.Length; i++)
+                sum += field[i];
+
+            return sum;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<p><img src="../../images/disasm-demo.png" alt=""></p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyRyuJit.html">BenchmarkDotNet.Samples.IntroDisassemblyRyuJit</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblyalljits">Sample: IntroDisassemblyAllJits</h2>
+<p>You can use a single config to compare the generated assembly code for ALL JITs.</p>
+<p>But to allow benchmarking any target platform architecture the project which defines benchmarks has to target <strong>AnyCPU</strong>.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;PlatformTarget&gt;AnyCPU&lt;/PlatformTarget&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyAllJits.cs">using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Jobs;
+
+namespace BenchmarkDotNet.Samples
+{
+    [Config(typeof(MultipleJits))]
+    public class IntroDisassemblyAllJits
+    {
+        public class MultipleJits : ManualConfig
+        {
+            public MultipleJits()
+            {
+                AddJob(Job.ShortRun.WithPlatform(Platform.X86).WithRuntime(new MonoRuntime(name: &quot;Mono x86&quot;, customPath: @&quot;C:\Program Files (x86)\Mono\bin\mono.exe&quot;)));
+                AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithRuntime(new MonoRuntime(name: &quot;Mono x64&quot;, customPath: @&quot;C:\Program Files\Mono\bin\mono.exe&quot;)));
+
+                AddJob(Job.ShortRun.WithJit(Jit.LegacyJit).WithPlatform(Platform.X86).WithRuntime(ClrRuntime.Net462));
+                AddJob(Job.ShortRun.WithJit(Jit.LegacyJit).WithPlatform(Platform.X64).WithRuntime(ClrRuntime.Net462));
+
+                AddJob(Job.ShortRun.WithJit(Jit.RyuJit).WithPlatform(Platform.X64).WithRuntime(ClrRuntime.Net462));
+
+                // RyuJit for .NET Core 5.0
+                AddJob(Job.ShortRun.WithJit(Jit.RyuJit).WithPlatform(Platform.X64).WithRuntime(CoreRuntime.Core50));
+
+                AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig(maxDepth: 3, exportDiff: true)));
+            }
+        }
+
+        private Increment increment = new Increment();
+
+        [Benchmark]
+        public int CallVirtualMethod() =&gt; increment.OperateTwice(10);
+
+        public abstract class Operation  // abstract unary integer operation
+        {
+            public abstract int Operate(int input);
+
+            public int OperateTwice(int input) =&gt; Operate(Operate(input)); // two virtual calls to Operate
+        }
+
+        public sealed class Increment : Operation // concrete, sealed operation: increment by fixed amount
+        {
+            public readonly int Amount;
+            public Increment(int amount = 1) { Amount = amount; }
+
+            public override int Operate(int input) =&gt; input + Amount;
+        }
+    }
+}
+</code></pre><h3 id="output">Output</h3>
+<p>The disassembly result can be obtained <a href="https://adamsitnik.com/files/disasm/Jit_Devirtualization-disassembly-report.html">here</a>.
+The file was too big to embed it in this doc page.</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyAllJits.html">BenchmarkDotNet.Samples.IntroDisassemblyAllJits</a></li>
+</ul>
+<hr>
+<h2 id="sample-introdisassemblydry">Sample: IntroDisassemblyDry</h2>
+<p><strong>Getting only the Disassembly without running the benchmarks for a long time.</strong></p>
+<p>Sometimes you might be interested only in the disassembly, not the results of the benchmarks.
+In that case you can use <strong>Job.Dry</strong> which runs the benchmark only <strong>once</strong>.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroDisassemblyDry.cs">using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DisassemblyDiagnoser(maxDepth: 3)]
+    [DryJob]
+    public class IntroDisassemblyDry
+    {
+        [Benchmark]
+        public void Foo()
+        {
+
+        }
+    }
+}
+</code></pre><h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="../configs/diagnosers.html">Diagnosers</a></li>
+<li><a class="xref" href="disassembler.html">Disassembler</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroDisassemblyDry.html">BenchmarkDotNet.Samples.IntroDisassemblyDry</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BuildPartition
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BuildPartition
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Running.BuildPartition">
+
+
+
+  <h1 id="BenchmarkDotNet_Running_BuildPartition" data-uid="BenchmarkDotNet.Running.BuildPartition" class="text-break">
+    Class BuildPartition
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Running.html">Running</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BuildPartition</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BuildPartition</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition__ctor_" data-uid="BenchmarkDotNet.Running.BuildPartition.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition__ctor_BenchmarkDotNet_Running_BenchmarkBuildInfo___BenchmarkDotNet_Characteristics_IResolver_" data-uid="BenchmarkDotNet.Running.BuildPartition.#ctor(BenchmarkDotNet.Running.BenchmarkBuildInfo[],BenchmarkDotNet.Characteristics.IResolver)">
+  BuildPartition(BenchmarkBuildInfo[], IResolver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BuildPartition(BenchmarkBuildInfo[] benchmarks, IResolver resolver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarks</code> <a class="xref" href="BenchmarkDotNet.Running.BenchmarkBuildInfo.html">BenchmarkBuildInfo</a>[]</dt>
+    <dd></dd>
+    <dt><code>resolver</code> <a class="xref" href="BenchmarkDotNet.Characteristics.IResolver.html">IResolver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_AssemblyLocation_" data-uid="BenchmarkDotNet.Running.BuildPartition.AssemblyLocation*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_AssemblyLocation" data-uid="BenchmarkDotNet.Running.BuildPartition.AssemblyLocation">
+  AssemblyLocation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AssemblyLocation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Benchmarks_" data-uid="BenchmarkDotNet.Running.BuildPartition.Benchmarks*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Benchmarks" data-uid="BenchmarkDotNet.Running.BuildPartition.Benchmarks">
+  Benchmarks
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BenchmarkBuildInfo[] Benchmarks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Running.BenchmarkBuildInfo.html">BenchmarkBuildInfo</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_BuildConfiguration_" data-uid="BenchmarkDotNet.Running.BuildPartition.BuildConfiguration*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_BuildConfiguration" data-uid="BenchmarkDotNet.Running.BuildPartition.BuildConfiguration">
+  BuildConfiguration
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildConfiguration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_GenerateMSBuildBinLog_" data-uid="BenchmarkDotNet.Running.BuildPartition.GenerateMSBuildBinLog*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_GenerateMSBuildBinLog" data-uid="BenchmarkDotNet.Running.BuildPartition.GenerateMSBuildBinLog">
+  GenerateMSBuildBinLog
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GenerateMSBuildBinLog { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_IsCustomBuildConfiguration_" data-uid="BenchmarkDotNet.Running.BuildPartition.IsCustomBuildConfiguration*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_IsCustomBuildConfiguration" data-uid="BenchmarkDotNet.Running.BuildPartition.IsCustomBuildConfiguration">
+  IsCustomBuildConfiguration
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCustomBuildConfiguration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_IsNativeAot_" data-uid="BenchmarkDotNet.Running.BuildPartition.IsNativeAot*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_IsNativeAot" data-uid="BenchmarkDotNet.Running.BuildPartition.IsNativeAot">
+  IsNativeAot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNativeAot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_IsNetFramework_" data-uid="BenchmarkDotNet.Running.BuildPartition.IsNetFramework*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_IsNetFramework" data-uid="BenchmarkDotNet.Running.BuildPartition.IsNetFramework">
+  IsNetFramework
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNetFramework { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_IsWasm_" data-uid="BenchmarkDotNet.Running.BuildPartition.IsWasm*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_IsWasm" data-uid="BenchmarkDotNet.Running.BuildPartition.IsWasm">
+  IsWasm
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsWasm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Jit_" data-uid="BenchmarkDotNet.Running.BuildPartition.Jit*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Jit" data-uid="BenchmarkDotNet.Running.BuildPartition.Jit">
+  Jit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Jit Jit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Environments.Jit.html">Jit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_LogBuildOutput_" data-uid="BenchmarkDotNet.Running.BuildPartition.LogBuildOutput*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_LogBuildOutput" data-uid="BenchmarkDotNet.Running.BuildPartition.LogBuildOutput">
+  LogBuildOutput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LogBuildOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Platform_" data-uid="BenchmarkDotNet.Running.BuildPartition.Platform*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Platform" data-uid="BenchmarkDotNet.Running.BuildPartition.Platform">
+  Platform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Platform Platform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Environments.Platform.html">Platform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_ProgramName_" data-uid="BenchmarkDotNet.Running.BuildPartition.ProgramName*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_ProgramName" data-uid="BenchmarkDotNet.Running.BuildPartition.ProgramName">
+  ProgramName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProgramName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_RepresentativeBenchmarkCase_" data-uid="BenchmarkDotNet.Running.BuildPartition.RepresentativeBenchmarkCase*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_RepresentativeBenchmarkCase" data-uid="BenchmarkDotNet.Running.BuildPartition.RepresentativeBenchmarkCase">
+  RepresentativeBenchmarkCase
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>the benchmarks are grouped by the build settings
+so you can use this benchmark to get the runtime settings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BenchmarkCase RepresentativeBenchmarkCase { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Resolver_" data-uid="BenchmarkDotNet.Running.BuildPartition.Resolver*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Resolver" data-uid="BenchmarkDotNet.Running.BuildPartition.Resolver">
+  Resolver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IResolver Resolver { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.IResolver.html">IResolver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Runtime_" data-uid="BenchmarkDotNet.Running.BuildPartition.Runtime*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Runtime" data-uid="BenchmarkDotNet.Running.BuildPartition.Runtime">
+  Runtime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Runtime Runtime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Environments.Runtime.html">Runtime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_Timeout_" data-uid="BenchmarkDotNet.Running.BuildPartition.Timeout*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_Timeout" data-uid="BenchmarkDotNet.Running.BuildPartition.Timeout">
+  Timeout
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan Timeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Running_BuildPartition_ToString_" data-uid="BenchmarkDotNet.Running.BuildPartition.ToString*"></a>
+
+  <h3 id="BenchmarkDotNet_Running_BuildPartition_ToString" data-uid="BenchmarkDotNet.Running.BuildPartition.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

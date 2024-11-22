@@ -1,0 +1,872 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct GcStats
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct GcStats
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Engines.GcStats">
+
+
+
+  <h1 id="BenchmarkDotNet_Engines_GcStats" data-uid="BenchmarkDotNet.Engines.GcStats" class="text-break">
+    Struct GcStats
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Engines.html">Engines</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct GcStats : IEquatable&lt;GcStats&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_AllocationQuantum" data-uid="BenchmarkDotNet.Engines.GcStats.AllocationQuantum">
+  AllocationQuantum
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly long AllocationQuantum</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Empty" data-uid="BenchmarkDotNet.Engines.GcStats.Empty">
+  Empty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly GcStats Empty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Gen0Collections_" data-uid="BenchmarkDotNet.Engines.GcStats.Gen0Collections*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Gen0Collections" data-uid="BenchmarkDotNet.Engines.GcStats.Gen0Collections">
+  Gen0Collections
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Gen0Collections { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Gen1Collections_" data-uid="BenchmarkDotNet.Engines.GcStats.Gen1Collections*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Gen1Collections" data-uid="BenchmarkDotNet.Engines.GcStats.Gen1Collections">
+  Gen1Collections
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Gen1Collections { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Gen2Collections_" data-uid="BenchmarkDotNet.Engines.GcStats.Gen2Collections*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Gen2Collections" data-uid="BenchmarkDotNet.Engines.GcStats.Gen2Collections">
+  Gen2Collections
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Gen2Collections { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_TotalOperations_" data-uid="BenchmarkDotNet.Engines.GcStats.TotalOperations*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_TotalOperations" data-uid="BenchmarkDotNet.Engines.GcStats.TotalOperations">
+  TotalOperations
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly long TotalOperations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Equals_" data-uid="BenchmarkDotNet.Engines.GcStats.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Equals_BenchmarkDotNet_Engines_GcStats_" data-uid="BenchmarkDotNet.Engines.GcStats.Equals(BenchmarkDotNet.Engines.GcStats)">
+  Equals(GcStats)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(GcStats other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Equals_" data-uid="BenchmarkDotNet.Engines.GcStats.Equals*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Equals_System_Object_" data-uid="BenchmarkDotNet.Engines.GcStats.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_FromForced_" data-uid="BenchmarkDotNet.Engines.GcStats.FromForced*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_FromForced_System_Int32_" data-uid="BenchmarkDotNet.Engines.GcStats.FromForced(System.Int32)">
+  FromForced(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats FromForced(int forcedFullGarbageCollections)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>forcedFullGarbageCollections</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_GetBytesAllocatedPerOperation_" data-uid="BenchmarkDotNet.Engines.GcStats.GetBytesAllocatedPerOperation*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_GetBytesAllocatedPerOperation_BenchmarkDotNet_Running_BenchmarkCase_" data-uid="BenchmarkDotNet.Engines.GcStats.GetBytesAllocatedPerOperation(BenchmarkDotNet.Running.BenchmarkCase)">
+  GetBytesAllocatedPerOperation(BenchmarkCase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? GetBytesAllocatedPerOperation(BenchmarkCase benchmarkCase)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>benchmarkCase</code> <a class="xref" href="BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_GetCollectionsCount_" data-uid="BenchmarkDotNet.Engines.GcStats.GetCollectionsCount*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_GetCollectionsCount_System_Int32_" data-uid="BenchmarkDotNet.Engines.GcStats.GetCollectionsCount(System.Int32)">
+  GetCollectionsCount(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetCollectionsCount(int generation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>generation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_GetHashCode_" data-uid="BenchmarkDotNet.Engines.GcStats.GetHashCode*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_GetHashCode" data-uid="BenchmarkDotNet.Engines.GcStats.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_GetTotalAllocatedBytes_" data-uid="BenchmarkDotNet.Engines.GcStats.GetTotalAllocatedBytes*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_GetTotalAllocatedBytes_System_Boolean_" data-uid="BenchmarkDotNet.Engines.GcStats.GetTotalAllocatedBytes(System.Boolean)">
+  GetTotalAllocatedBytes(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns total allocated bytes (not per operation)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? GetTotalAllocatedBytes(bool excludeAllocationQuantumSideEffects)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>excludeAllocationQuantumSideEffects</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Allocation quantum can affecting some of our nano-benchmarks in non-deterministic way.
+when this parameter is set to true and the number of all allocated bytes is less or equal AQ, we ignore AQ and put 0 to the results</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_Parse_" data-uid="BenchmarkDotNet.Engines.GcStats.Parse*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_Parse_System_String_" data-uid="BenchmarkDotNet.Engines.GcStats.Parse(System.String)">
+  Parse(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats Parse(string line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_ReadFinal_" data-uid="BenchmarkDotNet.Engines.GcStats.ReadFinal*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_ReadFinal" data-uid="BenchmarkDotNet.Engines.GcStats.ReadFinal">
+  ReadFinal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats ReadFinal()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_ReadInitial_" data-uid="BenchmarkDotNet.Engines.GcStats.ReadInitial*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_ReadInitial" data-uid="BenchmarkDotNet.Engines.GcStats.ReadInitial">
+  ReadInitial()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats ReadInitial()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_ToOutputLine_" data-uid="BenchmarkDotNet.Engines.GcStats.ToOutputLine*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_ToOutputLine" data-uid="BenchmarkDotNet.Engines.GcStats.ToOutputLine">
+  ToOutputLine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToOutputLine()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_ToString_" data-uid="BenchmarkDotNet.Engines.GcStats.ToString*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_ToString" data-uid="BenchmarkDotNet.Engines.GcStats.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_WithTotalOperations_" data-uid="BenchmarkDotNet.Engines.GcStats.WithTotalOperations*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_WithTotalOperations_System_Int64_" data-uid="BenchmarkDotNet.Engines.GcStats.WithTotalOperations(System.Int64)">
+  WithTotalOperations(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GcStats WithTotalOperations(long totalOperationsCount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>totalOperationsCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_op_Addition_" data-uid="BenchmarkDotNet.Engines.GcStats.op_Addition*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_op_Addition_BenchmarkDotNet_Engines_GcStats_BenchmarkDotNet_Engines_GcStats_" data-uid="BenchmarkDotNet.Engines.GcStats.op_Addition(BenchmarkDotNet.Engines.GcStats,BenchmarkDotNet.Engines.GcStats)">
+  operator +(GcStats, GcStats)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats operator +(GcStats left, GcStats right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Engines_GcStats_op_Subtraction_" data-uid="BenchmarkDotNet.Engines.GcStats.op_Subtraction*"></a>
+
+  <h3 id="BenchmarkDotNet_Engines_GcStats_op_Subtraction_BenchmarkDotNet_Engines_GcStats_BenchmarkDotNet_Engines_GcStats_" data-uid="BenchmarkDotNet.Engines.GcStats.op_Subtraction(BenchmarkDotNet.Engines.GcStats,BenchmarkDotNet.Engines.GcStats)">
+  operator -(GcStats, GcStats)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GcStats operator -(GcStats left, GcStats right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Engines.GcStats.html">GcStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

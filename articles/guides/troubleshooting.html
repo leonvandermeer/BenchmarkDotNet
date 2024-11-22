@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Troubleshooting | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Troubleshooting | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/guides/troubleshooting.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="troubleshooting">Troubleshooting</h1>
+
+<h2 id="benchmarkdotnet">BenchmarkDotNet</h2>
+<p>You need to be aware of the fact that to ensure process-level isolation BenchmarkDotNet generates, builds and executes every benchmark in a dedicated process. For .NET and Mono we generate a C# file and compile it using Roslyn. For .NET Core and NativeAOT we generate not only C# file but also a project file which later is restored and build with dotnet cli. If your project has some non-trivial build settings like a <code>.props</code> and <code>.target</code> files or native dependencies things might not work well out of the box.</p>
+<p>How do you know that BenchmarkDotNet has failed to build the project? BDN is going to tell you about it. An example:</p>
+<pre><code class="lang-log">// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Projects\BenchmarkDotNet\samples\BenchmarkDotNet.Samples\bin\Release\net8.0\c6045772-d3c7-4dbe-ab37-4aca6dcb6ec4
+// command took 0.51s and exited with 1
+// ***** Done, took 00:00:00 (0.66 sec)   *****
+// Found 1 benchmarks:
+//   IntroBasic.Sleep: DefaultJob
+
+// Build Error: Standard output:
+
+ Standard error:
+ C:\Projects\BenchmarkDotNet\samples\BenchmarkDotNet.Samples\bin\Release\net8.0\c6045772-d3c7-4dbe-ab37-4aca6dcb6ec4\BenchmarkDotNet.Autogenerated.csproj(36,1): error MSB4025: The project file could not be loaded. Unexpected end of file while parsing Comment has occurred. Line 36, position 1.
+
+// BenchmarkDotNet has failed to build the auto-generated boilerplate code.
+// It can be found in C:\Projects\BenchmarkDotNet\samples\BenchmarkDotNet.Samples\bin\Release\net8.0\c6045772-d3c7-4dbe-ab37-4aca6dcb6ec4
+// Please follow the troubleshooting guide: https://benchmarkdotnet.org/articles/guides/troubleshooting.html
+</code></pre>
+<p>If the error message is not clear enough, you need to investigate it further.</p>
+<p>How to troubleshoot the build process:</p>
+<ol>
+<li>Run the benchmarks with <code>--logBuildOutput</code> command line argument.</li>
+<li>Read the error message. If it does not contain the answer to your problem, please continue to the next step.</li>
+<li>Go to the build artifacts folder (path printed by BDN).</li>
+<li>The folder should contain:
+<ul>
+<li>a file with source code (ends with <code>.notcs</code> to make sure IDE don't include it in other projects by default)</li>
+<li>a project file (<code>.csproj</code>)</li>
+<li>a script file (<code>.bat</code> on Windows, <code>.sh</code> for other OSes) which should be doing exactly the same thing as BDN does:
+<ul>
+<li>dotnet restore</li>
+<li>dotnet build (with some parameters like <code>-c Release</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run the script, read the error message. From here you continue with the troubleshooting like it was a project in your solution.</li>
+</ol>
+<p>The recommended order of solving build issues:</p>
+<ol>
+<li>Change the right settings in your project file which defines benchmarks to get it working.</li>
+<li>Customize the <code>Job</code> settings using available options like <code>job.WithCustomBuildConfiguration($name)</code>or <code>job.With(new Argument[] { new MsBuildArgument(&quot;/p:SomeProperty=Value&quot;)})</code>.</li>
+<li>Implement your own <code>IToolchain</code> and generate and build all the right things in your way (you can use existing Builders and Generators and just override some methods to change specific behaviour).</li>
+<li>Report a bug in BenchmarkDotNet repository.</li>
+</ol>
+<h2 id="debugging-benchmarks">Debugging Benchmarks</h2>
+<h2 id="in-the-same-process">In the same process</h2>
+<p>If your benchmark builds but fails to run, you can simply debug it. The first thing you should try is to do it in a single process (host process === runner process).</p>
+<ol>
+<li>Use <code>DebugInProcessConfig</code></li>
+</ol>
+<pre><code class="lang-cs">static void Main(string[] args) =&gt; BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
+</code></pre>
+<ol start="2">
+<li>Set the breakpoints in your favorite IDE</li>
+<li>Start debugging the project with benchmarks</li>
+</ol>
+<h2 id="in-a-different-process">In a different process</h2>
+<p>Sometimes you won't be able to reproduce the problem in the same process. In this case, you have 3 options:</p>
+<h3 id="launch-a-debugger-from-the-benchmark-process-using-debugger-api">Launch a debugger from the benchmark process using Debugger API</h3>
+<pre><code class="lang-cs">[GlobalSetup]
+public void Setup()
+{
+    System.Diagnostics.Debugger.Launch();
+}
+</code></pre>
+<h3 id="attach-a-debugger-from-ide">Attach a debugger from IDE</h3>
+<p>Modify your benchmark to sleep until the Debugger is not attached and use your favorite IDE to attach the debugger to benchmark process. <strong>Do attach to the process which is running the benchmark</strong> (the arguments of the process are going to be <code>--benchmarkId $someNumber --benchmarkName $theName</code>), not the host process.</p>
+<pre><code class="lang-cs">[GlobalSetup]
+public void Setup()
+{
+    while(!System.Diagnostics.Debugger.IsAttached)
+        Thread.Sleep(TimeSpan.FromMilliseconds(100));
+}
+</code></pre>
+<h3 id="one-of-the-above-but-with-a-debug-build">One of the above, but with a Debug build</h3>
+<p>By default, BDN builds everything in Release. But debugging Release builds even with full symbols might be non-trivial. To enforce BDN to build the benchmark in Debug please use <code>DebugBuildConfig</code> and then attach the debugger.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

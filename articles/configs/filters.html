@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Filters | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Filters | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../../logo/icon-32.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/leonvandermeer/BenchmarkDotNet/blob/docs-stable/docs/articles/configs/filters.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="docs.filters">
+<h1 id="filters">Filters</h1>
+
+<p>Sometimes you don't want to run all of your benchmarks.
+In this case, you can <em>filter</em> some of them with the help of <em>filters</em>.</p>
+<p>Predefined filters:</p>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Filters benchmarks by</th>
+<th>Console argument</th>
+<th>Console example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GlobFilter</td>
+<td>Provided glob pattern</td>
+<td><code>filter</code></td>
+<td>--filter <em>Serializer</em>.ToStream</td>
+</tr>
+<tr>
+<td>AttributesFilter</td>
+<td>Provided attribute names</td>
+<td><code>attribute</code></td>
+<td>--attribute STAThread</td>
+</tr>
+<tr>
+<td>AllCategoriesFilter</td>
+<td>All Provided category names</td>
+<td><code>categories</code></td>
+<td>--allCategories Priority1 CoreFX</td>
+</tr>
+<tr>
+<td>AnyCategoriesFilter</td>
+<td>Any provided category names</td>
+<td><code>anycategories</code></td>
+<td>--anyCategories Json Xml</td>
+</tr>
+<tr>
+<td>SimpleFilter</td>
+<td>Provided lambda predicate</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>NameFilter</td>
+<td>Provided lambda predicate</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>UnionFilter</td>
+<td>Logical AND</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>DisjunctionFilter</td>
+<td>Logical OR</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sample-introfilters">Sample: IntroFilters</h2>
+<p>You can either use one of the predefined <code>Filter</code> types or create a custom type which implements <code>IFilter</code> interface.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroFilters.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Filters;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DryJob]
+    [Config(typeof(Config))]
+    public class IntroFilters
+    {
+        private class Config : ManualConfig
+        {
+            // We will benchmark ONLY method with
+            // names (which contains &quot;A&quot; OR &quot;1&quot;) AND (have length &lt; 3)
+            public Config()
+            {
+                // benchmark with names which contains &quot;A&quot; OR &quot;1&quot;
+                AddFilter(new DisjunctionFilter(
+                    new NameFilter(name =&gt; name.Contains(&quot;A&quot;)),
+                    new NameFilter(name =&gt; name.Contains(&quot;1&quot;))
+                ));
+
+                // benchmark with names with length &lt; 3
+                AddFilter(new NameFilter(name =&gt; name.Length &lt; 3));
+            }
+        }
+
+        [Benchmark] public void A1() =&gt; Thread.Sleep(10); // Will be benchmarked
+        [Benchmark] public void A2() =&gt; Thread.Sleep(10); // Will be benchmarked
+        [Benchmark] public void A3() =&gt; Thread.Sleep(10); // Will be benchmarked
+        [Benchmark] public void B1() =&gt; Thread.Sleep(10); // Will be benchmarked
+        [Benchmark] public void B2() =&gt; Thread.Sleep(10);
+        [Benchmark] public void B3() =&gt; Thread.Sleep(10);
+        [Benchmark] public void C1() =&gt; Thread.Sleep(10); // Will be benchmarked
+        [Benchmark] public void C2() =&gt; Thread.Sleep(10);
+        [Benchmark] public void C3() =&gt; Thread.Sleep(10);
+        [Benchmark] public void Aaa() =&gt; Thread.Sleep(10);
+    }
+}
+</code></pre><h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="filters.html">Filters</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroFilters.html">BenchmarkDotNet.Samples.IntroFilters</a></li>
+</ul>
+<hr>
+<h2 id="sample-introcategories">Sample: IntroCategories</h2>
+<p>Combined together with <code>[BenchmarkCategory]</code> attribute, you can group the benchmarks into categories and filter them by categories.</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroCategories.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    [DryJob]
+    [CategoriesColumn]
+    [BenchmarkCategory(&quot;Awesome&quot;)]
+    [AnyCategoriesFilter(&quot;A&quot;, &quot;1&quot;)]
+    public class IntroCategories
+    {
+        [Benchmark]
+        [BenchmarkCategory(&quot;A&quot;, &quot;1&quot;)]
+        public void A1() =&gt; Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory(&quot;A&quot;, &quot;2&quot;)]
+        public void A2() =&gt; Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory(&quot;B&quot;, &quot;1&quot;)]
+        public void B1() =&gt; Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory(&quot;B&quot;, &quot;2&quot;)]
+        public void B2() =&gt; Thread.Sleep(10);
+    }
+}
+</code></pre><h3 id="command-line-examples">Command line examples:</h3>
+<pre><code>--allCategories=A,B
+--anyCategories=A,B
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="filters.html">Filters</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroCategories.html">BenchmarkDotNet.Samples.IntroCategories</a></li>
+</ul>
+<hr>
+<h2 id="sample-introjoin">Sample: IntroJoin</h2>
+<p>If you are using <code>BenchmarkSwitcher</code> and want to run all the benchmarks with a category from all types and join them into one summary table, use the <code>--join</code> option (or <code>BenchmarkSwitcher.RunAllJoined</code>):</p>
+<h3 id="source-code">Source code</h3>
+<pre><code class="lang-csharp" name="IntroJoin.cs">using System.Threading;
+using BenchmarkDotNet.Attributes;
+
+namespace BenchmarkDotNet.Samples
+{
+    // Run BenchmarkSwitcher with arguments: &quot;--join --category=IntroJoinA&quot;
+
+    [DryJob]
+    public class IntroJoin1
+    {
+        [Benchmark]
+        [BenchmarkCategory(&quot;IntroJoinA&quot;)]
+        public void A() =&gt; Thread.Sleep(10);
+
+        [Benchmark]
+        [BenchmarkCategory(&quot;IntroJoinB&quot;)]
+        public void B() =&gt; Thread.Sleep(10);
+    }
+
+    [DryJob]
+    public class IntroJoin2
+    {
+        [Benchmark]
+        [BenchmarkCategory(&quot;IntroJoinA&quot;)]
+        public void A() =&gt; Thread.Sleep(10);
+
+        [Benchmark]
+        [BenchmarkCategory(&quot;IntroJoinB&quot;)]
+        public void B() =&gt; Thread.Sleep(10);
+    }
+}
+</code></pre><h3 id="command-line">Command line</h3>
+<pre><code>--join --allCategories=IntroJoinA
+</code></pre>
+<h3 id="output">Output</h3>
+<pre><code class="lang-markdown">|       Type | Method |     Mean | Error |
+|----------- |------- |---------:|------:|
+| IntroJoin1 |      A | 10.99 ms |    NA |
+| IntroJoin2 |      A | 12.50 ms |    NA |
+</code></pre>
+<h3 id="links">Links</h3>
+<ul>
+<li><a class="xref" href="filters.html">Filters</a></li>
+<li>The permanent link to this sample: <a class="xref" href="../samples/IntroJoin.html">BenchmarkDotNet.Samples.IntroJoin</a></li>
+</ul>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

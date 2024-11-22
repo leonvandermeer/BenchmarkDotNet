@@ -1,0 +1,1321 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Job
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Job
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Jobs.Job">
+
+
+
+  <h1 id="BenchmarkDotNet_Jobs_Job" data-uid="BenchmarkDotNet.Jobs.Job" class="text-break">
+    Class Job
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Jobs.html">Jobs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Job : JobMode&lt;Job&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html">CharacteristicObject</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a>&gt;</div>
+      <div><a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html">JobMode</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a>&gt;</div>
+      <div><span class="xref">Job</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Default">JobMode&lt;Job&gt;.Default</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobMode-1.html#BenchmarkDotNet_Jobs_JobMode_1_Job">JobMode&lt;Job&gt;.Job</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;Job&gt;.Apply(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Apply_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;Job&gt;.Apply(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicObject&lt;Job&gt;.ApplyAndFreeze(CharacteristicObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_ApplyAndFreeze_BenchmarkDotNet_Characteristics_CharacteristicObject___">CharacteristicObject&lt;Job&gt;.ApplyAndFreeze(params CharacteristicObject[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_Freeze">CharacteristicObject&lt;Job&gt;.Freeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject-1.html#BenchmarkDotNet_Characteristics_CharacteristicObject_1_UnfreezeCopy">CharacteristicObject&lt;Job&gt;.UnfreezeCopy()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_IdCharacteristic">CharacteristicObject.IdCharacteristic</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_GetCharacteristicsWithValues">CharacteristicObject.GetCharacteristicsWithValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasValue_BenchmarkDotNet_Characteristics_Characteristic_">CharacteristicObject.HasValue(Characteristic)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0__BenchmarkDotNet_Characteristics_IResolver___0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, IResolver, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_">CharacteristicObject.ResolveValue(Characteristic, IResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_BenchmarkDotNet_Characteristics_IResolver_System_Object_">CharacteristicObject.ResolveValue(Characteristic, IResolver, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue__1_BenchmarkDotNet_Characteristics_Characteristic___0____0_">CharacteristicObject.ResolveValue&lt;T&gt;(Characteristic&lt;T&gt;, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValue_BenchmarkDotNet_Characteristics_Characteristic_System_Object_">CharacteristicObject.ResolveValue(Characteristic, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ResolveValueAsNullable__1_BenchmarkDotNet_Characteristics_Characteristic___0__">CharacteristicObject.ResolveValueAsNullable&lt;T&gt;(Characteristic&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_ToString">CharacteristicObject.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Frozen">CharacteristicObject.Frozen</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_HasChanges">CharacteristicObject.HasChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html#BenchmarkDotNet_Characteristics_CharacteristicObject_Id">CharacteristicObject.Id</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetAllCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetAllCharacteristics(CharacteristicObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicHelper.html#BenchmarkDotNet_Characteristics_CharacteristicHelper_GetThisTypeCharacteristics_BenchmarkDotNet_Characteristics_CharacteristicObject_">CharacteristicHelper.GetThisTypeCharacteristics(CharacteristicObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_AsBaseline_BenchmarkDotNet_Jobs_Job_">JobExtensions.AsBaseline(Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_AsDefault_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.AsDefault(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_AsMutator_BenchmarkDotNet_Jobs_Job_">JobExtensions.AsMutator(Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_DontEnforcePowerPlan_BenchmarkDotNet_Jobs_Job_">JobExtensions.DontEnforcePowerPlan(Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_RunOncePerIteration_BenchmarkDotNet_Jobs_Job_">JobExtensions.RunOncePerIteration(Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithAffinity_BenchmarkDotNet_Jobs_Job_System_IntPtr_">JobExtensions.WithAffinity(Job, nint)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithAnalyzeLaunchVariance_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithAnalyzeLaunchVariance(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithArguments_BenchmarkDotNet_Jobs_Job_System_Collections_Generic_IReadOnlyList_BenchmarkDotNet_Jobs_Argument__">JobExtensions.WithArguments(Job, IReadOnlyList&lt;Argument&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithBaseline_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithBaseline(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithClock_BenchmarkDotNet_Jobs_Job_Perfolizer_Horology_IClock_">JobExtensions.WithClock(Job, IClock)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithCustomBuildConfiguration_BenchmarkDotNet_Jobs_Job_System_String_">JobExtensions.WithCustomBuildConfiguration(Job, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithEngineFactory_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Engines_IEngineFactory_">JobExtensions.WithEngineFactory(Job, IEngineFactory)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithEnvironmentVariable_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Jobs_EnvironmentVariable_">JobExtensions.WithEnvironmentVariable(Job, EnvironmentVariable)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithEnvironmentVariable_BenchmarkDotNet_Jobs_Job_System_String_System_String_">JobExtensions.WithEnvironmentVariable(Job, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithEnvironmentVariables_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Jobs_EnvironmentVariable___">JobExtensions.WithEnvironmentVariables(Job, params EnvironmentVariable[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithEvaluateOverhead_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithEvaluateOverhead(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcAllowVeryLargeObjects_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcAllowVeryLargeObjects(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcConcurrent_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcConcurrent(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcCpuGroups_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcCpuGroups(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcForce_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcForce(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcMode_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Jobs_GcMode_">JobExtensions.WithGcMode(Job, GcMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcRetainVm_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcRetainVm(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithGcServer_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithGcServer(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithHeapAffinitizeMask_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithHeapAffinitizeMask(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithHeapCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithHeapCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithId_BenchmarkDotNet_Jobs_Job_System_String_">JobExtensions.WithId(Job, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithInvocationCount_BenchmarkDotNet_Jobs_Job_System_Int64_">JobExtensions.WithInvocationCount(Job, long)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithIterationCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithIterationCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithIterationTime_BenchmarkDotNet_Jobs_Job_Perfolizer_Horology_TimeInterval_">JobExtensions.WithIterationTime(Job, TimeInterval)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithJit_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Environments_Jit_">JobExtensions.WithJit(Job, Jit)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithLargeAddressAware_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithLargeAddressAware(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithLaunchCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithLaunchCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMaxAbsoluteError_BenchmarkDotNet_Jobs_Job_Perfolizer_Horology_TimeInterval_">JobExtensions.WithMaxAbsoluteError(Job, TimeInterval)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMaxIterationCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithMaxIterationCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMaxRelativeError_BenchmarkDotNet_Jobs_Job_System_Double_">JobExtensions.WithMaxRelativeError(Job, double)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMaxWarmupCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithMaxWarmupCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMemoryRandomization_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithMemoryRandomization(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMinInvokeCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithMinInvokeCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMinIterationCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithMinIterationCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMinIterationTime_BenchmarkDotNet_Jobs_Job_Perfolizer_Horology_TimeInterval_">JobExtensions.WithMinIterationTime(Job, TimeInterval)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithMinWarmupCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithMinWarmupCount(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithNoAffinitize_BenchmarkDotNet_Jobs_Job_System_Boolean_">JobExtensions.WithNoAffinitize(Job, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithNuGet_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Jobs_NuGetReferenceList_">JobExtensions.WithNuGet(Job, NuGetReferenceList)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithNuGet_BenchmarkDotNet_Jobs_Job_System_String_System_String_System_Uri_System_Boolean_">JobExtensions.WithNuGet(Job, string, string?, Uri?, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithoutEnvironmentVariables_BenchmarkDotNet_Jobs_Job_">JobExtensions.WithoutEnvironmentVariables(Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithOutlierMode_BenchmarkDotNet_Jobs_Job_Perfolizer_Mathematics_OutlierDetection_OutlierMode_">JobExtensions.WithOutlierMode(Job, OutlierMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithPlatform_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Environments_Platform_">JobExtensions.WithPlatform(Job, Platform)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithPowerPlan_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Environments_PowerPlan_">JobExtensions.WithPowerPlan(Job, PowerPlan)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithPowerPlan_BenchmarkDotNet_Jobs_Job_System_Guid_">JobExtensions.WithPowerPlan(Job, Guid)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithRuntime_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Environments_Runtime_">JobExtensions.WithRuntime(Job, Runtime)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithStrategy_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Engines_RunStrategy_">JobExtensions.WithStrategy(Job, RunStrategy)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithToolchain_BenchmarkDotNet_Jobs_Job_BenchmarkDotNet_Toolchains_IToolchain_">JobExtensions.WithToolchain(Job, IToolchain)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithUnrollFactor_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithUnrollFactor(Job, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Jobs.JobExtensions.html#BenchmarkDotNet_Jobs_JobExtensions_WithWarmupCount_BenchmarkDotNet_Jobs_Job_System_Int32_">JobExtensions.WithWarmupCount(Job, int)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor" data-uid="BenchmarkDotNet.Jobs.Job.#ctor">
+  Job()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor_BenchmarkDotNet_Characteristics_CharacteristicObject_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor(BenchmarkDotNet.Characteristics.CharacteristicObject)">
+  Job(CharacteristicObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job(CharacteristicObject other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor_BenchmarkDotNet_Characteristics_CharacteristicObject___" data-uid="BenchmarkDotNet.Jobs.Job.#ctor(BenchmarkDotNet.Characteristics.CharacteristicObject[])">
+  Job(params CharacteristicObject[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job(params CharacteristicObject[] others)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>others</code> <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor_System_String_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor(System.String)">
+  Job(string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job(string? id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor_System_String_BenchmarkDotNet_Characteristics_CharacteristicObject_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor(System.String,BenchmarkDotNet.Characteristics.CharacteristicObject)">
+  Job(string?, CharacteristicObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job(string? id, CharacteristicObject other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job__ctor_" data-uid="BenchmarkDotNet.Jobs.Job.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job__ctor_System_String_BenchmarkDotNet_Characteristics_CharacteristicObject___" data-uid="BenchmarkDotNet.Jobs.Job.#ctor(System.String,BenchmarkDotNet.Characteristics.CharacteristicObject[])">
+  Job(string?, params CharacteristicObject[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job(string? id, params CharacteristicObject[] others)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>others</code> <a class="xref" href="BenchmarkDotNet.Characteristics.CharacteristicObject.html">CharacteristicObject</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_AccuracyCharacteristic" data-uid="BenchmarkDotNet.Jobs.Job.AccuracyCharacteristic">
+  AccuracyCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;AccuracyMode&gt; AccuracyCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html">AccuracyMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Dry" data-uid="BenchmarkDotNet.Jobs.Job.Dry">
+  Dry
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job Dry</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_EnvironmentCharacteristic" data-uid="BenchmarkDotNet.Jobs.Job.EnvironmentCharacteristic">
+  EnvironmentCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;EnvironmentMode&gt; EnvironmentCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.EnvironmentMode.html">EnvironmentMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_InProcess" data-uid="BenchmarkDotNet.Jobs.Job.InProcess">
+  InProcess
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job InProcess</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_InProcessDontLogOutput" data-uid="BenchmarkDotNet.Jobs.Job.InProcessDontLogOutput">
+  InProcessDontLogOutput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job InProcessDontLogOutput</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_InfrastructureCharacteristic" data-uid="BenchmarkDotNet.Jobs.Job.InfrastructureCharacteristic">
+  InfrastructureCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;InfrastructureMode&gt; InfrastructureCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.InfrastructureMode.html">InfrastructureMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_LegacyJitX64" data-uid="BenchmarkDotNet.Jobs.Job.LegacyJitX64">
+  LegacyJitX64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job LegacyJitX64</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_LegacyJitX86" data-uid="BenchmarkDotNet.Jobs.Job.LegacyJitX86">
+  LegacyJitX86
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job LegacyJitX86</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_LongRun" data-uid="BenchmarkDotNet.Jobs.Job.LongRun">
+  LongRun
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job LongRun</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_MediumRun" data-uid="BenchmarkDotNet.Jobs.Job.MediumRun">
+  MediumRun
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job MediumRun</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_MetaCharacteristic" data-uid="BenchmarkDotNet.Jobs.Job.MetaCharacteristic">
+  MetaCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;MetaMode&gt; MetaCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.MetaMode.html">MetaMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_RunCharacteristic" data-uid="BenchmarkDotNet.Jobs.Job.RunCharacteristic">
+  RunCharacteristic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Characteristic&lt;RunMode&gt; RunCharacteristic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Characteristics.Characteristic-1.html">Characteristic</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.RunMode.html">RunMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_RyuJitX64" data-uid="BenchmarkDotNet.Jobs.Job.RyuJitX64">
+  RyuJitX64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job RyuJitX64</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_RyuJitX86" data-uid="BenchmarkDotNet.Jobs.Job.RyuJitX86">
+  RyuJitX86
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job RyuJitX86</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_ShortRun" data-uid="BenchmarkDotNet.Jobs.Job.ShortRun">
+  ShortRun
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job ShortRun</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_VeryLongRun" data-uid="BenchmarkDotNet.Jobs.Job.VeryLongRun">
+  VeryLongRun
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job VeryLongRun</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_Accuracy_" data-uid="BenchmarkDotNet.Jobs.Job.Accuracy*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Accuracy" data-uid="BenchmarkDotNet.Jobs.Job.Accuracy">
+  Accuracy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AccuracyMode Accuracy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.AccuracyMode.html">AccuracyMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_DisplayInfo_" data-uid="BenchmarkDotNet.Jobs.Job.DisplayInfo*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_DisplayInfo" data-uid="BenchmarkDotNet.Jobs.Job.DisplayInfo">
+  DisplayInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DisplayInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_Environment_" data-uid="BenchmarkDotNet.Jobs.Job.Environment*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Environment" data-uid="BenchmarkDotNet.Jobs.Job.Environment">
+  Environment
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnvironmentMode Environment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.EnvironmentMode.html">EnvironmentMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_FolderInfo_" data-uid="BenchmarkDotNet.Jobs.Job.FolderInfo*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_FolderInfo" data-uid="BenchmarkDotNet.Jobs.Job.FolderInfo">
+  FolderInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FolderInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_Infrastructure_" data-uid="BenchmarkDotNet.Jobs.Job.Infrastructure*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Infrastructure" data-uid="BenchmarkDotNet.Jobs.Job.Infrastructure">
+  Infrastructure
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InfrastructureMode Infrastructure { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.InfrastructureMode.html">InfrastructureMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_Meta_" data-uid="BenchmarkDotNet.Jobs.Job.Meta*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Meta" data-uid="BenchmarkDotNet.Jobs.Job.Meta">
+  Meta
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MetaMode Meta { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.MetaMode.html">MetaMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_ResolvedId_" data-uid="BenchmarkDotNet.Jobs.Job.ResolvedId*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_ResolvedId" data-uid="BenchmarkDotNet.Jobs.Job.ResolvedId">
+  ResolvedId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ResolvedId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Jobs_Job_Run_" data-uid="BenchmarkDotNet.Jobs.Job.Run*"></a>
+
+  <h3 id="BenchmarkDotNet_Jobs_Job_Run" data-uid="BenchmarkDotNet.Jobs.Job.Run">
+  Run
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RunMode Run { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Jobs.RunMode.html">RunMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

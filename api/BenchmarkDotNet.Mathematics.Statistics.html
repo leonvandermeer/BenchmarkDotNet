@@ -1,0 +1,1444 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Statistics
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Statistics
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Mathematics.Statistics">
+
+
+
+  <h1 id="BenchmarkDotNet_Mathematics_Statistics" data-uid="BenchmarkDotNet.Mathematics.Statistics" class="text-break">
+    Class Statistics
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Mathematics.html">Mathematics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Statistics</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Statistics</span></div>
+    </dd>
+  </dl>
+
+
+
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Extensions.StatisticsExtensions.html#BenchmarkDotNet_Extensions_StatisticsExtensions_CreateNanosecondFormatter_BenchmarkDotNet_Mathematics_Statistics_System_Globalization_CultureInfo_System_String_">StatisticsExtensions.CreateNanosecondFormatter(Statistics, CultureInfo, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Extensions.StatisticsExtensions.html#BenchmarkDotNet_Extensions_StatisticsExtensions_ToString_BenchmarkDotNet_Mathematics_Statistics_System_Globalization_CultureInfo_System_Func_System_Double_System_String__System_Boolean_">StatisticsExtensions.ToString(Statistics?, CultureInfo, Func&lt;double, string&gt;, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics__ctor_" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics__ctor_Perfolizer_Sample_" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor(Perfolizer.Sample)">
+  Statistics(Sample)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Statistics(Sample sample)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sample</code> <span class="xref">Sample</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics__ctor_" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics__ctor_System_Collections_Generic_IEnumerable_System_Double__" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor(System.Collections.Generic.IEnumerable{System.Double})">
+  Statistics(IEnumerable&lt;double&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Statistics(IEnumerable&lt;double&gt; values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics__ctor_" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics__ctor_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor(System.Collections.Generic.IEnumerable{System.Int32})">
+  Statistics(IEnumerable&lt;int&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Statistics(IEnumerable&lt;int&gt; values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics__ctor_" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics__ctor_System_Double___" data-uid="BenchmarkDotNet.Mathematics.Statistics.#ctor(System.Double[])">
+  Statistics(params double[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Statistics(params double[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_AllOutliers_" data-uid="BenchmarkDotNet.Mathematics.Statistics.AllOutliers*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_AllOutliers" data-uid="BenchmarkDotNet.Mathematics.Statistics.AllOutliers">
+  AllOutliers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double[] AllOutliers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_ConfidenceInterval_" data-uid="BenchmarkDotNet.Mathematics.Statistics.ConfidenceInterval*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_ConfidenceInterval" data-uid="BenchmarkDotNet.Mathematics.Statistics.ConfidenceInterval">
+  ConfidenceInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LegacyConfidenceInterval ConfidenceInterval { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Mathematics.LegacyConfidenceInterval.html">LegacyConfidenceInterval</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_InterquartileRange_" data-uid="BenchmarkDotNet.Mathematics.Statistics.InterquartileRange*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_InterquartileRange" data-uid="BenchmarkDotNet.Mathematics.Statistics.InterquartileRange">
+  InterquartileRange
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double InterquartileRange { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Kurtosis_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Kurtosis*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Kurtosis" data-uid="BenchmarkDotNet.Mathematics.Statistics.Kurtosis">
+  Kurtosis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Kurtosis { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_LowerFence_" data-uid="BenchmarkDotNet.Mathematics.Statistics.LowerFence*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_LowerFence" data-uid="BenchmarkDotNet.Mathematics.Statistics.LowerFence">
+  LowerFence
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LowerFence { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_LowerOutliers_" data-uid="BenchmarkDotNet.Mathematics.Statistics.LowerOutliers*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_LowerOutliers" data-uid="BenchmarkDotNet.Mathematics.Statistics.LowerOutliers">
+  LowerOutliers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double[] LowerOutliers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Max_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Max*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Max" data-uid="BenchmarkDotNet.Mathematics.Statistics.Max">
+  Max
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Max { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Mean_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Mean*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Mean" data-uid="BenchmarkDotNet.Mathematics.Statistics.Mean">
+  Mean
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Mean { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Median_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Median*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Median" data-uid="BenchmarkDotNet.Mathematics.Statistics.Median">
+  Median
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Median { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Min_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Min*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Min" data-uid="BenchmarkDotNet.Mathematics.Statistics.Min">
+  Min
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Min { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_N_" data-uid="BenchmarkDotNet.Mathematics.Statistics.N*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_N" data-uid="BenchmarkDotNet.Mathematics.Statistics.N">
+  N
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int N { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_OriginalValues_" data-uid="BenchmarkDotNet.Mathematics.Statistics.OriginalValues*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_OriginalValues" data-uid="BenchmarkDotNet.Mathematics.Statistics.OriginalValues">
+  OriginalValues
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;double&gt; OriginalValues { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Percentiles_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Percentiles*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Percentiles" data-uid="BenchmarkDotNet.Mathematics.Statistics.Percentiles">
+  Percentiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PercentileValues Percentiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Mathematics.PercentileValues.html">PercentileValues</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Q1_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Q1*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Q1" data-uid="BenchmarkDotNet.Mathematics.Statistics.Q1">
+  Q1
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Q1 { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Q3_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Q3*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Q3" data-uid="BenchmarkDotNet.Mathematics.Statistics.Q3">
+  Q3
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Q3 { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Skewness_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Skewness*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Skewness" data-uid="BenchmarkDotNet.Mathematics.Statistics.Skewness">
+  Skewness
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Skewness { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_StandardDeviation_" data-uid="BenchmarkDotNet.Mathematics.Statistics.StandardDeviation*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_StandardDeviation" data-uid="BenchmarkDotNet.Mathematics.Statistics.StandardDeviation">
+  StandardDeviation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StandardDeviation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_StandardError_" data-uid="BenchmarkDotNet.Mathematics.Statistics.StandardError*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_StandardError" data-uid="BenchmarkDotNet.Mathematics.Statistics.StandardError">
+  StandardError
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StandardError { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_UpperFence_" data-uid="BenchmarkDotNet.Mathematics.Statistics.UpperFence*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_UpperFence" data-uid="BenchmarkDotNet.Mathematics.Statistics.UpperFence">
+  UpperFence
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UpperFence { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_UpperOutliers_" data-uid="BenchmarkDotNet.Mathematics.Statistics.UpperOutliers*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_UpperOutliers" data-uid="BenchmarkDotNet.Mathematics.Statistics.UpperOutliers">
+  UpperOutliers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double[] UpperOutliers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Variance_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Variance*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Variance" data-uid="BenchmarkDotNet.Mathematics.Statistics.Variance">
+  Variance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Variance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_CalcCentralMoment_" data-uid="BenchmarkDotNet.Mathematics.Statistics.CalcCentralMoment*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_CalcCentralMoment_System_Int32_" data-uid="BenchmarkDotNet.Mathematics.Statistics.CalcCentralMoment(System.Int32)">
+  CalcCentralMoment(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double CalcCentralMoment(int k)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_CanBeInverted_" data-uid="BenchmarkDotNet.Mathematics.Statistics.CanBeInverted*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_CanBeInverted" data-uid="BenchmarkDotNet.Mathematics.Statistics.CanBeInverted">
+  CanBeInverted()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true, if this statistics can be inverted (see <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html#BenchmarkDotNet_Mathematics_Statistics_Invert">Invert()</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanBeInverted()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_DivMean_" data-uid="BenchmarkDotNet.Mathematics.Statistics.DivMean*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_DivMean_BenchmarkDotNet_Mathematics_Statistics_BenchmarkDotNet_Mathematics_Statistics_" data-uid="BenchmarkDotNet.Mathematics.Statistics.DivMean(BenchmarkDotNet.Mathematics.Statistics,BenchmarkDotNet.Mathematics.Statistics)">
+  DivMean(Statistics?, Statistics?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Mean for [X/Y].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double DivMean(Statistics? x, Statistics? y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Divide_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Divide*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Divide_BenchmarkDotNet_Mathematics_Statistics_BenchmarkDotNet_Mathematics_Statistics_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Divide(BenchmarkDotNet.Mathematics.Statistics,BenchmarkDotNet.Mathematics.Statistics)">
+  Divide(Statistics, Statistics)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Statistics Divide(Statistics x, Statistics y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_GetActualOutliers_" data-uid="BenchmarkDotNet.Mathematics.Statistics.GetActualOutliers*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_GetActualOutliers_Perfolizer_Mathematics_OutlierDetection_OutlierMode_" data-uid="BenchmarkDotNet.Mathematics.Statistics.GetActualOutliers(Perfolizer.Mathematics.OutlierDetection.OutlierMode)">
+  GetActualOutliers(OutlierMode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double[] GetActualOutliers(OutlierMode outlierMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outlierMode</code> <span class="xref">OutlierMode</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_GetConfidenceInterval_" data-uid="BenchmarkDotNet.Mathematics.Statistics.GetConfidenceInterval*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_GetConfidenceInterval_Perfolizer_Mathematics_Common_ConfidenceLevel_" data-uid="BenchmarkDotNet.Mathematics.Statistics.GetConfidenceInterval(Perfolizer.Mathematics.Common.ConfidenceLevel)">
+  GetConfidenceInterval(ConfidenceLevel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfidenceInterval GetConfidenceInterval(ConfidenceLevel level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <span class="xref">ConfidenceLevel</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ConfidenceInterval</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_Invert_" data-uid="BenchmarkDotNet.Mathematics.Statistics.Invert*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_Invert" data-uid="BenchmarkDotNet.Mathematics.Statistics.Invert">
+  Invert()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Statistics for [1/X]. If Min is less then or equal to 0, returns null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Statistics Invert()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_IsActualOutlier_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsActualOutlier*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_IsActualOutlier_System_Double_Perfolizer_Mathematics_OutlierDetection_OutlierMode_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsActualOutlier(System.Double,Perfolizer.Mathematics.OutlierDetection.OutlierMode)">
+  IsActualOutlier(double, OutlierMode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsActualOutlier(double value, OutlierMode outlierMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>outlierMode</code> <span class="xref">OutlierMode</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_IsLowerOutlier_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsLowerOutlier*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_IsLowerOutlier_System_Double_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsLowerOutlier(System.Double)">
+  IsLowerOutlier(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLowerOutlier(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_IsOutlier_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsOutlier*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_IsOutlier_System_Double_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsOutlier(System.Double)">
+  IsOutlier(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOutlier(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_IsUpperOutlier_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsUpperOutlier*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_IsUpperOutlier_System_Double_" data-uid="BenchmarkDotNet.Mathematics.Statistics.IsUpperOutlier(System.Double)">
+  IsUpperOutlier(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUpperOutlier(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_MulMean_" data-uid="BenchmarkDotNet.Mathematics.Statistics.MulMean*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_MulMean_BenchmarkDotNet_Mathematics_Statistics_BenchmarkDotNet_Mathematics_Statistics_" data-uid="BenchmarkDotNet.Mathematics.Statistics.MulMean(BenchmarkDotNet.Mathematics.Statistics,BenchmarkDotNet.Mathematics.Statistics)">
+  MulMean(Statistics, Statistics)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Mean for [X*Y].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MulMean(Statistics x, Statistics y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="BenchmarkDotNet.Mathematics.Statistics.html">Statistics</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_ToString_" data-uid="BenchmarkDotNet.Mathematics.Statistics.ToString*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_ToString" data-uid="BenchmarkDotNet.Mathematics.Statistics.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Mathematics_Statistics_WithoutOutliers_" data-uid="BenchmarkDotNet.Mathematics.Statistics.WithoutOutliers*"></a>
+
+  <h3 id="BenchmarkDotNet_Mathematics_Statistics_WithoutOutliers" data-uid="BenchmarkDotNet.Mathematics.Statistics.WithoutOutliers">
+  WithoutOutliers()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double[] WithoutOutliers()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

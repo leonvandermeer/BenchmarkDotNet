@@ -1,0 +1,749 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class LoggerExtensions
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class LoggerExtensions
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Loggers.LoggerExtensions">
+
+
+
+  <h1 id="BenchmarkDotNet_Loggers_LoggerExtensions" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions" class="text-break">
+    Class LoggerExtensions
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Loggers.html">Loggers</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class LoggerExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">LoggerExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_Write_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.Write*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_Write_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.Write(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  Write(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Write(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteError_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteError*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteError_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteError(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteError(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteError(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHeader_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHeader*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHeader_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHeader(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteHeader(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteHeader(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHelp_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHelp*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHelp_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHelp(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteHelp(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteHelp(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHint_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHint*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteHint_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteHint(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteHint(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteHint(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteInfo_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteInfo*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteInfo_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteInfo(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteInfo(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteInfo(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLine_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLine*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLine_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLine(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLine(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLine(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineError_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineError*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineError_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineError(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineError(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineError(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHeader_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHeader*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHeader_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHeader(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineHeader(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineHeader(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHelp_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHelp*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHelp_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHelp(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineHelp(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineHelp(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHint_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHint*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHint_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineHint(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineHint(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineHint(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineInfo_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineInfo*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineInfo_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineInfo(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineInfo(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineInfo(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineResult_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineResult*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineResult_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineResult(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineResult(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineResult(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineStatistic_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineStatistic*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineStatistic_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineStatistic(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineStatistic(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineStatistic(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineWarning_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineWarning*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineWarning_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteLineWarning(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteLineWarning(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineWarning(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteResult_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteResult*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteResult_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteResult(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteResult(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteResult(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteStatistic_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteStatistic*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteStatistic_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteStatistic(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteStatistic(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteStatistic(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteWarning_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteWarning*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_LoggerExtensions_WriteWarning_BenchmarkDotNet_Loggers_ILogger_System_String_" data-uid="BenchmarkDotNet.Loggers.LoggerExtensions.WriteWarning(BenchmarkDotNet.Loggers.ILogger,System.String)">
+  WriteWarning(ILogger, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteWarning(this ILogger logger, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

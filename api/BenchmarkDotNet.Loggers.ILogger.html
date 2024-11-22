@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface ILogger
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ILogger
+ | BenchmarkDotNet ">
+      
+      
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Loggers.ILogger">
+
+
+
+  <h1 id="BenchmarkDotNet_Loggers_ILogger" data-uid="BenchmarkDotNet.Loggers.ILogger" class="text-break">
+    Interface ILogger
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Loggers.html">Loggers</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ILogger</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_Write_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.Write(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteError_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteError(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteHeader_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteHeader(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteHelp_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteHelp(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteHint_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteHint(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteInfo_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteInfo(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLine_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLine(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineError_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineError(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHeader_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineHeader(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHelp_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineHelp(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineHint_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineHint(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineInfo_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineInfo(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineResult_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineResult(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineStatistic_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineStatistic(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteLineWarning_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteLineWarning(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteResult_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteResult(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteStatistic_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteStatistic(ILogger, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Loggers.LoggerExtensions.html#BenchmarkDotNet_Loggers_LoggerExtensions_WriteWarning_BenchmarkDotNet_Loggers_ILogger_System_String_">LoggerExtensions.WriteWarning(ILogger, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_Id_" data-uid="BenchmarkDotNet.Loggers.ILogger.Id*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_Id" data-uid="BenchmarkDotNet.Loggers.ILogger.Id">
+  Id
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_Priority_" data-uid="BenchmarkDotNet.Loggers.ILogger.Priority*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_Priority" data-uid="BenchmarkDotNet.Loggers.ILogger.Priority">
+  Priority
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>If there are several loggers with the same <a class="xref" href="BenchmarkDotNet.Loggers.ILogger.html#BenchmarkDotNet_Loggers_ILogger_Id">Id</a>,
+only logger with the highest priority will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Priority { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_Flush_" data-uid="BenchmarkDotNet.Loggers.ILogger.Flush*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_Flush" data-uid="BenchmarkDotNet.Loggers.ILogger.Flush">
+  Flush()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Flush()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_Write_" data-uid="BenchmarkDotNet.Loggers.ILogger.Write*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_Write_BenchmarkDotNet_Loggers_LogKind_System_String_" data-uid="BenchmarkDotNet.Loggers.ILogger.Write(BenchmarkDotNet.Loggers.LogKind,System.String)">
+  Write(LogKind, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Write(LogKind logKind, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logKind</code> <a class="xref" href="BenchmarkDotNet.Loggers.LogKind.html">LogKind</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_WriteLine_" data-uid="BenchmarkDotNet.Loggers.ILogger.WriteLine*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_WriteLine" data-uid="BenchmarkDotNet.Loggers.ILogger.WriteLine">
+  WriteLine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteLine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BenchmarkDotNet_Loggers_ILogger_WriteLine_" data-uid="BenchmarkDotNet.Loggers.ILogger.WriteLine*"></a>
+
+  <h3 id="BenchmarkDotNet_Loggers_ILogger_WriteLine_BenchmarkDotNet_Loggers_LogKind_System_String_" data-uid="BenchmarkDotNet.Loggers.ILogger.WriteLine(BenchmarkDotNet.Loggers.LogKind,System.String)">
+  WriteLine(LogKind, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteLine(LogKind logKind, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logKind</code> <a class="xref" href="BenchmarkDotNet.Loggers.LogKind.html">LogKind</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

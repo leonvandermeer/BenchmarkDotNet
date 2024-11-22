@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DebugInProcessConfig
+ | BenchmarkDotNet </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DebugInProcessConfig
+ | BenchmarkDotNet ">
+      
+      <meta name="description" content="config which allows to debug benchmarks running it in the same process">
+      <link rel="icon" href="../logo/icon-32.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo/icon.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig">
+
+
+
+  <h1 id="BenchmarkDotNet_Configs_DebugInProcessConfig" data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig" class="text-break">
+    Class DebugInProcessConfig
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BenchmarkDotNet.html">BenchmarkDotNet</a>.<a class="xref" href="BenchmarkDotNet.Configs.html">Configs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BenchmarkDotNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>config which allows to debug benchmarks running it in the same process</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DebugInProcessConfig : DebugConfig, IConfig</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html">DebugConfig</a></div>
+      <div><span class="xref">DebugInProcessConfig</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="BenchmarkDotNet.Configs.IConfig.html">IConfig</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetValidators">DebugConfig.GetValidators()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetColumnProviders">DebugConfig.GetColumnProviders()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetExporters">DebugConfig.GetExporters()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetLoggers">DebugConfig.GetLoggers()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetDiagnosers">DebugConfig.GetDiagnosers()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetAnalysers">DebugConfig.GetAnalysers()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetHardwareCounters">DebugConfig.GetHardwareCounters()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetEventProcessors">DebugConfig.GetEventProcessors()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetFilters">DebugConfig.GetFilters()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetColumnHidingRules">DebugConfig.GetColumnHidingRules()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_GetLogicalGroupRules">DebugConfig.GetLogicalGroupRules()</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_Orderer">DebugConfig.Orderer</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_CategoryDiscoverer">DebugConfig.CategoryDiscoverer</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_SummaryStyle">DebugConfig.SummaryStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_UnionRule">DebugConfig.UnionRule</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_BuildTimeout">DebugConfig.BuildTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_WakeLock">DebugConfig.WakeLock</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_ArtifactsPath">DebugConfig.ArtifactsPath</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_CultureInfo">DebugConfig.CultureInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_Options">DebugConfig.Options</a>
+    </div>
+    <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.DebugConfig.html#BenchmarkDotNet_Configs_DebugConfig_ConfigAnalysisConclusion">DebugConfig.ConfigAnalysisConclusion</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddAnalyser_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Analysers_IAnalyser___">ConfigExtensions.AddAnalyser(IConfig, params IAnalyser[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddColumn_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumn___">ConfigExtensions.AddColumn(IConfig, params IColumn[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddColumnProvider_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumnProvider___">ConfigExtensions.AddColumnProvider(IConfig, params IColumnProvider[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddDiagnoser_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_IDiagnoser___">ConfigExtensions.AddDiagnoser(IConfig, params IDiagnoser[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddEventProcessor_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_EventProcessors_EventProcessor___">ConfigExtensions.AddEventProcessor(IConfig, params EventProcessor[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddExporter_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Exporters_IExporter___">ConfigExtensions.AddExporter(IConfig, params IExporter[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddFilter_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Filters_IFilter___">ConfigExtensions.AddFilter(IConfig, params IFilter[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddHardwareCounters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_HardwareCounter___">ConfigExtensions.AddHardwareCounters(IConfig, params HardwareCounter[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddJob_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job_">ConfigExtensions.AddJob(IConfig, Job)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddLogger_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Loggers_ILogger___">ConfigExtensions.AddLogger(IConfig, params ILogger[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddLogicalGroupRules_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule___">ConfigExtensions.AddLogicalGroupRules(IConfig, params BenchmarkLogicalGroupRule[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_AddValidator_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Validators_IValidator___">ConfigExtensions.AddValidator(IConfig, params IValidator[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_CreateImmutableConfig_BenchmarkDotNet_Configs_IConfig_">ConfigExtensions.CreateImmutableConfig(IConfig)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_DontOverwriteResults_BenchmarkDotNet_Configs_IConfig_System_Boolean_">ConfigExtensions.DontOverwriteResults(IConfig, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_HideColumns_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumn___">ConfigExtensions.HideColumns(IConfig, params IColumn[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_HideColumns_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumnHidingRule___">ConfigExtensions.HideColumns(IConfig, params IColumnHidingRule[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_HideColumns_BenchmarkDotNet_Configs_IConfig_System_String___">ConfigExtensions.HideColumns(IConfig, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_KeepBenchmarkFiles_BenchmarkDotNet_Configs_IConfig_System_Boolean_">ConfigExtensions.KeepBenchmarkFiles(IConfig, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_StopOnFirstError_BenchmarkDotNet_Configs_IConfig_System_Boolean_">ConfigExtensions.StopOnFirstError(IConfig, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithArtifactsPath_BenchmarkDotNet_Configs_IConfig_System_String_">ConfigExtensions.WithArtifactsPath(IConfig, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithCultureInfo_BenchmarkDotNet_Configs_IConfig_System_Globalization_CultureInfo_">ConfigExtensions.WithCultureInfo(IConfig, CultureInfo)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithOption_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_ConfigOptions_System_Boolean_">ConfigExtensions.WithOption(IConfig, ConfigOptions, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithOptions_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_ConfigOptions_">ConfigExtensions.WithOptions(IConfig, ConfigOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithOrderer_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Order_IOrderer_">ConfigExtensions.WithOrderer(IConfig, IOrderer)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithSummaryStyle_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Reports_SummaryStyle_">ConfigExtensions.WithSummaryStyle(IConfig, SummaryStyle)</a>
+  </div>
+  <div>
+      <a class="xref" href="BenchmarkDotNet.Configs.ConfigExtensions.html#BenchmarkDotNet_Configs_ConfigExtensions_WithUnionRule_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_ConfigUnionRule_">ConfigExtensions.WithUnionRule(IConfig, ConfigUnionRule)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BenchmarkDotNet_Configs_DebugInProcessConfig__ctor_" data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig.#ctor*"></a>
+
+  <h3 id="BenchmarkDotNet_Configs_DebugInProcessConfig__ctor" data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig.#ctor">
+  DebugInProcessConfig()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DebugInProcessConfig()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BenchmarkDotNet_Configs_DebugInProcessConfig_GetJobs_" data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig.GetJobs*"></a>
+
+  <h3 id="BenchmarkDotNet_Configs_DebugInProcessConfig_GetJobs" data-uid="BenchmarkDotNet.Configs.DebugInProcessConfig.GetJobs">
+  GetJobs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Job&gt; GetJobs()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="BenchmarkDotNet.Jobs.Job.html">Job</a>&gt;</dt>
+    <dd>config which allows to debug benchmarks running it in the same process</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2013–2024 .NET Foundation and contributors
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
