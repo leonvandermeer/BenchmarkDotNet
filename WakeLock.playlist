@@ -1,0 +1,6 @@
+<Playlist Version="2.0">
+  <Rule Match="All">
+    <!--<Property Match="Contains" Name="Project" Value="(net8.0)" />-->
+    <Property Match="Contains" Name="Test" Value="wake" />
+  </Rule>
+</Playlist>
