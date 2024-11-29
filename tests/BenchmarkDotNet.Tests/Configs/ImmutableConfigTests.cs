@@ -387,10 +387,10 @@ namespace BenchmarkDotNet.Tests.Configs
         [Fact]
         public void CustomWakeLockHasPrecedenceOverDefaultWakeLock()
         {
-            WakeLockType customTimeout = WakeLockType.RequireDisplay;
-            var mutable = ManualConfig.CreateEmpty().WithWakeLock(customTimeout);
+            WakeLockType customWakeLock = WakeLockType.RequireDisplay;
+            var mutable = ManualConfig.CreateEmpty().WithWakeLock(customWakeLock);
             var final = ImmutableConfigBuilder.Create(mutable);
-            Assert.Equal(customTimeout, final.WakeLock);
+            Assert.Equal(customWakeLock, final.WakeLock);
         }
 
         [Theory]
@@ -398,15 +398,15 @@ namespace BenchmarkDotNet.Tests.Configs
         [InlineData(true)]
         public void WhenTwoCustomWakeLocksAreProvidedTheLongerOneIsUsed(bool direction)
         {
-            var system = ManualConfig.CreateEmpty().WithWakeLock(WakeLockType.RequireSystem);
+            var none = ManualConfig.CreateEmpty().WithWakeLock(WakeLockType.None);
             var display = ManualConfig.CreateEmpty().WithWakeLock(WakeLockType.RequireDisplay);
 
             if (direction)
-                system.Add(display);
+                none.Add(display);
             else
-                display.Add(system);
+                display.Add(none);
 
-            var final = ImmutableConfigBuilder.Create(direction ? system : display);
+            var final = ImmutableConfigBuilder.Create(direction ? none : display);
             Assert.Equal(WakeLockType.RequireDisplay, final.WakeLock);
         }
 

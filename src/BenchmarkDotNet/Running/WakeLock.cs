@@ -11,8 +11,12 @@ internal partial class WakeLock
     public static WakeLockType GetWakeLockType(BenchmarkRunInfo[] benchmarkRunInfos) =>
         benchmarkRunInfos.Select(static i => i.Config.WakeLock).Max();
 
+    private static readonly bool OsVersionIsSupported =
+        // Must be windows 7 or greater
+        OsDetector.IsWindows() && Environment.OSVersion.Version >= new Version(6, 1);
+
     public static IDisposable Request(WakeLockType wakeLockType, string reason) =>
-        wakeLockType == WakeLockType.No || !OsDetector.IsWindows() ? null : new WakeLockSentinel(wakeLockType, reason);
+        wakeLockType == WakeLockType.None || !OsVersionIsSupported ? null : new WakeLockSentinel(wakeLockType, reason);
 
     private class WakeLockSentinel : DisposeAtProcessTermination
     {

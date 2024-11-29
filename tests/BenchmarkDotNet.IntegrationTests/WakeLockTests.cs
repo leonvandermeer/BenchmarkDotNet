@@ -25,13 +25,13 @@ public class WakeLockTests(ITestOutputHelper output) : BenchmarkTestExecutor(out
     [Fact]
     public void ConfigurationDefaultValue()
     {
-        Assert.Equal(WakeLockType.No, DefaultConfig.Instance.WakeLock);
-        Assert.Equal(WakeLockType.No, new DebugBuildConfig().WakeLock);
-        Assert.Equal(WakeLockType.No, new DebugInProcessConfig().WakeLock);
+        Assert.Equal(WakeLockType.RequireSystem, DefaultConfig.Instance.WakeLock);
+        Assert.Equal(WakeLockType.RequireSystem, new DebugBuildConfig().WakeLock);
+        Assert.Equal(WakeLockType.RequireSystem, new DebugInProcessConfig().WakeLock);
     }
 
     [TheoryEnvSpecific(EnvRequirement.NonWindows)]
-    [InlineData(WakeLockType.No)]
+    [InlineData(WakeLockType.None)]
     [InlineData(WakeLockType.RequireSystem)]
     [InlineData(WakeLockType.RequireDisplay)]
     public void WakeLockIsWindowsOnly(WakeLockType wakeLockType)
@@ -43,7 +43,7 @@ public class WakeLockTests(ITestOutputHelper output) : BenchmarkTestExecutor(out
     [FactEnvSpecific(EnvRequirement.WindowsOnly)]
     public void WakeLockSleepOrDisplayIsAllowed()
     {
-        using IDisposable wakeLock = WakeLock.Request(WakeLockType.No, "dummy");
+        using IDisposable wakeLock = WakeLock.Request(WakeLockType.None, "dummy");
         Assert.Null(wakeLock);
     }
 
@@ -83,7 +83,8 @@ public class WakeLockTests(ITestOutputHelper output) : BenchmarkTestExecutor(out
     [SupportedOSPlatform("windows")]
 #endif
     [TheoryEnvSpecific(EnvRequirement.WindowsOnly)]
-    [InlineData(typeof(Sleepy), "")]
+    [InlineData(typeof(Default), "SYSTEM")]
+    [InlineData(typeof(None), "")]
     [InlineData(typeof(RequireSystem), "SYSTEM")]
     [InlineData(typeof(RequireDisplay), "DISPLAY, SYSTEM")]
     public async Task BenchmarkRunnerAcquiresWakeLock(Type type, string expected)
@@ -106,7 +107,9 @@ public class WakeLockTests(ITestOutputHelper output) : BenchmarkTestExecutor(out
         }
     }
 
-    public class Sleepy : Base { }
+    public class Default : Base { }
+
+    [WakeLock(WakeLockType.None)] public class None : Base { }
 
     [WakeLock(WakeLockType.RequireSystem)] public class RequireSystem : Base { }
 
