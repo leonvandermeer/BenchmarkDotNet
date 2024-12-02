@@ -367,9 +367,9 @@ namespace BenchmarkDotNet.Tests
         [Fact]
         public void UserCanSpecifyWakeLock()
         {
-            var config = ConfigParser.Parse(["--preventSleep", "RequireDisplay"], new OutputLogger(Output)).config;
+            var config = ConfigParser.Parse(["--wakeLock", "Display"], new OutputLogger(Output)).config;
 
-            Assert.Equal(WakeLockType.RequireDisplay, config.WakeLock);
+            Assert.Equal(WakeLockType.Display, config.WakeLock);
         }
 
         [Fact]

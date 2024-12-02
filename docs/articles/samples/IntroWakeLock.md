@@ -15,13 +15,13 @@ Using a WakeLock prevents the system doing so.
 ### Command line
 
 ```
---preventSleep None
+--wakeLock None
 ```
 ```
---preventSleep RequireSystem
+--wakeLock System
 ```
 ```
---preventSleep RequireDisplay
+--wakeLock Display
 ```
 
 ### Links

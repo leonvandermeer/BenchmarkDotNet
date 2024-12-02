@@ -28,7 +28,7 @@ internal partial class WakeLock
             this.wakeLockType = wakeLockType;
             safePowerHandle = PInvoke.PowerCreateRequest(reason);
             PInvoke.PowerSetRequest(safePowerHandle, PInvoke.POWER_REQUEST_TYPE.PowerRequestSystemRequired);
-            if (wakeLockType == WakeLockType.RequireDisplay)
+            if (wakeLockType == WakeLockType.Display)
             {
                 PInvoke.PowerSetRequest(safePowerHandle, PInvoke.POWER_REQUEST_TYPE.PowerRequestDisplayRequired);
             }
@@ -36,7 +36,7 @@ internal partial class WakeLock
 
         public override void Dispose()
         {
-            if (wakeLockType == WakeLockType.RequireDisplay)
+            if (wakeLockType == WakeLockType.Display)
             {
                 PInvoke.PowerClearRequest(safePowerHandle, PInvoke.POWER_REQUEST_TYPE.PowerRequestDisplayRequired);
             }

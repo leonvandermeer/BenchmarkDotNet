@@ -387,27 +387,32 @@ namespace BenchmarkDotNet.Tests.Configs
         [Fact]
         public void CustomWakeLockHasPrecedenceOverDefaultWakeLock()
         {
-            WakeLockType customWakeLock = WakeLockType.RequireDisplay;
+            WakeLockType customWakeLock = WakeLockType.Display;
             var mutable = ManualConfig.CreateEmpty().WithWakeLock(customWakeLock);
             var final = ImmutableConfigBuilder.Create(mutable);
             Assert.Equal(customWakeLock, final.WakeLock);
         }
 
         [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void WhenTwoCustomWakeLocksAreProvidedTheLongerOneIsUsed(bool direction)
+        [InlineData(WakeLockType.None, WakeLockType.None, WakeLockType.None)]
+        [InlineData(WakeLockType.System, WakeLockType.None, WakeLockType.None)]
+        [InlineData(WakeLockType.Display, WakeLockType.None, WakeLockType.Display)]
+        [InlineData(WakeLockType.None, WakeLockType.System, WakeLockType.None)]
+        [InlineData(WakeLockType.System, WakeLockType.System, WakeLockType.System)]
+        [InlineData(WakeLockType.Display, WakeLockType.System, WakeLockType.Display)]
+        [InlineData(WakeLockType.None, WakeLockType.Display, WakeLockType.Display)]
+        [InlineData(WakeLockType.System, WakeLockType.Display, WakeLockType.Display)]
+        [InlineData(WakeLockType.Display, WakeLockType.Display, WakeLockType.Display)]
+        public void WhenTwoCustomWakeLocksAreProvidedDisplayBeatsNoneBeatsDefault(
+            WakeLockType left, WakeLockType right, WakeLockType expected)
         {
-            var none = ManualConfig.CreateEmpty().WithWakeLock(WakeLockType.None);
-            var display = ManualConfig.CreateEmpty().WithWakeLock(WakeLockType.RequireDisplay);
+            var l = ManualConfig.CreateEmpty().WithWakeLock(left);
+            var r = ManualConfig.CreateEmpty().WithWakeLock(right);
 
-            if (direction)
-                none.Add(display);
-            else
-                display.Add(none);
+            l.Add(r);
 
-            var final = ImmutableConfigBuilder.Create(direction ? none : display);
-            Assert.Equal(WakeLockType.RequireDisplay, final.WakeLock);
+            var final = ImmutableConfigBuilder.Create(l);
+            Assert.Equal(expected, final.WakeLock);
         }
 
         private static ManualConfig CreateConfigFromJobs(params Job[] jobs)
