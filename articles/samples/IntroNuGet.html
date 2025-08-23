@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -87,14 +87,15 @@
         <article data-uid="BenchmarkDotNet.Samples.IntroNuGet">
 
 <h2 id="sample-intronuget">Sample: IntroNuGet</h2>
-<p>You can set specific versions of NuGet dependencies for each job.
+<p>You can set specific versions of NuGet dependencies for each job using MsBuild properties in your csproj.
 It allows comparing different versions of the same package (if there are no breaking changes in API).</p>
 <h3 id="source-code">Source code</h3>
 <pre><code class="lang-csharp" name="IntroNuGet.cs">using System;
+using System.Collections.Immutable;
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
-using Newtonsoft.Json;
 
 namespace BenchmarkDotNet.Samples
 {
@@ -102,34 +103,50 @@ namespace BenchmarkDotNet.Samples
     /// Benchmarks between various versions of a NuGet package
     /// &lt;/summary&gt;
     /// &lt;remarks&gt;
-    /// Only supported with the CsProjCoreToolchain toolchain
+    /// Only supported with CsProj toolchains.
     /// &lt;/remarks&gt;
     [Config(typeof(Config))]
     public class IntroNuGet
     {
-        // Specify jobs with different versions of the same NuGet package to benchmark.
-        // The NuGet versions referenced on these jobs must be greater or equal to the
-        // same NuGet version referenced in this benchmark project.
-        // Example: This benchmark project references Newtonsoft.Json 9.0.1
+        // Setup your csproj like this:
+        /*
+        &lt;PropertyGroup&gt;
+          &lt;!-- Use 9.0.0 as default package version if not specified --&gt;
+          &lt;SciVersion Condition=&quot;'$(SciVersion)' == ''&quot;&gt;9.0.0&lt;/SciVersion&gt;
+        &lt;/PropertyGroup&gt;
+        &lt;ItemGroup&gt;
+          &lt;PackageReference Include=&quot;System.Collections.Immutable&quot; Version=&quot;$(SciVersion)&quot; /&gt;
+        &lt;/ItemGroup&gt;
+        */
+        // All versions of the package must be source-compatible with your benchmark code.
         private class Config : ManualConfig
         {
             public Config()
             {
-                var baseJob = Job.MediumRun;
+                string[] targetVersions = [
+                    &quot;9.0.0&quot;,
+                    &quot;9.0.3&quot;,
+                    &quot;9.0.5&quot;,
+                ];
 
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;11.0.2&quot;).WithId(&quot;11.0.2&quot;));
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;11.0.1&quot;).WithId(&quot;11.0.1&quot;));
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;10.0.3&quot;).WithId(&quot;10.0.3&quot;));
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;10.0.2&quot;).WithId(&quot;10.0.2&quot;));
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;10.0.1&quot;).WithId(&quot;10.0.1&quot;));
-                AddJob(baseJob.WithNuGet(&quot;Newtonsoft.Json&quot;, &quot;9.0.1&quot;).WithId(&quot;9.0.1&quot;));
+                foreach (var version in targetVersions)
+                {
+                    AddJob(Job.MediumRun
+                        .WithMsBuildArguments($&quot;/p:SciVersion={version}&quot;)
+                        .WithId($&quot;v{version}&quot;)
+                    );
+                }
             }
         }
 
+        private static readonly Random rand = new Random(Seed: 0);
+        private static readonly double[] values = Enumerable.Range(1, 10_000).Select(x =&gt; rand.NextDouble()).ToArray();
+
         [Benchmark]
-        public void SerializeAnonymousObject()
-            =&gt; JsonConvert.SerializeObject(
-                new { hello = &quot;world&quot;, price = 1.99, now = DateTime.UtcNow });
+        public void ToImmutableArrayBenchmark()
+        {
+            var results = values.ToImmutableArray();
+        }
     }
 }
 </code></pre><h3 id="output">Output</h3>
@@ -138,7 +155,7 @@ namespace BenchmarkDotNet.Samples
 <tr>
 <th>Method</th>
 <th>Job</th>
-<th>NuGetReferences</th>
+<th>Arguments</th>
 <th style="text-align: right;">Mean</th>
 <th style="text-align: right;">Error</th>
 <th style="text-align: right;">StdDev</th>
@@ -146,52 +163,28 @@ namespace BenchmarkDotNet.Samples
 </thead>
 <tbody>
 <tr>
-<td>SerializeAnonymousObject</td>
-<td>10.0.1</td>
-<td>Newtonsoft.Json 10.0.1</td>
-<td style="text-align: right;">2.926 us</td>
-<td style="text-align: right;">0.0795 us</td>
-<td style="text-align: right;">0.0283 us</td>
+<td>ToImmutableArrayBenchmark</td>
+<td>v9.0.0</td>
+<td>/p:SciVersion=9.0.0</td>
+<td style="text-align: right;">1.173 μs</td>
+<td style="text-align: right;">0.0057 μs</td>
+<td style="text-align: right;">0.0086 μs</td>
 </tr>
 <tr>
-<td>SerializeAnonymousObject</td>
-<td>10.0.2</td>
-<td>Newtonsoft.Json 10.0.2</td>
-<td style="text-align: right;">2.877 us</td>
-<td style="text-align: right;">0.5928 us</td>
-<td style="text-align: right;">0.2114 us</td>
+<td>ToImmutableArrayBenchmark</td>
+<td>v9.0.3</td>
+<td>/p:SciVersion=9.0.3</td>
+<td style="text-align: right;">1.173 μs</td>
+<td style="text-align: right;">0.0038 μs</td>
+<td style="text-align: right;">0.0058 μs</td>
 </tr>
 <tr>
-<td>SerializeAnonymousObject</td>
-<td>10.0.3</td>
-<td>Newtonsoft.Json 10.0.3</td>
-<td style="text-align: right;">2.706 us</td>
-<td style="text-align: right;">0.1251 us</td>
-<td style="text-align: right;">0.0446 us</td>
-</tr>
-<tr>
-<td>SerializeAnonymousObject</td>
-<td>11.0.1</td>
-<td>Newtonsoft.Json 11.0.1</td>
-<td style="text-align: right;">2.778 us</td>
-<td style="text-align: right;">0.5037 us</td>
-<td style="text-align: right;">0.1796 us</td>
-</tr>
-<tr>
-<td>SerializeAnonymousObject</td>
-<td>11.0.2</td>
-<td>Newtonsoft.Json 11.0.2</td>
-<td style="text-align: right;">2.644 us</td>
-<td style="text-align: right;">0.0609 us</td>
-<td style="text-align: right;">0.0217 us</td>
-</tr>
-<tr>
-<td>SerializeAnonymousObject</td>
-<td>9.0.1</td>
-<td>Newtonsoft.Json 9.0.1</td>
-<td style="text-align: right;">2.722 us</td>
-<td style="text-align: right;">0.3552 us</td>
-<td style="text-align: right;">0.1267 us</td>
+<td>ToImmutableArrayBenchmark</td>
+<td>v9.0.5</td>
+<td>/p:SciVersion=9.0.5</td>
+<td style="text-align: right;">1.172 μs</td>
+<td style="text-align: right;">0.0107 μs</td>
+<td style="text-align: right;">0.0157 μs</td>
 </tr>
 </tbody>
 </table>

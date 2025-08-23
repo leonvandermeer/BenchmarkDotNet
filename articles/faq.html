@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -94,21 +94,21 @@ Consider to use Visual Studio 2015/2017 or <a href="https://www.jetbrains.com/ri
 See also: <a href="https://github.com/dotnet/BenchmarkDotNet/issues/237">BenchmarkDotNet#237</a>, <a href="https://github.com/dotnet/roslyn/issues/12780">roslyn#12780</a>.</p>
 </li>
 <li><p><strong>Q</strong> Why can't I install BenchmarkDotNet in a new .NET Core Console App in Visual Studio 2017?</p>
-<p><strong>A</strong> BenchmarkDotNet supports only netcoreapp3.1+.
+<p><strong>A</strong> BenchmarkDotNet supports only netcoreapp2.0+.
 Some old Visual Studio 2017 can create a new application which targets netcoreapp1.0.
-You should upgrade it up to 3.1.
+You should upgrade it up to 2.0.
 If you want to target netcoreapp1.0 in your main assembly, it's recommended to create a separated project for benchmarks.</p>
 </li>
 <li><p><strong>Q</strong> I created a new .NET Core Console App in Visual Studio 2017. Now I want to run my code on CoreCLR, full .NET Framework, and Mono. How can I do it?</p>
 <p><strong>A</strong> Use the following lines in your <code>.csproj</code> file:</p>
-<pre><code class="lang-xml">&lt;TargetFrameworks&gt;netcoreapp3.1;net46&lt;/TargetFrameworks&gt;
+<pre><code class="lang-xml">&lt;TargetFrameworks&gt;netcoreapp2.0;net46&lt;/TargetFrameworks&gt;
 &lt;PlatformTarget&gt;AnyCPU&lt;/PlatformTarget&gt;
 </code></pre>
 <p>And mark your benchmark class with the following attributes:</p>
 <pre><code class="lang-cs">[CoreJob, ClrJob, MonoJob]
 </code></pre>
 </li>
-<li><p><strong>Q</strong> My source code targets old versions of .NET Framework or .NET Core, but BenchmarkDotNet requires <code>net461</code> and <code>netcoreapp3.1</code>. How can I run benchmarks in this case?</p>
+<li><p><strong>Q</strong> My source code targets old versions of .NET Framework or .NET Core, but BenchmarkDotNet requires <code>net461</code> and <code>netcoreapp2.0</code>. How can I run benchmarks in this case?</p>
 <p><strong>A</strong> It's a good practice to introduce an additional console application (e.g. <code>MyAwesomeLibrary.Benchmarks</code>) which will depend on your code and BenchmarkDotNet.
 Due to the fact that users usually run benchmarks in a develop environment and don't distribute benchmarks for users, it shouldn't be a problem.</p>
 </li>
